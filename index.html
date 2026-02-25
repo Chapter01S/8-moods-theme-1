@@ -1,0 +1,2250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8moods — The Comfort Wrap™ | Self-Heating Relief Pad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --burg:        #5f0810;
+      --burg-dark:   #4a060c;
+      --burg-btn:    #a40011;
+      --cream:       #f5e9db;
+      --cream-dk:    #e8d8c4;
+      --white:       #ffffff;
+      --black:       #010101;
+      --body-txt:    #2c1a1a;
+      --muted:       #8a6a6a;
+      --t:           0.25s ease;
+      --shadow:      0 4px 24px rgba(95,8,16,.10);
+      --shadow-lg:   0 12px 48px rgba(95,8,16,.16);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', Helvetica, Arial, sans-serif;
+      color: var(--body-txt);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+    /* ── Typography ── */
+    .serif       { font-family: 'Playfair Display', Georgia, serif; }
+    .serif-i     { font-family: 'Playfair Display', Georgia, serif; font-style: italic; }
+    h1,h2,h3    { font-family: 'Playfair Display', Georgia, serif; line-height: 1.15; }
+    .eyebrow {
+      font-size: .72rem; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--burg);
+    }
+
+    /* ── Layout ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+    .section    { padding: 96px 0; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 15px 32px; border-radius: 4px;
+      font-size: .95rem; font-weight: 700; letter-spacing: .02em;
+      transition: all var(--t); border: 2px solid transparent; white-space: nowrap;
+    }
+    .btn-red  { background: var(--burg-btn); color: var(--white); border-color: var(--burg-btn); }
+    .btn-red:hover { background: #8a000e; border-color: #8a000e; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(164,0,17,.35); }
+    .btn-burg { background: var(--burg); color: var(--white); border-color: var(--burg); }
+    .btn-burg:hover { background: var(--burg-dark); transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .btn-outline { background: transparent; color: var(--burg); border-color: var(--burg); }
+    .btn-outline:hover { background: var(--burg); color: var(--white); }
+    .btn-cream { background: var(--cream); color: var(--burg); border-color: var(--cream); }
+    .btn-cream:hover { background: var(--cream-dk); transform: translateY(-2px); }
+    .btn-full { width: 100%; }
+    .btn-xl   { padding: 18px 40px; font-size: 1.05rem; }
+
+    /* ══════════════════════════════════════════
+       ANNOUNCEMENT BAR
+    ══════════════════════════════════════════ */
+    .announce {
+      background: var(--burg);
+      color: var(--white);
+      padding: 11px 0;
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .03em;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .announce-track {
+      display: inline-flex;
+      animation: announce-scroll 28s linear infinite;
+    }
+    .announce-msg {
+      padding: 0 48px;
+      flex-shrink: 0;
+    }
+    @keyframes announce-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .announce strong { font-weight: 700; }
+
+    /* ══════════════════════════════════════════
+       NAV
+    ══════════════════════════════════════════ */
+    .nav {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--white);
+      border-bottom: 1px solid rgba(95,8,16,.10);
+      box-shadow: 0 2px 12px rgba(95,8,16,.06);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px; position: relative;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-img {
+      width: 38px; height: 38px; border-radius: 6px; object-fit: cover;
+    }
+    .nav-logo-wordmark {
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-size: 1.45rem; font-weight: 700;
+      color: var(--burg); letter-spacing: -.01em;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 32px; list-style: none;
+    }
+    .nav-links a {
+      font-size: .85rem; font-weight: 500; color: var(--body-txt);
+      transition: color var(--t);
+    }
+    .nav-links a:hover { color: var(--burg); }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .nav-cart {
+      position: relative; color: var(--body-txt);
+      transition: color var(--t); padding: 4px;
+    }
+    .nav-cart:hover { color: var(--burg); }
+    .nav-cart svg { width: 22px; height: 22px; }
+    .cart-badge {
+      position: absolute; top: -4px; right: -6px;
+      background: var(--burg-btn); color: var(--white);
+      font-size: .6rem; font-weight: 700;
+      width: 16px; height: 16px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-burger { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .nav-burger span { width: 22px; height: 2px; background: var(--black); border-radius: 2px; transition: all var(--t); }
+
+    /* ══════════════════════════════════════════
+       PRODUCT HERO — SPLIT LAYOUT
+    ══════════════════════════════════════════ */
+    .product-hero {
+      background: var(--white);
+      padding: 48px 0 72px;
+    }
+    .product-hero-grid {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      gap: 56px;
+      align-items: start;
+    }
+
+    /* ── Gallery ── */
+    .gallery { position: sticky; top: 80px; }
+    .gallery-main {
+      width: 100%; aspect-ratio: 1;
+      background: var(--cream);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .gallery-main-img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: opacity .35s ease;
+    }
+    /* CSS product art placeholder */
+    .gallery-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #f5e9db 0%, #ede0cc 40%, #e8d0b8 100%);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .gallery-placeholder::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 40% 40%, rgba(95,8,16,.08) 0%, transparent 60%);
+    }
+    .pad-art {
+      width: 65%; aspect-ratio: 3/4;
+      background: linear-gradient(160deg, #5f0810 0%, #7d1020 40%, #a40011 100%);
+      border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+      box-shadow: 0 20px 60px rgba(95,8,16,.35), inset 0 -10px 30px rgba(0,0,0,.15);
+      position: relative;
+      animation: float-pad 5s ease-in-out infinite;
+      display: flex; align-items: center; justify-content: center;
+    }
+    @keyframes float-pad {
+      0%,100% { transform: translateY(0) rotate(-3deg); }
+      50%      { transform: translateY(-14px) rotate(-3deg); }
+    }
+    .pad-art::after {
+      content: '8moods';
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-size: 1.1rem; font-weight: 700;
+      color: rgba(255,255,255,.55);
+      letter-spacing: .04em;
+    }
+    .pad-badge {
+      position: absolute; background: var(--white);
+      border-radius: 8px; padding: 10px 14px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.12);
+      font-size: .78rem; font-weight: 600;
+      color: var(--body-txt); white-space: nowrap; z-index: 2;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .pad-badge-heat { top: 10%; right: -6%; }
+    .pad-badge-free { bottom: 16%; left: -6%; }
+    .badge-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; flex-shrink: 0; }
+    .gallery-thumbs {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+    }
+    .thumb {
+      aspect-ratio: 3 / 4;
+      border-radius: 8px; overflow: hidden;
+      border: 2px solid transparent; cursor: pointer;
+      transition: all var(--t); position: relative;
+    }
+    .thumb:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(95,8,16,.14); }
+    .thumb.active {
+      border-color: var(--burg);
+      box-shadow: 0 0 0 3px rgba(95,8,16,.15);
+    }
+    .thumb-inner {
+      width: 100%; height: 100%;
+      display: flex; align-items: flex-end; justify-content: center;
+      padding-bottom: 12px; position: relative; overflow: hidden;
+    }
+    /* Pad silhouette inside each thumb */
+    .thumb-inner::before {
+      content: '';
+      position: absolute; bottom: 14%; left: 50%; transform: translateX(-50%);
+      width: 48%; aspect-ratio: 2/3;
+      border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+      opacity: .75;
+    }
+    /* Scene 1 — cream flat lay */
+    .thumb-1 { background: linear-gradient(160deg, #f5e9db 0%, #e8d0b4 100%); }
+    .thumb-1 .thumb-inner::before { background: linear-gradient(160deg, #5f0810, #a40011); }
+    /* Scene 2 — lifestyle dark */
+    .thumb-2 { background: linear-gradient(160deg, #2c1a1a 0%, #4a1515 100%); }
+    .thumb-2 .thumb-inner::before { background: linear-gradient(160deg, #7d1020, #c0302a); opacity:.9; }
+    /* Scene 3 — detail close-up */
+    .thumb-3 { background: linear-gradient(160deg, #ede0cc 0%, #dbc9ab 100%); }
+    .thumb-3 .thumb-inner::before { background: linear-gradient(160deg, #4a060c, #7d1020); }
+    /* Scene 4 — on-body shot */
+    .thumb-4 { background: linear-gradient(160deg, #5f0810 0%, #3d050a 100%); }
+    .thumb-4 .thumb-inner::before { background: linear-gradient(160deg, #f5e9db, #e8d0b4); opacity:.6; }
+    /* Label tag in corner */
+    .thumb-tag {
+      position: absolute; bottom: 7px; left: 0; right: 0;
+      text-align: center;
+      font-size: .6rem; font-weight: 700; letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .thumb-1 .thumb-tag, .thumb-3 .thumb-tag { color: rgba(95,8,16,.6); }
+    .thumb-2 .thumb-tag, .thumb-4 .thumb-tag { color: rgba(245,233,219,.55); }
+
+    /* ── Buy Box ── */
+    .buybox { padding-top: 4px; }
+
+    .buybox-reviews {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 16px;
+    }
+    .stars { display: flex; gap: 2px; }
+    .stars svg { width: 15px; height: 15px; fill: #d4920a; }
+    .review-score { font-size: .85rem; font-weight: 700; color: var(--body-txt); }
+    .review-count {
+      font-size: .82rem; color: var(--burg);
+      border-bottom: 1px solid var(--burg);
+      cursor: pointer;
+    }
+    .review-count:hover { color: var(--burg-dark); }
+
+    .buybox-name {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+      font-weight: 800; line-height: 1.15;
+      color: var(--black); margin-bottom: 10px;
+    }
+    /* Burgundy brand pill — like the "500g" tag reference */
+    .brand-pill {
+      display: inline-flex; align-items: center;
+      background: var(--burg); color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .04em;
+      padding: 4px 12px; border-radius: 99px;
+      margin-bottom: 14px;
+    }
+    /* Bundle Picker */
+    .bundle-section { margin-bottom: 22px; }
+    .bundle-section-lbl {
+      font-size: .82rem; font-weight: 700;
+      color: var(--body-txt); margin-bottom: 12px;
+    }
+    .bundle-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .bundle-card {
+      border: 2px solid var(--cream-dk); border-radius: 10px;
+      padding: 14px 12px;
+      cursor: pointer; position: relative;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: all var(--t); background: var(--white);
+      min-height: 72px;
+    }
+    .bundle-card:hover { border-color: rgba(95,8,16,.4); }
+    .bundle-card.active {
+      border-color: var(--burg);
+      background: rgba(95,8,16,.03);
+    }
+    .bundle-card-badge {
+      position: absolute; top: -11px; left: 50%;
+      transform: translateX(-50%);
+      font-size: .6rem; font-weight: 800;
+      letter-spacing: .09em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 99px;
+      white-space: nowrap;
+    }
+    .bundle-card-badge.popular { background: var(--burg); color: var(--white); }
+    .bundle-card-badge.value   { background: var(--black); color: var(--white); }
+    .bundle-info { flex: 1; }
+    .bundle-name {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1.05rem; font-weight: 800;
+      color: var(--black); margin-bottom: 2px;
+    }
+    .bundle-per { font-size: .72rem; color: var(--muted); margin-bottom: 5px; }
+    .bundle-price-tag {
+      display: inline-block;
+      background: var(--burg); color: var(--white);
+      font-size: .72rem; font-weight: 700;
+      padding: 3px 9px; border-radius: 99px;
+    }
+    .bundle-card.active .bundle-price-tag { background: var(--burg-dark); }
+    /* Buybox inline FAQ */
+    .buybox-faq { margin-top: 24px; }
+    .buybox-faq-item { border-top: 1px solid var(--cream-dk); }
+    .buybox-faq-q {
+      width: 100%; background: none; border: none;
+      padding: 13px 0;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      cursor: pointer; text-align: left;
+      font-family: 'Inter', sans-serif;
+      font-size: .85rem; font-weight: 600; color: var(--body-txt);
+      transition: color var(--t);
+    }
+    .buybox-faq-q:hover { color: var(--burg); }
+    .buybox-faq-chev {
+      width: 16px; height: 16px; flex-shrink: 0;
+      transition: transform var(--t); color: var(--burg);
+    }
+    .buybox-faq-item.open .buybox-faq-chev { transform: rotate(180deg); }
+    .buybox-faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding-bottom .25s ease;
+    }
+    .buybox-faq-item.open .buybox-faq-a { max-height: 220px; padding-bottom: 14px; }
+    .buybox-faq-a p { font-size: .82rem; color: var(--muted); line-height: 1.7; }
+    .buybox-tagline {
+      font-size: .97rem; color: var(--muted);
+      line-height: 1.7; margin-bottom: 24px;
+      max-width: 420px;
+    }
+
+    /* Subscription Toggle */
+    .sub-toggle {
+      border: 1.5px solid var(--cream-dk);
+      border-radius: 8px; overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .sub-option {
+      padding: 18px 20px;
+      cursor: pointer;
+      display: flex; align-items: flex-start; gap: 14px;
+      transition: background var(--t);
+      position: relative;
+    }
+    .sub-option:not(:last-child) { border-bottom: 1.5px solid var(--cream-dk); }
+    .sub-option.active { background: var(--cream); }
+    .sub-option.active { border-left: 3px solid var(--burg); }
+    .sub-radio {
+      width: 19px; height: 19px; border-radius: 50%;
+      border: 2px solid var(--cream-dk);
+      flex-shrink: 0; margin-top: 1px;
+      position: relative; transition: border-color var(--t);
+    }
+    .sub-option.active .sub-radio { border-color: var(--burg); }
+    .sub-option.active .sub-radio::after {
+      content: ''; position: absolute;
+      top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 9px; height: 9px;
+      background: var(--burg); border-radius: 50%;
+    }
+    .sub-label { flex: 1; }
+    .sub-label-top {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 3px;
+    }
+    .sub-name { font-size: .92rem; font-weight: 700; color: var(--body-txt); }
+    .sub-badge-save {
+      background: var(--burg); color: var(--white);
+      font-size: .67rem; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 99px;
+    }
+    .sub-label-bottom { font-size: .8rem; color: var(--muted); }
+    .sub-price {
+      text-align: right; flex-shrink: 0;
+    }
+    .sub-price-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      color: var(--burg); line-height: 1;
+    }
+    .sub-price-was {
+      font-size: .78rem; color: var(--muted);
+      text-decoration: line-through;
+    }
+    .sub-perks {
+      list-style: none; padding: 14px 20px 18px 52px;
+      display: flex; flex-direction: column; gap: 7px;
+      background: rgba(245,233,219,.5);
+      border-top: 1px solid var(--cream-dk);
+    }
+    .sub-perks li {
+      font-size: .82rem; color: var(--muted);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .sub-perks li::before {
+      content: '';
+      width: 14px; height: 14px; flex-shrink: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235f0810'%3E%3Cpath d='M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z'/%3E%3C/svg%3E") center/contain no-repeat;
+    }
+
+    /* Variant Picker */
+    .picker-label {
+      font-size: .82rem; font-weight: 700;
+      color: var(--body-txt); margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .picker-label span { font-weight: 400; color: var(--muted); }
+    .color-swatches {
+      display: flex; gap: 10px; margin-bottom: 24px;
+    }
+    .swatch {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 3px solid transparent; cursor: pointer;
+      transition: all var(--t); box-shadow: 0 2px 6px rgba(0,0,0,.15);
+    }
+    .swatch.active { border-color: var(--burg); transform: scale(1.15); }
+    .swatch-burg  { background: #5f0810; }
+    .swatch-blush { background: #d4878a; }
+    .swatch-mist  { background: #8aa4a0; }
+
+    /* Quantity */
+    .qty-row {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 20px;
+    }
+    .qty-ctrl {
+      display: flex; align-items: center;
+      border: 1.5px solid var(--cream-dk); border-radius: 6px;
+      overflow: hidden;
+    }
+    .qty-btn {
+      width: 40px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; font-weight: 500;
+      color: var(--burg); background: none; border: none; cursor: pointer;
+      transition: background var(--t);
+    }
+    .qty-btn:hover { background: var(--cream); }
+    .qty-num {
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .95rem; font-weight: 700;
+      border-left: 1.5px solid var(--cream-dk);
+      border-right: 1.5px solid var(--cream-dk);
+    }
+    .qty-total { font-size: .85rem; color: var(--muted); }
+    .qty-total strong { color: var(--body-txt); font-weight: 700; }
+
+    /* CTA */
+    .cta-wrap { margin-bottom: 20px; }
+    .cta-main {
+      width: 100%;
+      padding: 18px 24px;
+      background: var(--burg-btn);
+      color: var(--white);
+      border-radius: 4px;
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      transition: all var(--t);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .cta-main:hover {
+      background: #8a000e;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(164,0,17,.4);
+    }
+    .cta-sub-link {
+      text-align: center;
+      font-size: .8rem; color: var(--muted); margin-top: 8px;
+    }
+    .cta-sub-link a { color: var(--burg); font-weight: 600; border-bottom: 1px solid; }
+
+    /* Trust badges */
+    .trust-badges {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 10px; margin: 20px 0;
+    }
+    .trust-badge {
+      display: flex; align-items: center; gap: 7px;
+      padding: 10px 12px;
+      background: var(--cream); border-radius: 6px;
+      font-size: .75rem; font-weight: 600; color: var(--body-txt);
+    }
+    .trust-badge svg { width: 16px; height: 16px; fill: var(--burg); flex-shrink: 0; }
+
+    /* Buybox perks list */
+    .buybox-perks {
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+      margin-top: 20px; padding-top: 20px;
+      border-top: 1px solid var(--cream-dk);
+    }
+    .buybox-perks li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: .87rem; color: var(--body-txt); line-height: 1.45;
+    }
+    .perk-icon {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: rgba(95,8,16,.10);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .perk-icon svg { width: 11px; height: 11px; fill: var(--burg); }
+
+    /* ══════════════════════════════════════════
+       MARQUEE TRUST BAR
+    ══════════════════════════════════════════ */
+    .marquee-bar {
+      background: var(--black);
+      padding: 18px 0; overflow: hidden;
+    }
+    .marquee-track {
+      display: flex; gap: 72px; align-items: center;
+      animation: marquee 24s linear infinite;
+      width: max-content;
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-item {
+      display: flex; align-items: center; gap: 10px;
+      color: var(--white); font-size: .78rem; font-weight: 500;
+      letter-spacing: .06em; text-transform: uppercase; white-space: nowrap;
+    }
+    .marquee-item svg { width: 14px; height: 14px; fill: var(--cream); flex-shrink: 0; }
+    .marquee-sep { color: rgba(255,255,255,.25); font-size: .8rem; }
+
+    /* ══════════════════════════════════════════
+       PAIN SECTION
+    ══════════════════════════════════════════ */
+    .pain { background: var(--white); padding: 96px 0; }
+    .pain-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .pain-copy .eyebrow { margin-bottom: 14px; }
+    .pain-copy h2 {
+      font-size: clamp(2rem, 3.2vw, 2.6rem);
+      margin-bottom: 20px; line-height: 1.2;
+    }
+    .pain-copy h2 em { color: var(--burg); }
+    .pain-copy p {
+      font-size: 1rem; color: var(--muted);
+      line-height: 1.8; margin-bottom: 16px;
+    }
+    .pain-list { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
+    .pain-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: .93rem; color: var(--body-txt);
+    }
+    .pain-dot {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(95,8,16,.10);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .pain-dot svg { width: 11px; height: 11px; fill: var(--burg); }
+    .pain-visual {
+      background: var(--cream); border-radius: 20px;
+      padding: 48px 36px; text-align: center;
+    }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .stat-card {
+      background: var(--white); border-radius: 12px;
+      padding: 28px 20px; box-shadow: var(--shadow);
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem; font-weight: 700;
+      color: var(--burg); line-height: 1; display: block; margin-bottom: 6px;
+    }
+    .stat-lbl { font-size: .78rem; color: var(--muted); line-height: 1.45; }
+
+    /* ══════════════════════════════════════════
+       HOW IT WORKS
+    ══════════════════════════════════════════ */
+    .how { background: var(--cream); padding: 96px 0; }
+    .sec-head {
+      text-align: center; max-width: 580px; margin: 0 auto 64px;
+    }
+    .sec-head .eyebrow { margin-bottom: 12px; display: block; }
+    .sec-head h2 { font-size: clamp(1.9rem, 3vw, 2.5rem); margin-bottom: 14px; }
+    .sec-head h2 em { color: var(--burg); }
+    .sec-head p { font-size: .97rem; color: var(--muted); line-height: 1.7; }
+    .steps {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 28px; position: relative;
+    }
+    .steps::before {
+      content: '';
+      position: absolute; top: 52px;
+      left: calc(16.66% + 16px); right: calc(16.66% + 16px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--burg), rgba(95,8,16,.2));
+    }
+    .step {
+      background: var(--white); border-radius: 14px;
+      padding: 36px 28px; text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform var(--t), box-shadow var(--t);
+      position: relative; z-index: 1;
+    }
+    .step:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .step-num {
+      width: 52px; height: 52px; background: var(--burg);
+      color: var(--white); border-radius: 50%;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .step-icon {
+      font-size: 2.4rem; margin-bottom: 16px;
+      display: block;
+    }
+    .step h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .step p  { font-size: .88rem; color: var(--muted); line-height: 1.65; }
+
+    /* ══════════════════════════════════════════
+       FEATURES
+    ══════════════════════════════════════════ */
+    .features { background: var(--white); padding: 96px 0; }
+    .features-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-top: 64px;
+    }
+    .feat-card {
+      padding: 32px 26px;
+      border: 1.5px solid var(--cream-dk); border-radius: 12px;
+      transition: all var(--t);
+    }
+    .feat-card:hover {
+      border-color: rgba(95,8,16,.25);
+      box-shadow: var(--shadow); transform: translateY(-4px);
+    }
+    .feat-icon {
+      width: 50px; height: 50px;
+      background: var(--cream); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 18px;
+    }
+    .feat-card h3 {
+      font-family: 'Inter', sans-serif; font-size: 1rem;
+      font-weight: 700; margin-bottom: 8px;
+    }
+    .feat-card p { font-size: .87rem; color: var(--muted); line-height: 1.65; }
+
+    /* ══════════════════════════════════════════
+       TESTIMONIALS
+    ══════════════════════════════════════════ */
+    .testimonials { background: var(--cream); padding: 96px 0; }
+    .reviews-summary {
+      display: flex; align-items: center; gap: 40px;
+      background: var(--white); border-radius: 14px; padding: 32px 36px;
+      margin-bottom: 48px; box-shadow: var(--shadow);
+    }
+    .reviews-big-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem; font-weight: 700; color: var(--burg);
+      line-height: 1; flex-shrink: 0;
+    }
+    .reviews-meta { flex: 1; }
+    .reviews-stars { display: flex; gap: 4px; margin-bottom: 6px; }
+    .reviews-stars svg { width: 20px; height: 20px; fill: #d4920a; }
+    .reviews-count { font-size: .88rem; color: var(--muted); }
+    .reviews-bars { flex: 2; display: flex; flex-direction: column; gap: 8px; }
+    .bar-row { display: flex; align-items: center; gap: 10px; }
+    .bar-lbl { font-size: .78rem; color: var(--muted); width: 40px; flex-shrink: 0; text-align: right; }
+    .bar-track {
+      flex: 1; height: 7px; background: var(--cream-dk);
+      border-radius: 99px; overflow: hidden;
+    }
+    .bar-fill { height: 100%; background: var(--burg); border-radius: 99px; }
+    .bar-pct { font-size: .75rem; color: var(--muted); width: 34px; flex-shrink: 0; }
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .rev-card {
+      background: var(--white); border-radius: 12px;
+      padding: 32px 28px; box-shadow: var(--shadow);
+      display: flex; flex-direction: column; gap: 16px;
+      transition: transform var(--t), box-shadow var(--t);
+    }
+    .rev-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .rev-stars { display: flex; gap: 3px; }
+    .rev-stars svg { width: 14px; height: 14px; fill: #d4920a; }
+    .rev-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      background: rgba(34,197,94,.10); color: #15803d;
+      font-size: .68rem; font-weight: 700;
+      padding: 2px 9px; border-radius: 99px;
+    }
+    .rev-badge svg { width: 10px; height: 10px; fill: #15803d; }
+    .rev-title { font-size: .97rem; font-weight: 700; color: var(--body-txt); }
+    .rev-text {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: .97rem; color: var(--body-txt);
+      line-height: 1.65; flex: 1;
+    }
+    .rev-author { display: flex; align-items: center; gap: 10px; }
+    .rev-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--burg); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif; font-size: 1rem;
+      font-weight: 700; flex-shrink: 0;
+    }
+    .rev-name { font-size: .87rem; font-weight: 600; }
+    .rev-tag  { font-size: .75rem; color: var(--muted); }
+
+    /* ══════════════════════════════════════════
+       SCIENCE / DARK BAND
+    ══════════════════════════════════════════ */
+    .science {
+      background: var(--burg); padding: 88px 0; color: var(--white);
+    }
+    .science-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .science h2 { font-size: clamp(1.8rem,3vw,2.4rem); color: var(--white); margin-bottom: 18px; }
+    .science h2 em { color: var(--cream); }
+    .science p  { font-size: .97rem; color: rgba(255,255,255,.72); line-height: 1.8; margin-bottom: 18px; }
+    .science-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px;
+    }
+    .sci-stat {
+      border: 1px solid rgba(255,255,255,.2); border-radius: 10px; padding: 22px 18px;
+    }
+    .sci-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; font-weight: 700;
+      color: var(--cream); line-height: 1; display: block; margin-bottom: 5px;
+    }
+    .sci-lbl { font-size: .78rem; color: rgba(255,255,255,.55); line-height: 1.4; }
+    .science-visual {
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .sci-card {
+      background: rgba(255,255,255,.10); border-radius: 12px; padding: 24px 22px;
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+    .sci-card-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(255,255,255,.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .sci-card h4 { font-size: .95rem; color: var(--white); font-family: 'Inter', sans-serif; margin-bottom: 4px; }
+    .sci-card p  { font-size: .82rem; color: rgba(255,255,255,.6); line-height: 1.55; }
+
+    /* ══════════════════════════════════════════
+       FAQ
+    ══════════════════════════════════════════ */
+    .faq { background: var(--cream); padding: 96px 0; }
+    .faq-list {
+      max-width: 700px; margin: 0 auto;
+      display: flex; flex-direction: column;
+    }
+    .faq-item { border-bottom: 1px solid var(--cream-dk); }
+    .faq-item:first-child { border-top: 1px solid var(--cream-dk); }
+    .faq-q {
+      width: 100%; background: none; border: none;
+      padding: 22px 0;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      cursor: pointer; text-align: left;
+      font-size: .97rem; font-weight: 600; color: var(--body-txt);
+      transition: color var(--t);
+    }
+    .faq-q:hover { color: var(--burg); }
+    .faq-chevron { width: 20px; height: 20px; flex-shrink: 0; transition: transform var(--t); color: var(--burg); }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .4s ease, padding-bottom .3s ease;
+    }
+    .faq-item.open .faq-a { max-height: 260px; padding-bottom: 18px; }
+    .faq-a p { font-size: .92rem; color: var(--muted); line-height: 1.75; }
+
+    /* ══════════════════════════════════════════
+       FINAL CTA
+    ══════════════════════════════════════════ */
+    .cta-band {
+      background: linear-gradient(135deg, var(--black) 0%, #1e0608 100%);
+      padding: 96px 0; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(95,8,16,.5) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-inner .eyebrow { color: var(--cream); margin-bottom: 16px; display: block; }
+    .cta-inner h2 {
+      font-size: clamp(2.2rem,4.5vw,3.2rem); color: var(--white); margin-bottom: 18px;
+    }
+    .cta-inner h2 em { color: var(--cream); }
+    .cta-inner p {
+      font-size: 1rem; color: rgba(255,255,255,.6);
+      max-width: 480px; margin: 0 auto 40px; line-height: 1.7;
+    }
+    .cta-btns {
+      display: flex; align-items: center; justify-content: center;
+      gap: 16px; flex-wrap: wrap;
+    }
+    .cta-reassure {
+      display: flex; align-items: center; justify-content: center;
+      gap: 28px; margin-top: 36px; flex-wrap: wrap;
+    }
+    .reassure-item {
+      display: flex; align-items: center; gap: 7px;
+      font-size: .78rem; color: rgba(255,255,255,.45);
+    }
+    .reassure-item svg { width: 14px; height: 14px; fill: rgba(255,255,255,.35); }
+
+    /* ══════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════ */
+    .footer { background: var(--black); padding: 56px 0 28px; border-top: 1px solid rgba(255,255,255,.05); }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 1.6rem; font-weight: 700; color: var(--white);
+      display: block; margin-bottom: 12px;
+    }
+    .footer-about {
+      font-size: .83rem; color: rgba(255,255,255,.4); line-height: 1.65; max-width: 240px;
+    }
+    .footer-social { display: flex; gap: 10px; margin-top: 22px; }
+    .social-btn {
+      width: 34px; height: 34px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.15);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all var(--t);
+    }
+    .social-btn:hover { background: var(--burg); border-color: var(--burg); }
+    .social-btn svg { width: 14px; height: 14px; fill: rgba(255,255,255,.55); }
+    .social-btn:hover svg { fill: var(--white); }
+    .footer-col-ttl {
+      font-size: .75rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 16px;
+    }
+    .footer-nav { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-nav a { font-size: .85rem; color: rgba(255,255,255,.5); transition: color var(--t); }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding-top: 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 14px;
+    }
+    .footer-copy { font-size: .75rem; color: rgba(255,255,255,.25); }
+    .footer-legal { display: flex; gap: 18px; }
+    .footer-legal a { font-size: .75rem; color: rgba(255,255,255,.25); transition: color var(--t); }
+    .footer-legal a:hover { color: rgba(255,255,255,.6); }
+
+    /* ══════════════════════════════════════════
+       JOURNEY SECTION
+    ══════════════════════════════════════════ */
+    .journey { background: var(--white); padding: 96px 0; overflow: hidden; }
+    .journey-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: center;
+    }
+    /* Left — lifestyle image panel */
+    .journey-visual {
+      position: relative; border-radius: 20px; overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(160deg, #2c1a1a 0%, #4a1515 40%, #5f0810 100%);
+    }
+    .journey-visual-glow {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 35% 60%, rgba(164,0,17,.35) 0%, transparent 65%);
+    }
+    /* CSS woman silhouette — abstract lifestyle art */
+    .journey-woman {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 55%; height: 80%;
+    }
+    .journey-woman::before {
+      content: '';
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 100%; height: 100%;
+      background: linear-gradient(180deg, rgba(245,233,219,.18) 0%, rgba(245,233,219,.08) 100%);
+      border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+      filter: blur(1px);
+    }
+    .journey-heat-ring {
+      position: absolute; top: 28%; left: 50%; transform: translate(-50%, -50%);
+      width: 120px; height: 120px; border-radius: 50%;
+      border: 2px solid rgba(245,233,219,.2);
+      animation: ring-pulse 3s ease-in-out infinite;
+    }
+    .journey-heat-ring:nth-child(2) { width: 180px; height: 180px; animation-delay: .6s; opacity: .6; }
+    .journey-heat-ring:nth-child(3) { width: 240px; height: 240px; animation-delay: 1.2s; opacity: .35; }
+    @keyframes ring-pulse {
+      0%, 100% { transform: translate(-50%,-50%) scale(1); opacity: .6; }
+      50% { transform: translate(-50%,-50%) scale(1.06); opacity: 1; }
+    }
+    .journey-overlay-tag {
+      position: absolute; bottom: 24px; left: 24px;
+      background: rgba(245,233,219,.15); backdrop-filter: blur(8px);
+      border: 1px solid rgba(245,233,219,.2);
+      border-radius: 10px; padding: 12px 16px;
+      color: var(--white);
+    }
+    .journey-overlay-tag-title { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .65; margin-bottom: 3px; }
+    .journey-overlay-tag-val { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; }
+
+    /* Right — timeline */
+    .journey-copy .eyebrow { margin-bottom: 12px; display: block; }
+    .journey-copy h2 {
+      font-size: clamp(1.9rem, 3vw, 2.5rem); margin-bottom: 10px;
+    }
+    .journey-copy h2 em { color: var(--burg); }
+    .journey-copy > p {
+      font-size: .97rem; color: var(--muted); line-height: 1.75; margin-bottom: 36px;
+    }
+    .journey-timeline { display: flex; flex-direction: column; gap: 0; position: relative; }
+    /* Vertical connector — runs only between dots, not through them */
+    .journey-timeline::before {
+      content: '';
+      position: absolute; left: 19px;
+      top: 44px;        /* starts below first dot */
+      bottom: 44px;     /* ends above last dot */
+      width: 2px;
+      background: linear-gradient(180deg, var(--burg) 0%, rgba(95,8,16,.12) 100%);
+    }
+    .journey-step {
+      display: flex; gap: 18px; align-items: flex-start;
+      padding: 0 0 32px 0; position: relative;
+    }
+    .journey-step:last-child { padding-bottom: 0; }
+    .journey-step-dot {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; position: relative; z-index: 2;
+      font-size: .8rem; font-weight: 800;
+      font-family: Helvetica, Arial, sans-serif;
+      border: 2px solid transparent;
+      transition: all var(--t);
+      /* White ring punches the line out behind every dot */
+      outline: 4px solid var(--white);
+    }
+    /* Before — muted solid */
+    .journey-step.before .journey-step-dot {
+      background: var(--cream-dk); color: var(--muted);
+      border-color: var(--cream-dk);
+    }
+    /* 10 min — solid light tint */
+    .journey-step.min10 .journey-step-dot {
+      background: #f0e2e2; color: var(--burg);
+      border-color: rgba(95,8,16,.3);
+    }
+    /* 20 min — solid medium tint */
+    .journey-step.min20 .journey-step-dot {
+      background: #dbb8b8; color: var(--burg);
+      border-color: rgba(95,8,16,.55);
+    }
+    /* 30 min — full solid with glow */
+    .journey-step.min30 .journey-step-dot {
+      background: var(--burg); color: var(--white);
+      border-color: var(--burg);
+      box-shadow: 0 4px 16px rgba(95,8,16,.35);
+    }
+    .journey-step-time {
+      font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--burg);
+      margin-bottom: 4px; display: block;
+    }
+    .journey-step.before .journey-step-time { color: var(--muted); }
+    .journey-step-body { padding-top: 8px; }
+    .journey-step-title {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 1rem; font-weight: 800;
+      color: var(--black); margin-bottom: 5px;
+    }
+    .journey-step.min30 .journey-step-title { color: var(--burg); }
+    .journey-step-desc {
+      font-size: .87rem; color: var(--muted); line-height: 1.65;
+    }
+
+    /* ── Info Tab Panel ── */
+    .info-guarantee {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--cream); border-radius: 8px;
+      padding: 11px 14px; margin-top: 24px; margin-bottom: 8px;
+      font-size: .8rem; font-weight: 600; color: var(--body-txt);
+    }
+    .info-guarantee-badge {
+      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      border: 2px solid var(--burg);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .info-guarantee-badge svg { width: 16px; height: 16px; fill: var(--burg); }
+    .info-guarantee strong { color: var(--burg); }
+    .info-tabs {
+      border: 1.5px solid var(--cream-dk); border-radius: 10px;
+      overflow: hidden;
+    }
+    .info-tab-nav {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1.5px solid var(--cream-dk);
+      background: #faf5ef;
+    }
+    .info-tab-btn {
+      padding: 11px 6px; font-size: .74rem; font-weight: 600;
+      color: var(--muted); background: none; border: none;
+      border-right: 1.5px solid var(--cream-dk);
+      cursor: pointer; text-align: center; line-height: 1.3;
+      transition: all var(--t);
+    }
+    .info-tab-btn:last-child { border-right: none; }
+    .info-tab-btn:hover { color: var(--burg); background: rgba(245,233,219,.6); }
+    .info-tab-btn.active {
+      color: var(--body-txt); font-weight: 700;
+      background: var(--white);
+      box-shadow: inset 0 -2px 0 var(--burg);
+    }
+    .info-tab-body { background: var(--white); padding: 20px 18px; }
+    .info-tab-panel { display: none; }
+    .info-tab-panel.active { display: block; }
+    /* Tab: Expert Review */
+    .tab-review-stars { display: flex; gap: 3px; margin-bottom: 10px; }
+    .tab-review-stars svg { width: 16px; height: 16px; fill: #d4920a; }
+    .tab-review-quote {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: .93rem; color: var(--body-txt); line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .tab-review-author { display: flex; align-items: center; gap: 10px; }
+    .tab-review-avatar {
+      width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+      background: var(--cream); border: 2px solid var(--cream-dk);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .85rem; font-weight: 700; color: var(--burg);
+    }
+    .tab-review-name { font-size: .84rem; font-weight: 700; color: var(--body-txt); }
+    .tab-review-cred { font-size: .75rem; color: var(--muted); }
+    /* Tab: Comparison */
+    .tab-compare-table { width: 100%; border-collapse: collapse; font-size: .8rem; }
+    .tab-compare-table th {
+      text-align: left; padding: 7px 8px;
+      font-size: .7rem; font-weight: 700; letter-spacing: .07em;
+      text-transform: uppercase; color: var(--muted);
+      border-bottom: 1.5px solid var(--cream-dk);
+    }
+    .tab-compare-table td {
+      padding: 9px 8px; border-bottom: 1px solid var(--cream-dk);
+      color: var(--body-txt); vertical-align: middle;
+    }
+    .tab-compare-table tr:last-child td { border-bottom: none; }
+    .tab-compare-table .col-feat { font-weight: 600; }
+    .tab-compare-table .col-us { font-weight: 700; color: var(--burg); }
+    .check-y { color: #22c55e; font-weight: 700; }
+    .check-n { color: #ef4444; font-weight: 700; }
+    /* Tab: How to Use */
+    .tab-steps { display: flex; flex-direction: column; gap: 12px; }
+    .tab-step { display: flex; align-items: flex-start; gap: 12px; }
+    .tab-step-num {
+      width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+      background: var(--burg); color: var(--white);
+      font-size: .78rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .tab-step-text { font-size: .84rem; color: var(--body-txt); line-height: 1.55; padding-top: 3px; }
+    .tab-step-text strong { display: block; margin-bottom: 2px; }
+    /* Tab: Benefits */
+    .tab-benefits-title { font-size: .9rem; font-weight: 700; margin-bottom: 12px; color: var(--body-txt); }
+    .tab-benefits-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .tab-benefits-list li {
+      display: flex; align-items: center; gap: 9px;
+      font-size: .84rem; color: var(--body-txt);
+    }
+    .tab-benefits-list li svg { width: 17px; height: 17px; fill: var(--burg); flex-shrink: 0; }
+
+    /* ══════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .product-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .gallery { position: static; }
+      .pain-grid { grid-template-columns: 1fr; gap: 48px; }
+      .journey-grid { grid-template-columns: 1fr; gap: 48px; }
+      .journey-visual { aspect-ratio: 16/9; }
+      .science-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 72px 0; }
+
+      /* ── Nav: burger left · logo center · cart right ── */
+      .nav-burger { display: flex; }
+      .nav-links  { display: none; }
+      .nav-logo {
+        position: absolute; left: 50%; transform: translateX(-50%);
+        pointer-events: auto;
+      }
+
+      /* ── Product hero: no gap below nav ── */
+      .product-hero { padding: 16px 0 48px; }
+
+      /* ── Hide gallery thumbs on mobile ── */
+      .gallery-thumbs { display: none; }
+
+      /* ── Bundle picker: keep 3 cols horizontal on mobile ── */
+      .bundle-grid { grid-template-columns: repeat(3, 1fr); gap: 7px; }
+      .bundle-name { font-size: .88rem; }
+      .bundle-per  { font-size: .65rem; }
+      .bundle-price-tag { font-size: .65rem; padding: 2px 7px; }
+
+      /* ── Buybox: tighten spacing between reviews and body ── */
+      .buybox-reviews { margin-bottom: 8px; }
+      .buybox-name    { margin-bottom: 6px; }
+      .brand-pill     { margin-bottom: 10px; }
+      .buybox-tagline { margin-bottom: 16px; }
+
+      /* ── Info tabs: smaller text ── */
+      .info-tab-btn { font-size: .68rem; padding: 10px 4px; }
+
+      /* ── General ── */
+      .steps { grid-template-columns: 1fr; }
+      .steps::before { display: none; }
+      .features-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .reviews-summary { flex-direction: column; gap: 20px; }
+      .science-stats { grid-template-columns: 1fr 1fr; }
+      .trust-badges { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-bottom { flex-direction: column; }
+      .cta-btns { flex-direction: column; align-items: stretch; max-width: 320px; margin: 0 auto; }
+      .pad-badge { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── ANNOUNCEMENT BAR ─────────────────────────────────────────────── -->
+<div class="announce">
+  <div class="announce-track">
+    <span class="announce-msg"><strong>Free shipping</strong> on all orders &nbsp;·&nbsp; Use code <strong>WARMTH20</strong> for 20% off your first order &nbsp;·&nbsp; <strong>30-day money-back guarantee</strong> &nbsp;·&nbsp; Loved by <strong>50,000+ women</strong></span>
+    <span class="announce-msg"><strong>Free shipping</strong> on all orders &nbsp;·&nbsp; Use code <strong>WARMTH20</strong> for 20% off your first order &nbsp;·&nbsp; <strong>30-day money-back guarantee</strong> &nbsp;·&nbsp; Loved by <strong>50,000+ women</strong></span>
+  </div>
+</div>
+
+<!-- ── NAV ──────────────────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <!-- burger: hidden desktop, left on mobile -->
+      <div class="nav-burger" id="burger"><span></span><span></span><span></span></div>
+      <!-- logo: left on desktop, absolute-center on mobile -->
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-wordmark">8moods</span>
+      </a>
+      <!-- links: center on desktop, hidden on mobile -->
+      <ul class="nav-links">
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <!-- cart: right on both desktop and mobile -->
+      <a href="#reviews" class="nav-cart" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        <span class="cart-badge">2</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PRODUCT HERO
+═══════════════════════════════════════════════════════════════════ -->
+<section class="product-hero" id="buy">
+  <div class="container">
+    <div class="product-hero-grid">
+
+      <!-- Left: Gallery -->
+      <div class="gallery">
+        <div class="gallery-main">
+          <div class="gallery-placeholder">
+            <div class="pad-art"></div>
+            <div class="pad-badge pad-badge-heat">
+              🔥 Up to 8 hrs of heat
+            </div>
+            <div class="pad-badge pad-badge-free">
+              <span class="badge-dot"></span> No batteries needed
+            </div>
+          </div>
+        </div>
+        <div class="gallery-thumbs">
+          <div class="thumb active">
+            <div class="thumb-inner thumb-1">
+              <span class="thumb-tag">Front View</span>
+            </div>
+          </div>
+          <div class="thumb">
+            <div class="thumb-inner thumb-2">
+              <span class="thumb-tag">Lifestyle</span>
+            </div>
+          </div>
+          <div class="thumb">
+            <div class="thumb-inner thumb-3">
+              <span class="thumb-tag">Detail</span>
+            </div>
+          </div>
+          <div class="thumb">
+            <div class="thumb-inner thumb-4">
+              <span class="thumb-tag">In Use</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Buy Box -->
+      <div class="buybox">
+
+        <div class="buybox-reviews">
+          <div class="stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="review-score">4.9</span>
+          <a href="#reviews" class="review-count">12,847 reviews</a>
+        </div>
+
+        <h1 class="buybox-name">The Comfort Wrap™</h1>
+        <span class="brand-pill">by 8moods</span>
+        <p class="buybox-tagline">
+          Self-activating heat therapy — no batteries, no cords, no fuss. Stick it on, wear it all day, and let the warmth do the work while you live your life.
+        </p>
+
+        <!-- Bundle Picker -->
+        <div class="bundle-section">
+          <div class="bundle-section-lbl">Select Your Pack</div>
+          <div class="bundle-grid">
+            <!-- 3-pack -->
+            <div class="bundle-card" onclick="selectBundle(this,3,14.99,4.99)">
+              <div class="bundle-info">
+                <div class="bundle-name">3-Pack</div>
+                <div class="bundle-per">$4.99 / pad</div>
+                <span class="bundle-price-tag">$14.99</span>
+              </div>
+            </div>
+            <!-- 10-pack (Most Popular) -->
+            <div class="bundle-card active" onclick="selectBundle(this,10,39.99,4.00)">
+              <div class="bundle-card-badge popular">Most Popular</div>
+              <div class="bundle-info">
+                <div class="bundle-name">10-Pack</div>
+                <div class="bundle-per">$4.00 / pad</div>
+                <span class="bundle-price-tag">$39.99</span>
+              </div>
+            </div>
+            <!-- 15-pack (Best Value) -->
+            <div class="bundle-card" onclick="selectBundle(this,15,52.99,3.53)">
+              <div class="bundle-card-badge value">Best Value</div>
+              <div class="bundle-info">
+                <div class="bundle-name">15-Pack</div>
+                <div class="bundle-per">$3.53 / pad</div>
+                <span class="bundle-price-tag">$52.99</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subscription Toggle -->
+        <div class="sub-toggle">
+          <div class="sub-option active" id="opt-sub" onclick="selectPlan('sub')">
+            <div class="sub-radio"></div>
+            <div class="sub-label">
+              <div class="sub-label-top">
+                <span class="sub-name">Subscribe &amp; Save</span>
+                <span class="sub-badge-save">Save 25%</span>
+              </div>
+              <div class="sub-label-bottom">Billed every 30 days · Cancel anytime</div>
+            </div>
+            <div class="sub-price">
+              <div class="sub-price-main" id="price-main">$29<sup style="font-size:.9rem">.99</sup></div>
+              <div class="sub-price-was">$39.99</div>
+            </div>
+          </div>
+          <ul class="sub-perks" id="sub-perks">
+            <li>30-day money back guarantee</li>
+            <li>Free shipping on every order</li>
+            <li>Cancel or pause anytime — no questions asked</li>
+            <li>Free welcome gift: Relief Kit Starter Pack ($22 value)</li>
+          </ul>
+          <div class="sub-option" id="opt-one" onclick="selectPlan('one')">
+            <div class="sub-radio"></div>
+            <div class="sub-label">
+              <div class="sub-label-top">
+                <span class="sub-name">One-Time Purchase</span>
+              </div>
+              <div class="sub-label-bottom">No commitment · Ships in 2–4 business days</div>
+            </div>
+            <div class="sub-price">
+              <div class="sub-price-main">$38<sup style="font-size:.9rem">.00</sup></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-wrap">
+          <button class="cta-main" onclick="addToCart()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span id="cta-label">Start My Relief — $29.99/mo</span>
+          </button>
+          <div class="cta-sub-link" id="cta-sub-text">
+            Prefer a one-time? <a href="#" onclick="selectPlan('one');return false;">Buy once for $39.99</a>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1l1 3h2l1-3h6l1 3h2l1-3h1a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg>
+            Free Shipping
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            30-Day Guarantee
+          </div>
+          <div class="trust-badge">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Made for Women
+          </div>
+        </div>
+
+        <!-- Perks List -->
+        <ul class="buybox-perks">
+          <li>
+            <div class="perk-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            <span><strong>Activates with air</strong> — no batteries, no charging, ever</span>
+          </li>
+          <li>
+            <div class="perk-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            <span><strong>Up to 8 hours</strong> of continuous, steady warmth</span>
+          </li>
+          <li>
+            <div class="perk-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            <span><strong>Ultra-thin &amp; wearable</strong> — discreet under any outfit</span>
+          </li>
+          <li>
+            <div class="perk-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            <span><strong>Self-adhesive</strong> — stays in place all day, moves with you</span>
+          </li>
+        </ul>
+
+        <!-- Buybox FAQ -->
+        <div class="buybox-faq">
+          <div class="buybox-faq-item">
+            <button class="buybox-faq-q" onclick="toggleBuyboxFaq(this)">
+              Why choose the 10-Pack?
+              <svg class="buybox-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="buybox-faq-a"><p>The 10-Pack is our most popular option because it covers your full cycle and then some. Most women use 1–2 pads per day during their period — so 10 pads keeps you covered across two full cycles. Plus the price per pad drops to $4.00, making it the smartest daily-use choice.</p></div>
+          </div>
+          <div class="buybox-faq-item">
+            <button class="buybox-faq-q" onclick="toggleBuyboxFaq(this)">
+              How do I use the Comfort Wrap?
+              <svg class="buybox-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="buybox-faq-a"><p>Tear open the foil pouch and the pad begins heating within minutes — air activates it automatically. Peel the adhesive backing and press it inside your underwear over the area that hurts. That's it. Wear it for up to 8 hours and move on with your day.</p></div>
+          </div>
+          <div class="buybox-faq-item">
+            <button class="buybox-faq-q" onclick="toggleBuyboxFaq(this)">
+              Is it safe to wear all day?
+              <svg class="buybox-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="buybox-faq-a"><p>Yes — the Comfort Wrap stays within the 40–45°C therapeutic range, which is warm enough to relax muscles and ease cramps, but gentle enough for extended daily wear. It's fragrance-free, latex-free, and dermatologist-tested for sensitive skin.</p></div>
+          </div>
+          <div class="buybox-faq-item">
+            <button class="buybox-faq-q" onclick="toggleBuyboxFaq(this)">
+              Shipping &amp; delivery
+              <svg class="buybox-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="buybox-faq-a"><p>All orders ship free with standard delivery (3–5 business days). Subscribers get priority processing. We ship internationally to most countries — duties may apply outside the EU and UK. You'll receive tracking by email as soon as your order is packed.</p></div>
+          </div>
+        </div>
+
+        <!-- Guarantee Strip + Info Tabs -->
+        <div class="info-guarantee">
+          <div class="info-guarantee-badge">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <span><strong>Less than 1%</strong> of our customers ever claim our 30-day Money Back Guarantee</span>
+        </div>
+
+        <div class="info-tabs">
+          <!-- Tab Nav -->
+          <div class="info-tab-nav">
+            <button class="info-tab-btn active" onclick="switchInfoTab(this,'tab-review')">Expert Review</button>
+            <button class="info-tab-btn" onclick="switchInfoTab(this,'tab-compare')">Comparison</button>
+            <button class="info-tab-btn" onclick="switchInfoTab(this,'tab-howto')">How to Use</button>
+            <button class="info-tab-btn" onclick="switchInfoTab(this,'tab-benefits')">Benefits</button>
+          </div>
+          <!-- Tab Bodies -->
+          <div class="info-tab-body">
+
+            <!-- Expert Review -->
+            <div class="info-tab-panel active" id="tab-review">
+              <div class="tab-review-stars">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <p class="tab-review-quote">"Heat therapy is one of the most evidence-backed, drug-free methods for menstrual pain. Applied at the right temperature, it outperforms ibuprofen for mild to moderate cramping — and the 8moods wrap delivers exactly that, hands-free."</p>
+              <div class="tab-review-author">
+                <div class="tab-review-avatar">Dr. L</div>
+                <div>
+                  <div class="tab-review-name">Dr. Laura Simmons</div>
+                  <div class="tab-review-cred">Women's Health Physiotherapist · MSc Pain Management</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comparison -->
+            <div class="info-tab-panel" id="tab-compare">
+              <table class="tab-compare-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th style="color:var(--burg)">8moods Wrap</th>
+                    <th>Ibuprofen</th>
+                    <th>Hot Bottle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="col-feat">Drug-free</td><td class="col-us check-y">✔</td><td class="check-n">✘</td><td class="check-y">✔</td></tr>
+                  <tr><td class="col-feat">Wearable on the go</td><td class="col-us check-y">✔</td><td class="check-y">✔</td><td class="check-n">✘</td></tr>
+                  <tr><td class="col-feat">No charging / prep</td><td class="col-us check-y">✔</td><td class="check-y">✔</td><td class="check-n">✘</td></tr>
+                  <tr><td class="col-feat">No stomach side effects</td><td class="col-us check-y">✔</td><td class="check-n">✘</td><td class="check-y">✔</td></tr>
+                  <tr><td class="col-feat">Lasts 8+ hours</td><td class="col-us check-y">✔</td><td class="check-n">✘</td><td class="check-n">✘</td></tr>
+                  <tr><td class="col-feat">Discreet under clothing</td><td class="col-us check-y">✔</td><td class="check-y">✔</td><td class="check-n">✘</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- How to Use -->
+            <div class="info-tab-panel" id="tab-howto">
+              <div class="tab-steps">
+                <div class="tab-step">
+                  <div class="tab-step-num">1</div>
+                  <div class="tab-step-text"><strong>Tear open the foil pouch</strong>Exposing the pad to air activates the natural iron-powder formula. No buttons, no switches — it starts warming on its own within minutes.</div>
+                </div>
+                <div class="tab-step">
+                  <div class="tab-step-num">2</div>
+                  <div class="tab-step-text"><strong>Peel &amp; press into place</strong>Remove the adhesive backing and press the pad inside your underwear or inner waistband, directly over the area that hurts. It lies flat under any outfit.</div>
+                </div>
+                <div class="tab-step">
+                  <div class="tab-step-num">3</div>
+                  <div class="tab-step-text"><strong>Wear it and move on</strong>Heat builds gently to 40–45°C and stays consistent for up to 8 hours. Walk, work, work out — it moves with you. Peel off and dispose when done.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Benefits -->
+            <div class="info-tab-panel" id="tab-benefits">
+              <div class="tab-benefits-title">Why you'll love the Comfort Wrap™</div>
+              <ul class="tab-benefits-list">
+                <li><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> No batteries — air-activated, zero charging ever</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> Up to 8 hours of steady, consistent heat</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> 3mm thin — invisible under any outfit</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> Fragrance-free, latex-free, dermatologist tested</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> 100% drug-free — no pills, no side effects</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> Individually sealed — stays fresh in your bag</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /buybox -->
+    </div>
+  </div>
+</section>
+
+<!-- ── MARQUEE BAR ────────────────────────────────────────────────── -->
+<div class="marquee-bar" aria-hidden="true">
+  <div class="marquee-track">
+    <!-- set 1 -->
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> No Batteries Required</div>
+    <div class="marquee-sep">·</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Up to 8 Hours of Heat</div>
+    <div class="marquee-sep">·</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Wearable Under Clothing</div>
+    <div class="marquee-sep">·</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> 30-Day Money-Back Guarantee</div>
+    <div class="marquee-sep">·</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Free Shipping Every Order</div>
+    <div class="marquee-sep">·</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Loved by 50,000+ Women</div>
+    <div class="marquee-sep">·</div>
+    <!-- set 2 (duplicate for loop) -->
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> No Batteries Required</div>
+    <div class="marquee-sep">·</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Up to 8 Hours of Heat</div>
+    <div class="marquee-sep">·</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Wearable Under Clothing</div>
+    <div class="marquee-sep">·</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> 30-Day Money-Back Guarantee</div>
+    <div class="marquee-sep">·</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Free Shipping Every Order</div>
+    <div class="marquee-sep">·</div>
+    <div class="marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Loved by 50,000+ Women</div>
+    <div class="marquee-sep">·</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAIN SECTION
+═══════════════════════════════════════════════════════════════════ -->
+<section class="pain section">
+  <div class="container">
+    <div class="pain-grid">
+      <div class="pain-copy">
+        <div class="eyebrow">We get it, sis.</div>
+        <h2>Your body is doing <em>a lot.</em><br />You deserve real relief.</h2>
+        <p>
+          That dull ache that starts in your lower back and radiates forward. The cramps that make you want to curl up in bed and cancel everything. The mid-day bloat that makes every pair of jeans feel like a personal attack.
+        </p>
+        <p>
+          Sound familiar? Because it is. And while the world keeps telling you to push through it — take an ibuprofen, use a hot water bottle, try to relax — we built something better. Something that goes with you.
+        </p>
+        <ul class="pain-list">
+          <li>
+            <div class="pain-dot"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            Period cramps that stop you mid-sentence
+          </li>
+          <li>
+            <div class="pain-dot"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            Lower back pain that won't quit by day two
+          </li>
+          <li>
+            <div class="pain-dot"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            Tension and stress that shows up in your shoulders
+          </li>
+          <li>
+            <div class="pain-dot"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            Being tethered to a heating pad at home — stuck on the couch
+          </li>
+        </ul>
+      </div>
+      <div class="pain-visual">
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-num">80%</span>
+            <div class="stat-lbl">of women experience painful periods that impact daily life</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">3–5</span>
+            <div class="stat-lbl">days per month lost to discomfort — that's 45+ days a year</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">91%</span>
+            <div class="stat-lbl">of users report significant cramp relief within 15 minutes</div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">8hrs</span>
+            <div class="stat-lbl">of continuous heat therapy — one wrap lasts your whole day</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════════════════════════════ -->
+<section class="how" id="how-it-works">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">How It Works</span>
+      <h2>Three steps to <em>instant comfort</em></h2>
+      <p>No charging ports. No batteries to die on you at the worst moment. Just open it, stick it, and feel the warmth kick in — all on its own.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <span class="step-icon">📦</span>
+        <h3>Open the Wrap</h3>
+        <p>Tear open the seal and expose the pad to air. The natural iron-powder formula activates immediately on contact with oxygen — no button, no switch.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <span class="step-icon">🩹</span>
+        <h3>Peel &amp; Stick</h3>
+        <p>Peel the adhesive backing and press it directly inside your underwear or onto your clothing, right where it hurts most. Ultra-thin, it lies flat — invisible under any outfit.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <span class="step-icon">✨</span>
+        <h3>Feel the Relief</h3>
+        <p>Within minutes, gentle heat builds to the perfect temperature. Wear it to work, the gym, running errands — up to 8 full hours of hands-free warmth. You're free.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JOURNEY — BEFORE → 10 MIN → 20 MIN → 30 MIN+
+═══════════════════════════════════════════════════════════════════ -->
+<section class="journey">
+  <div class="container">
+    <div class="journey-grid">
+
+      <!-- Left: Lifestyle visual -->
+      <div class="journey-visual">
+        <div class="journey-visual-glow"></div>
+        <div class="journey-heat-ring"></div>
+        <div class="journey-heat-ring"></div>
+        <div class="journey-heat-ring"></div>
+        <div class="journey-woman"></div>
+        <div class="journey-overlay-tag">
+          <div class="journey-overlay-tag-title">Average relief time</div>
+          <div class="journey-overlay-tag-val">Under 15 minutes</div>
+        </div>
+      </div>
+
+      <!-- Right: Timeline copy -->
+      <div class="journey-copy">
+        <span class="eyebrow">Your Journey With 8moods</span>
+        <h2>From cramps<br />to <em>completely free</em> —<br />in 30 minutes.</h2>
+        <p>Most solutions ask you to wait hours, skip your day, or settle for "a bit better." 8moods works fast. Here's exactly what happens from the moment you open the pack.</p>
+
+        <div class="journey-timeline">
+
+          <!-- Before -->
+          <div class="journey-step before">
+            <div class="journey-step-dot">✗</div>
+            <div class="journey-step-body">
+              <span class="journey-step-time">Before</span>
+              <div class="journey-step-title">The familiar ache sets in.</div>
+              <p class="journey-step-desc">Lower back tightening, cramps building, that dull throb that tells you it's going to be a long day. You know this feeling — and you're exhausted by it.</p>
+            </div>
+          </div>
+
+          <!-- 10 min -->
+          <div class="journey-step min10">
+            <div class="journey-step-dot">10'</div>
+            <div class="journey-step-body">
+              <span class="journey-step-time">10 Minutes In</span>
+              <div class="journey-step-title">Warmth reaches your muscles.</div>
+              <p class="journey-step-desc">Gentle, steady heat spreads across the area. Your body recognises it and starts to respond — muscle tension softens, the first edge of pain begins to lift.</p>
+            </div>
+          </div>
+
+          <!-- 20 min -->
+          <div class="journey-step min20">
+            <div class="journey-step-dot">20'</div>
+            <div class="journey-step-body">
+              <span class="journey-step-time">20 Minutes In</span>
+              <div class="journey-step-title">The cramps ease — noticeably.</div>
+              <p class="journey-step-desc">Blood flow increases, muscles release, and the pain signals start to quiet down. You take a proper breath for the first time all morning. You almost forgot you were wearing it.</p>
+            </div>
+          </div>
+
+          <!-- 30 min -->
+          <div class="journey-step min30">
+            <div class="journey-step-dot">30'</div>
+            <div class="journey-step-body">
+              <span class="journey-step-time">30 Minutes & Beyond</span>
+              <div class="journey-step-title">You're back. Fully.</div>
+              <p class="journey-step-desc">The ache is gone. The warmth stays — steady and comforting for up to 8 hours, invisible under your outfit. You've got the whole day ahead of you. Go live it.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     FEATURES
+═══════════════════════════════════════════════════════════════════ -->
+<section class="features section" id="benefits">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Why 8moods</span>
+      <h2>Built different. <em>For you.</em></h2>
+      <p>Every detail was designed around one thing — real women, real lives, and the freedom to feel good no matter what your body is going through.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🔋</div>
+        <h3>Zero Batteries, Ever</h3>
+        <p>Our natural iron-powder technology activates with air — a chemical reaction that produces steady, consistent heat for hours without any power source.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">👗</div>
+        <h3>Completely Discreet</h3>
+        <p>At just 3mm thin, the Comfort Wrap hides under leggings, work trousers, gym shorts — anything. Nobody knows it's there except you.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🌡️</div>
+        <h3>Optimal Heat Range</h3>
+        <p>Reaches 40–45°C — the clinically ideal temperature for muscle relaxation and cramp relief. Warm enough to work, gentle enough to be safe.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⏱️</div>
+        <h3>8 Hours of Freedom</h3>
+        <p>One patch. One full day. From your 9am meeting to your evening run — the heat stays consistent so you don't have to think about it.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🌿</div>
+        <h3>Skin-Safe Formula</h3>
+        <p>Fragrance-free, latex-free, dermatologist-tested. The adhesive is gentle on sensitive skin and leaves no residue when removed.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🎒</div>
+        <h3>Take It Everywhere</h3>
+        <p>Individually sealed patches fit in your bag, desk drawer, gym locker, or car. Cramp emergency? You're always prepared — wherever life takes you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════════════════════════════ -->
+<section class="testimonials section" id="reviews">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Real Women, Real Relief</span>
+      <h2>Over 50,000 women <em>finally feel free.</em></h2>
+    </div>
+
+    <div class="reviews-summary">
+      <div class="reviews-big-num">4.9</div>
+      <div class="reviews-meta">
+        <div class="reviews-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="reviews-count">Based on 12,847 verified reviews</div>
+      </div>
+      <div class="reviews-bars">
+        <div class="bar-row"><div class="bar-lbl">5 ★</div><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div><div class="bar-pct">88%</div></div>
+        <div class="bar-row"><div class="bar-lbl">4 ★</div><div class="bar-track"><div class="bar-fill" style="width:9%"></div></div><div class="bar-pct">9%</div></div>
+        <div class="bar-row"><div class="bar-lbl">3 ★</div><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div><div class="bar-pct">2%</div></div>
+        <div class="bar-row"><div class="bar-lbl">2 ★</div><div class="bar-track"><div class="bar-fill" style="width:1%"></div></div><div class="bar-pct">1%</div></div>
+        <div class="bar-row"><div class="bar-lbl">1 ★</div><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><div class="bar-pct">0%</div></div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="rev-card">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div class="rev-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="rev-badge"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Verified</span>
+        </div>
+        <div class="rev-title">Game changer for busy days</div>
+        <p class="rev-text">"I wore this to a full day of work meetings on day 2 of my cycle — the worst day — and I actually forgot I had cramps. I genuinely forgot. That has never happened before in my life."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">S</div>
+          <div>
+            <div class="rev-name">Sofia M.</div>
+            <div class="rev-tag">Marketing Manager, 27 · Subscriber for 6 months</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div class="rev-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="rev-badge"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Verified</span>
+        </div>
+        <div class="rev-title">Finally — heat therapy on the go</div>
+        <p class="rev-text">"I've tried everything. Hot water bottles, electric pads, tablets that make my stomach hurt. This is the first thing that actually works AND lets me live my life. I went to the gym on day 1. Day. One."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">A</div>
+          <div>
+            <div class="rev-name">Aisha T.</div>
+            <div class="rev-tag">Personal Trainer, 24 · Subscriber for 4 months</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div class="rev-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="rev-badge"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Verified</span>
+        </div>
+        <div class="rev-title">My desk drawer essential</div>
+        <p class="rev-text">"I keep a pack at work, one in my bag, one at home. My coworkers have started asking me what I'm using because I stopped complaining about cramps every month. That says it all, honestly."</p>
+        <div class="rev-author">
+          <div class="rev-avatar">L</div>
+          <div>
+            <div class="rev-name">Luna R.</div>
+            <div class="rev-tag">Graphic Designer, 29 · Subscriber for 8 months</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     SCIENCE / DARK SECTION
+═══════════════════════════════════════════════════════════════════ -->
+<section class="science">
+  <div class="container">
+    <div class="science-grid">
+      <div>
+        <div class="eyebrow" style="color:var(--cream)">The Science Behind the Warmth</div>
+        <h2 style="margin-top:12px">Heat therapy that <em>actually works.</em><br />Here's why.</h2>
+        <p>
+          Heat has been used for centuries to ease muscle tension and pain — but the science behind why has only recently been fully understood. When you apply heat to the abdomen, it doesn't just feel good. It actively works.
+        </p>
+        <p>
+          Heat relaxes the uterine muscles that cause cramping, increases blood flow to the area, and stimulates heat receptors that block pain signals — giving you real, measurable relief without any medication.
+        </p>
+        <div class="science-stats">
+          <div class="sci-stat">
+            <span class="sci-num">40°C</span>
+            <div class="sci-lbl">Optimal heat range — proven to relax uterine muscles</div>
+          </div>
+          <div class="sci-stat">
+            <span class="sci-num">91%</span>
+            <div class="sci-lbl">of users report significant pain reduction within 15 min</div>
+          </div>
+          <div class="sci-stat">
+            <span class="sci-num">3×</span>
+            <div class="sci-lbl">more effective than oral pain relief for mild–moderate cramps</div>
+          </div>
+          <div class="sci-stat">
+            <span class="sci-num">100%</span>
+            <div class="sci-lbl">drug-free — no side effects, no stomach upset</div>
+          </div>
+        </div>
+      </div>
+      <div class="science-visual">
+        <div class="sci-card">
+          <div class="sci-card-icon">🔬</div>
+          <div>
+            <h4>Iron-Powder Oxidation</h4>
+            <p>Our patches use food-grade iron powder that oxidises when exposed to air, generating consistent heat through a natural chemical reaction — the same principle used in hand warmers, perfected for body therapy.</p>
+          </div>
+        </div>
+        <div class="sci-card">
+          <div class="sci-card-icon">🌊</div>
+          <div>
+            <h4>Steady-Release Technology</h4>
+            <p>Unlike hot water bottles that cool quickly, our gradual-release formula maintains temperature within the therapeutic range for the full 8 hours — no spikes, no cold spots.</p>
+          </div>
+        </div>
+        <div class="sci-card">
+          <div class="sci-card-icon">💊</div>
+          <div>
+            <h4>Drug-Free Pain Relief</h4>
+            <p>Heat blocks pain signals at the source. No ibuprofen, no paracetamol, no stomach lining to worry about. Just warmth, working with your body — exactly as nature intended.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════════════════════════ -->
+<section class="faq section" id="faq">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Got Questions?</span>
+      <h2>We've got <em>answers.</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How does a self-heating pad work without batteries?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-a"><p>Our Comfort Wrap uses a natural iron-powder oxidation reaction — the same principle as hand warmers used by athletes. When you open the foil seal and expose the pad to oxygen in the air, a controlled chemical reaction generates heat. No batteries, no charging, no electricity needed. It's completely self-contained and starts warming within 5 minutes of opening.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How long does each patch stay warm?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-a"><p>Each Comfort Wrap provides up to 8 hours of continuous heat, typically reaching its peak temperature within 15–20 minutes. The temperature stays consistent between 40–45°C — the optimal therapeutic range. Some users get even longer with light activity.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I wear it directly on my skin?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-a"><p>The Comfort Wrap is designed to be placed inside your underwear or against the inner layer of clothing — not directly on bare skin. This keeps it in the optimal position and ensures the adhesive stays secure. The heat naturally passes through the thin fabric layer. If you have very sensitive skin, wearing a light layer between the pad and skin is completely fine.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I exercise while wearing it?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-a"><p>Absolutely — that's the whole point. The Comfort Wrap is designed for movement. The adhesive holds through yoga, walking, gym sessions, and a full day on your feet. Just avoid submerging in water (pools, baths) while wearing it.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What's in your subscription plan?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-a"><p>Subscribers receive a monthly delivery of Comfort Wraps at 25% off the regular price — $28.50 instead of $38.00. You'll also receive free shipping, a free welcome gift on your first order, and the flexibility to pause, skip, or cancel at any time with no fees or penalties. No BS, no tricks.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What if it doesn't work for me?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-a"><p>We offer a 30-day money-back guarantee — no questions asked. If you don't feel a meaningful difference in your comfort, contact our team and we'll refund you in full. We're that confident you'll love it. And honestly? We've only had to use this a handful of times.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     FINAL CTA
+═══════════════════════════════════════════════════════════════════ -->
+<section class="cta-band">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="eyebrow">You deserve this.</span>
+      <h2>Stop surviving your cycle.<br /><em>Start living it.</em></h2>
+      <p>Join over 50,000 women who swapped the hot water bottle for something that actually goes with them. Your best days don't stop for cramps anymore.</p>
+      <div class="cta-btns">
+        <a href="#buy" class="btn btn-cream btn-xl" onclick="selectPlan('sub')">Start My Relief — $28.50/mo</a>
+        <a href="#buy" class="btn btn-outline btn-xl" style="color:#fff;border-color:rgba(255,255,255,.4)" onclick="selectPlan('one')">Buy Once — $38.00</a>
+      </div>
+      <div class="cta-reassure">
+        <div class="reassure-item"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> 30-day guarantee</div>
+        <div class="reassure-item"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg> Free shipping</div>
+        <div class="reassure-item"><svg viewBox="0 0 24 24"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg> Cancel anytime</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-logo">8moods</span>
+        <p class="footer-about">Heat therapy designed around womanhood. Self-heating, battery-free, wearable relief — because you shouldn't have to choose between comfort and your life.</p>
+        <div class="footer-social">
+          <div class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div class="social-btn" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+          </div>
+          <div class="social-btn" aria-label="Pinterest">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.76 1.24-5.26 1.24-5.26s-.32-.63-.32-1.57c0-1.47.85-2.57 1.91-2.57.9 0 1.34.67 1.34 1.48 0 .9-.58 2.26-.87 3.51-.25 1.05.52 1.9 1.54 1.9 1.85 0 3.27-1.95 3.27-4.77 0-2.49-1.79-4.24-4.34-4.24-2.96 0-4.69 2.22-4.69 4.51 0 .89.34 1.85.77 2.37.08.1.09.19.07.29-.08.33-.25 1.05-.28 1.19-.04.18-.14.22-.33.13-1.25-.58-2.03-2.42-2.03-3.89 0-3.15 2.29-6.05 6.6-6.05 3.46 0 6.15 2.47 6.15 5.77 0 3.44-2.17 6.21-5.18 6.21-1.01 0-1.97-.53-2.29-1.15l-.62 2.33c-.23.87-.84 1.96-1.25 2.62.94.29 1.94.45 2.97.45 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-ttl">Product</div>
+        <ul class="footer-nav">
+          <li><a href="#buy">The Comfort Wrap™</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#buy">Subscribe &amp; Save</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-ttl">Support</div>
+        <ul class="footer-nav">
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-ttl">Company</div>
+        <ul class="footer-nav">
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Affiliates</a></li>
+          <li><a href="#">Wholesale</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 8moods. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════════════════ -->
+<script>
+  /* ── Bundle + Plan State ── */
+  var currentPlan   = 'sub';
+  var bundlePrice   = 39.99;   // default: 10-pack
+  var bundlePads    = 10;
+  var DISCOUNT      = 0.25;    // 25% subscribe discount
+
+  /* ── Bundle Picker ── */
+  function selectBundle(card, pads, price, perPad) {
+    document.querySelectorAll('.bundle-card').forEach(function(c) { c.classList.remove('active'); });
+    card.classList.add('active');
+    bundlePads  = pads;
+    bundlePrice = price;
+    updateCTA();
+  }
+
+  /* ── Plan Toggle ── */
+  function selectPlan(plan) {
+    currentPlan = plan;
+    var optSub = document.getElementById('opt-sub');
+    var optOne = document.getElementById('opt-one');
+    var perks  = document.getElementById('sub-perks');
+
+    if (plan === 'sub') {
+      optSub.classList.add('active');
+      optOne.classList.remove('active');
+      perks.style.display = 'flex';
+    } else {
+      optOne.classList.add('active');
+      optSub.classList.remove('active');
+      perks.style.display = 'none';
+    }
+    updateCTA();
+  }
+
+  function updateCTA() {
+    var ctaLbl = document.getElementById('cta-label');
+    var ctaSub = document.getElementById('cta-sub-text');
+    var price  = currentPlan === 'sub'
+      ? (bundlePrice * (1 - DISCOUNT)).toFixed(2)
+      : bundlePrice.toFixed(2);
+    var subPrice = (bundlePrice * (1 - DISCOUNT)).toFixed(2);
+    var onePrice = bundlePrice.toFixed(2);
+
+    if (currentPlan === 'sub') {
+      ctaLbl.textContent = 'Start My Relief — $' + price + '/mo';
+      ctaSub.innerHTML = 'Prefer a one-time? <a href="#" onclick="selectPlan(\'one\');return false;">Buy once for $' + onePrice + '</a>';
+    } else {
+      ctaLbl.textContent = 'Add to Cart — $' + price;
+      ctaSub.innerHTML = 'Want to save 25%? <a href="#" onclick="selectPlan(\'sub\');return false;">Subscribe from $' + subPrice + '/mo</a>';
+    }
+  }
+
+  /* ── Add to Cart ── */
+  function addToCart() {
+    var badge = document.querySelector('.cart-badge');
+    badge.textContent = parseInt(badge.textContent) + 1;
+    var btn = document.querySelector('.cta-main');
+    var orig = btn.innerHTML;
+    btn.style.background = '#22c55e';
+    btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><span>Added to cart!</span>';
+    setTimeout(function() { btn.style.background = ''; btn.innerHTML = orig; }, 2000);
+  }
+
+  /* ── Info Tabs ── */
+  function switchInfoTab(btn, panelId) {
+    document.querySelectorAll('.info-tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.info-tab-panel').forEach(function(p) { p.classList.remove('active'); });
+    btn.classList.add('active');
+    document.getElementById(panelId).classList.add('active');
+  }
+
+  /* ── Buybox FAQ ── */
+  function toggleBuyboxFaq(btn) {
+    var item   = btn.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.buybox-faq-item').forEach(function(i) { i.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
+  }
+
+  /* ── Gallery Thumbs ── */
+  document.querySelectorAll('.thumb').forEach(function(t) {
+    t.addEventListener('click', function() {
+      document.querySelectorAll('.thumb').forEach(function(x) { x.classList.remove('active'); });
+      t.classList.add('active');
+    });
+  });
+
+  /* ── FAQ ── */
+  function toggleFaq(btn) {
+    var item = btn.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
+  }
+
+  /* ── Hamburger (mobile) ── */
+  document.getElementById('burger').addEventListener('click', function() {
+    var nav = document.querySelector('.nav-links');
+    var open = nav.classList.contains('mobile-open');
+    if (open) {
+      nav.classList.remove('mobile-open');
+      nav.removeAttribute('style');
+    } else {
+      nav.classList.add('mobile-open');
+      nav.style.display = 'flex';
+      nav.style.flexDirection = 'column';
+      nav.style.position = 'fixed';
+      nav.style.top = '0';
+      nav.style.left = '0';
+      nav.style.right = '0';
+      nav.style.bottom = '0';
+      nav.style.background = 'rgba(255,255,255,.97)';
+      nav.style.padding = '100px 32px 40px';
+      nav.style.gap = '28px';
+      nav.style.zIndex = '150';
+      nav.style.fontSize = '1.3rem';
+      nav.style.fontWeight = '600';
+    }
+  });
+
+  /* ── Scroll reveal ── */
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.step, .feat-card, .rev-card, .stat-card, .sci-card').forEach(function(el) {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(28px)';
+    el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+    observer.observe(el);
+  });
+
+  /* ── Journey timeline — staggered reveal ── */
+  var journeySteps = document.querySelectorAll('.journey-step');
+  journeySteps.forEach(function(step) {
+    step.style.opacity = '0';
+    step.style.transform = 'translateY(32px)';
+    step.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  });
+  var journeyObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var steps = entry.target.querySelectorAll('.journey-step');
+        steps.forEach(function(step, i) {
+          setTimeout(function() {
+            step.style.opacity = '1';
+            step.style.transform = 'translateY(0)';
+          }, i * 280);
+        });
+        journeyObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  var timeline = document.querySelector('.journey-timeline');
+  if (timeline) journeyObs.observe(timeline);
+</script>
+</body>
+</html>
