@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-8moods",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

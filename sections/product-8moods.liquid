@@ -1,0 +1,818 @@
+{% comment %}
+  8MOODS — Custom Product Landing Page Section
+  Assign this section via templates/product.8moods.json
+{% endcomment %}
+
+{{ 'product-8moods.css' | asset_url | stylesheet_tag }}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<div class="moods-page">
+
+<!-- ── ANNOUNCEMENT BAR ──────────────────────────────────────────── -->
+<div class="moods-announce">
+  <div class="moods-announce-track">
+    <span class="moods-announce-msg"><strong>Free shipping</strong> on all orders &nbsp;·&nbsp; Use code <strong>WARMTH20</strong> for 20% off your first order &nbsp;·&nbsp; <strong>30-day money-back guarantee</strong> &nbsp;·&nbsp; Loved by <strong>50,000+ women</strong></span>
+    <span class="moods-announce-msg"><strong>Free shipping</strong> on all orders &nbsp;·&nbsp; Use code <strong>WARMTH20</strong> for 20% off your first order &nbsp;·&nbsp; <strong>30-day money-back guarantee</strong> &nbsp;·&nbsp; Loved by <strong>50,000+ women</strong></span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PRODUCT HERO
+═══════════════════════════════════════════════════════════════════ -->
+<section class="moods-product-hero" id="moods-buy">
+  <div class="moods-container">
+    <div class="moods-product-hero-grid">
+
+      <!-- Left: Gallery -->
+      <div class="moods-gallery">
+        <div class="moods-gallery-main">
+          {%- if product.featured_image -%}
+            <img src="{{ product.featured_image | img_url: '800x800', crop: 'center' }}"
+                 alt="{{ product.featured_image.alt | escape }}"
+                 width="800" height="800"
+                 style="width:100%;height:100%;object-fit:cover;" />
+          {%- else -%}
+          <div class="moods-gallery-placeholder">
+            <div class="moods-pad-art"></div>
+            <div class="moods-pad-badge moods-pad-badge-heat">
+              🔥 Up to 8 hrs of heat
+            </div>
+            <div class="moods-pad-badge moods-pad-badge-free">
+              <span class="moods-badge-dot"></span> No batteries needed
+            </div>
+          </div>
+          {%- endif -%}
+        </div>
+        <div class="moods-gallery-thumbs">
+          {%- if product.images.size > 1 -%}
+            {%- for image in product.images limit: 4 -%}
+            <div class="moods-thumb {% if forloop.first %}active{% endif %}"
+                 onclick="this.closest('.moods-gallery').querySelector('.moods-gallery-main img') && (this.closest('.moods-gallery').querySelector('.moods-gallery-main img').src = '{{ image | img_url: '800x800', crop: 'center' }}'); document.querySelectorAll('.moods-thumb').forEach(function(t){t.classList.remove('active')}); this.classList.add('active');">
+              <img src="{{ image | img_url: '200x267', crop: 'center' }}" alt="{{ image.alt | escape }}" style="width:100%;height:100%;object-fit:cover;" />
+            </div>
+            {%- endfor -%}
+          {%- else -%}
+          <div class="moods-thumb active">
+            <div class="moods-thumb-inner moods-thumb-1">
+              <span class="moods-thumb-tag">Front View</span>
+            </div>
+          </div>
+          <div class="moods-thumb">
+            <div class="moods-thumb-inner moods-thumb-2">
+              <span class="moods-thumb-tag">Lifestyle</span>
+            </div>
+          </div>
+          <div class="moods-thumb">
+            <div class="moods-thumb-inner moods-thumb-3">
+              <span class="moods-thumb-tag">Detail</span>
+            </div>
+          </div>
+          <div class="moods-thumb">
+            <div class="moods-thumb-inner moods-thumb-4">
+              <span class="moods-thumb-tag">In Use</span>
+            </div>
+          </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Right: Buy Box -->
+      <div class="moods-buybox">
+
+        <div class="moods-buybox-reviews">
+          <div class="moods-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="moods-review-score">4.9</span>
+          <a href="#moods-reviews" class="moods-review-count">12,847 reviews</a>
+        </div>
+
+        <h1 class="moods-buybox-name">{{ product.title | default: 'The Comfort Wrap™' }}</h1>
+        <span class="moods-brand-pill">by 8moods</span>
+        <p class="moods-buybox-tagline">
+          Self-activating heat therapy — no batteries, no cords, no fuss. Stick it on, wear it all day, and let the warmth do the work while you live your life.
+        </p>
+
+        <!-- Bundle Picker -->
+        <div class="moods-bundle-section">
+          <div class="moods-bundle-section-lbl">Select Your Pack</div>
+          <div class="moods-bundle-grid">
+            <div class="moods-bundle-card" onclick="moodsSelectBundle(this,3,14.99,4.99)">
+              <div class="moods-bundle-info">
+                <div class="moods-bundle-name">3-Pack</div>
+                <div class="moods-bundle-per">$4.99 / pad</div>
+                <span class="moods-bundle-price-tag">$14.99</span>
+              </div>
+            </div>
+            <div class="moods-bundle-card active" onclick="moodsSelectBundle(this,10,39.99,4.00)">
+              <div class="moods-bundle-card-badge popular">Most Popular</div>
+              <div class="moods-bundle-info">
+                <div class="moods-bundle-name">10-Pack</div>
+                <div class="moods-bundle-per">$4.00 / pad</div>
+                <span class="moods-bundle-price-tag">$39.99</span>
+              </div>
+            </div>
+            <div class="moods-bundle-card" onclick="moodsSelectBundle(this,15,52.99,3.53)">
+              <div class="moods-bundle-card-badge value">Best Value</div>
+              <div class="moods-bundle-info">
+                <div class="moods-bundle-name">15-Pack</div>
+                <div class="moods-bundle-per">$3.53 / pad</div>
+                <span class="moods-bundle-price-tag">$52.99</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subscription Toggle -->
+        <div class="moods-sub-toggle">
+          <div class="moods-sub-option active" id="moods-opt-sub" onclick="moodsSelectPlan('sub')">
+            <div class="moods-sub-radio"></div>
+            <div class="moods-sub-label">
+              <div class="moods-sub-label-top">
+                <span class="moods-sub-name">Subscribe &amp; Save</span>
+                <span class="moods-sub-badge-save">Save 25%</span>
+              </div>
+              <div class="moods-sub-label-bottom">Billed every 30 days · Cancel anytime</div>
+            </div>
+            <div class="moods-sub-price">
+              <div class="moods-sub-price-main" id="moods-price-main">$29<sup style="font-size:.9rem">.99</sup></div>
+              <div class="moods-sub-price-was">$39.99</div>
+            </div>
+          </div>
+          <ul class="moods-sub-perks" id="moods-sub-perks">
+            <li>30-day money back guarantee</li>
+            <li>Free shipping on every order</li>
+            <li>Cancel or pause anytime — no questions asked</li>
+            <li>Free welcome gift: Relief Kit Starter Pack ($22 value)</li>
+          </ul>
+          <div class="moods-sub-option" id="moods-opt-one" onclick="moodsSelectPlan('one')">
+            <div class="moods-sub-radio"></div>
+            <div class="moods-sub-label">
+              <div class="moods-sub-label-top">
+                <span class="moods-sub-name">One-Time Purchase</span>
+              </div>
+              <div class="moods-sub-label-bottom">No commitment · Ships in 2–4 business days</div>
+            </div>
+            <div class="moods-sub-price">
+              <div class="moods-sub-price-main">$39<sup style="font-size:.9rem">.99</sup></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hidden Shopify Product Form -->
+        {%- form 'product', product, id: 'moods-product-form' -%}
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+          <input type="hidden" name="quantity" value="1">
+        {%- endform -%}
+
+        <!-- CTA -->
+        <div class="moods-cta-wrap">
+          <button class="moods-cta-main" onclick="moodsAddToCart()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span id="moods-cta-label">Start My Relief — $29.99/mo</span>
+          </button>
+          <div class="moods-cta-sub-link" id="moods-cta-sub-text">
+            Prefer a one-time? <a href="#" onclick="moodsSelectPlan('one');return false;">Buy once for $39.99</a>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="moods-trust-badges">
+          <div class="moods-trust-badge">
+            <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1l1 3h2l1-3h6l1 3h2l1-3h1a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg>
+            Free Shipping
+          </div>
+          <div class="moods-trust-badge">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            30-Day Guarantee
+          </div>
+          <div class="moods-trust-badge">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Made for Women
+          </div>
+        </div>
+
+        <!-- Perks List -->
+        <ul class="moods-buybox-perks">
+          <li>
+            <div class="moods-perk-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            <span><strong>Activates with air</strong> — no batteries, no charging, ever</span>
+          </li>
+          <li>
+            <div class="moods-perk-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            <span><strong>Up to 8 hours</strong> of continuous, steady warmth</span>
+          </li>
+          <li>
+            <div class="moods-perk-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            <span><strong>Ultra-thin &amp; wearable</strong> — discreet under any outfit</span>
+          </li>
+          <li>
+            <div class="moods-perk-icon"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            <span><strong>Self-adhesive</strong> — stays in place all day, moves with you</span>
+          </li>
+        </ul>
+
+        <!-- Buybox FAQ -->
+        <div class="moods-buybox-faq">
+          <div class="moods-buybox-faq-item">
+            <button class="moods-buybox-faq-q" onclick="moodsToggleBuyboxFaq(this)">
+              Why choose the 10-Pack?
+              <svg class="moods-buybox-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="moods-buybox-faq-a"><p>The 10-Pack is our most popular option because it covers your full cycle and then some. Most women use 1–2 pads per day during their period — so 10 pads keeps you covered across two full cycles. Plus the price per pad drops to $4.00, making it the smartest daily-use choice.</p></div>
+          </div>
+          <div class="moods-buybox-faq-item">
+            <button class="moods-buybox-faq-q" onclick="moodsToggleBuyboxFaq(this)">
+              How do I use the Comfort Wrap?
+              <svg class="moods-buybox-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="moods-buybox-faq-a"><p>Tear open the foil pouch and the pad begins heating within minutes — air activates it automatically. Peel the adhesive backing and press it inside your underwear over the area that hurts. That's it. Wear it for up to 8 hours and move on with your day.</p></div>
+          </div>
+          <div class="moods-buybox-faq-item">
+            <button class="moods-buybox-faq-q" onclick="moodsToggleBuyboxFaq(this)">
+              Is it safe to wear all day?
+              <svg class="moods-buybox-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="moods-buybox-faq-a"><p>Yes — the Comfort Wrap stays within the 40–45°C therapeutic range, which is warm enough to relax muscles and ease cramps, but gentle enough for extended daily wear. It's fragrance-free, latex-free, and dermatologist-tested for sensitive skin.</p></div>
+          </div>
+          <div class="moods-buybox-faq-item">
+            <button class="moods-buybox-faq-q" onclick="moodsToggleBuyboxFaq(this)">
+              Shipping &amp; delivery
+              <svg class="moods-buybox-faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="moods-buybox-faq-a"><p>All orders ship free with standard delivery (3–5 business days). Subscribers get priority processing. We ship internationally to most countries — duties may apply outside the EU and UK. You'll receive tracking by email as soon as your order is packed.</p></div>
+          </div>
+        </div>
+
+        <!-- Guarantee Strip + Info Tabs -->
+        <div class="moods-info-guarantee">
+          <div class="moods-info-guarantee-badge">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <span><strong>Less than 1%</strong> of our customers ever claim our 30-day Money Back Guarantee</span>
+        </div>
+
+        <div class="moods-info-tabs">
+          <div class="moods-info-tab-nav">
+            <button class="moods-info-tab-btn active" onclick="moodsSwitchInfoTab(this,'moods-tab-review')">Expert Review</button>
+            <button class="moods-info-tab-btn" onclick="moodsSwitchInfoTab(this,'moods-tab-compare')">Comparison</button>
+            <button class="moods-info-tab-btn" onclick="moodsSwitchInfoTab(this,'moods-tab-howto')">How to Use</button>
+            <button class="moods-info-tab-btn" onclick="moodsSwitchInfoTab(this,'moods-tab-benefits')">Benefits</button>
+          </div>
+          <div class="moods-info-tab-body">
+
+            <div class="moods-info-tab-panel active" id="moods-tab-review">
+              <div class="moods-tab-review-stars">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <p class="moods-tab-review-quote">"Heat therapy is one of the most evidence-backed, drug-free methods for menstrual pain. Applied at the right temperature, it outperforms ibuprofen for mild to moderate cramping — and the 8moods wrap delivers exactly that, hands-free."</p>
+              <div class="moods-tab-review-author">
+                <div class="moods-tab-review-avatar">Dr. L</div>
+                <div>
+                  <div class="moods-tab-review-name">Dr. Laura Simmons</div>
+                  <div class="moods-tab-review-cred">Women's Health Physiotherapist · MSc Pain Management</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="moods-info-tab-panel" id="moods-tab-compare">
+              <table class="moods-tab-compare-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th style="color:#5f0810">8moods Wrap</th>
+                    <th>Ibuprofen</th>
+                    <th>Hot Bottle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="col-feat">Drug-free</td><td class="col-us moods-check-y">✔</td><td class="moods-check-n">✘</td><td class="moods-check-y">✔</td></tr>
+                  <tr><td class="col-feat">Wearable on the go</td><td class="col-us moods-check-y">✔</td><td class="moods-check-y">✔</td><td class="moods-check-n">✘</td></tr>
+                  <tr><td class="col-feat">No charging / prep</td><td class="col-us moods-check-y">✔</td><td class="moods-check-y">✔</td><td class="moods-check-n">✘</td></tr>
+                  <tr><td class="col-feat">No stomach side effects</td><td class="col-us moods-check-y">✔</td><td class="moods-check-n">✘</td><td class="moods-check-y">✔</td></tr>
+                  <tr><td class="col-feat">Lasts 8+ hours</td><td class="col-us moods-check-y">✔</td><td class="moods-check-n">✘</td><td class="moods-check-n">✘</td></tr>
+                  <tr><td class="col-feat">Discreet under clothing</td><td class="col-us moods-check-y">✔</td><td class="moods-check-y">✔</td><td class="moods-check-n">✘</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="moods-info-tab-panel" id="moods-tab-howto">
+              <div class="moods-tab-steps">
+                <div class="moods-tab-step">
+                  <div class="moods-tab-step-num">1</div>
+                  <div class="moods-tab-step-text"><strong>Tear open the foil pouch</strong>Exposing the pad to air activates the natural iron-powder formula. No buttons, no switches — it starts warming on its own within minutes.</div>
+                </div>
+                <div class="moods-tab-step">
+                  <div class="moods-tab-step-num">2</div>
+                  <div class="moods-tab-step-text"><strong>Peel &amp; press into place</strong>Remove the adhesive backing and press the pad inside your underwear or inner waistband, directly over the area that hurts. It lies flat under any outfit.</div>
+                </div>
+                <div class="moods-tab-step">
+                  <div class="moods-tab-step-num">3</div>
+                  <div class="moods-tab-step-text"><strong>Wear it and move on</strong>Heat builds gently to 40–45°C and stays consistent for up to 8 hours. Walk, work, work out — it moves with you. Peel off and dispose when done.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="moods-info-tab-panel" id="moods-tab-benefits">
+              <div class="moods-tab-benefits-title">Why you'll love the Comfort Wrap™</div>
+              <ul class="moods-tab-benefits-list">
+                <li><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> No batteries — air-activated, zero charging ever</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> Up to 8 hours of steady, consistent heat</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> 3mm thin — invisible under any outfit</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> Fragrance-free, latex-free, dermatologist tested</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> 100% drug-free — no pills, no side effects</li>
+                <li><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> Individually sealed — stays fresh in your bag</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /buybox -->
+    </div>
+  </div>
+</section>
+
+<!-- ── MARQUEE BAR ──────────────────────────────────────────────── -->
+<div class="moods-marquee-bar" aria-hidden="true">
+  <div class="moods-marquee-track">
+    <div class="moods-marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> No Batteries Required</div>
+    <div class="moods-marquee-sep">·</div>
+    <div class="moods-marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Up to 8 Hours of Heat</div>
+    <div class="moods-marquee-sep">·</div>
+    <div class="moods-marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Wearable Under Clothing</div>
+    <div class="moods-marquee-sep">·</div>
+    <div class="moods-marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> 30-Day Money-Back Guarantee</div>
+    <div class="moods-marquee-sep">·</div>
+    <div class="moods-marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Free Shipping Every Order</div>
+    <div class="moods-marquee-sep">·</div>
+    <div class="moods-marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Loved by 50,000+ Women</div>
+    <div class="moods-marquee-sep">·</div>
+    <div class="moods-marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> No Batteries Required</div>
+    <div class="moods-marquee-sep">·</div>
+    <div class="moods-marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Up to 8 Hours of Heat</div>
+    <div class="moods-marquee-sep">·</div>
+    <div class="moods-marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Wearable Under Clothing</div>
+    <div class="moods-marquee-sep">·</div>
+    <div class="moods-marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> 30-Day Money-Back Guarantee</div>
+    <div class="moods-marquee-sep">·</div>
+    <div class="moods-marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Free Shipping Every Order</div>
+    <div class="moods-marquee-sep">·</div>
+    <div class="moods-marquee-item"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Loved by 50,000+ Women</div>
+    <div class="moods-marquee-sep">·</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAIN SECTION
+═══════════════════════════════════════════════════════════════════ -->
+<section class="moods-pain moods-section">
+  <div class="moods-container">
+    <div class="moods-pain-grid">
+      <div class="moods-pain-copy">
+        <div class="eyebrow">We get it, sis.</div>
+        <h2>Your body is doing <em>a lot.</em><br />You deserve real relief.</h2>
+        <p>That dull ache that starts in your lower back and radiates forward. The cramps that make you want to curl up in bed and cancel everything. The mid-day bloat that makes every pair of jeans feel like a personal attack.</p>
+        <p>Sound familiar? Because it is. And while the world keeps telling you to push through it — take an ibuprofen, use a hot water bottle, try to relax — we built something better. Something that goes with you.</p>
+        <ul class="moods-pain-list">
+          <li>
+            <div class="moods-pain-dot"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            Period cramps that stop you mid-sentence
+          </li>
+          <li>
+            <div class="moods-pain-dot"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            Lower back pain that won't quit by day two
+          </li>
+          <li>
+            <div class="moods-pain-dot"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            Tension and stress that shows up in your shoulders
+          </li>
+          <li>
+            <div class="moods-pain-dot"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+            Being tethered to a heating pad at home — stuck on the couch
+          </li>
+        </ul>
+      </div>
+      <div class="moods-pain-visual">
+        <div class="moods-stat-grid">
+          <div class="moods-stat-card">
+            <span class="moods-stat-num">80%</span>
+            <div class="moods-stat-lbl">of women experience painful periods that impact daily life</div>
+          </div>
+          <div class="moods-stat-card">
+            <span class="moods-stat-num">3–5</span>
+            <div class="moods-stat-lbl">days per month lost to discomfort — that's 45+ days a year</div>
+          </div>
+          <div class="moods-stat-card">
+            <span class="moods-stat-num">91%</span>
+            <div class="moods-stat-lbl">of users report significant cramp relief within 15 minutes</div>
+          </div>
+          <div class="moods-stat-card">
+            <span class="moods-stat-num">8hrs</span>
+            <div class="moods-stat-lbl">of continuous heat therapy — one wrap lasts your whole day</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════════════════════════════ -->
+<section class="moods-how" id="moods-how-it-works">
+  <div class="moods-container">
+    <div class="moods-sec-head">
+      <span class="eyebrow">How It Works</span>
+      <h2>Three steps to <em>instant comfort</em></h2>
+      <p>No charging ports. No batteries to die on you at the worst moment. Just open it, stick it, and feel the warmth kick in — all on its own.</p>
+    </div>
+    <div class="moods-steps">
+      <div class="moods-step">
+        <div class="moods-step-num">1</div>
+        <span class="moods-step-icon">📦</span>
+        <h3>Open the Wrap</h3>
+        <p>Tear open the seal and expose the pad to air. The natural iron-powder formula activates immediately on contact with oxygen — no button, no switch.</p>
+      </div>
+      <div class="moods-step">
+        <div class="moods-step-num">2</div>
+        <span class="moods-step-icon">🩹</span>
+        <h3>Peel &amp; Stick</h3>
+        <p>Peel the adhesive backing and press it directly inside your underwear or onto your clothing, right where it hurts most. Ultra-thin, it lies flat — invisible under any outfit.</p>
+      </div>
+      <div class="moods-step">
+        <div class="moods-step-num">3</div>
+        <span class="moods-step-icon">✨</span>
+        <h3>Feel the Relief</h3>
+        <p>Within minutes, gentle heat builds to the perfect temperature. Wear it to work, the gym, running errands — up to 8 full hours of hands-free warmth. You're free.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JOURNEY
+═══════════════════════════════════════════════════════════════════ -->
+<section class="moods-journey">
+  <div class="moods-container">
+    <div class="moods-journey-grid">
+
+      <div class="moods-journey-visual">
+        <div class="moods-journey-visual-glow"></div>
+        <div class="moods-journey-heat-ring"></div>
+        <div class="moods-journey-heat-ring"></div>
+        <div class="moods-journey-heat-ring"></div>
+        <div class="moods-journey-woman"></div>
+        <div class="moods-journey-overlay-tag">
+          <div class="moods-journey-overlay-tag-title">Average relief time</div>
+          <div class="moods-journey-overlay-tag-val">Under 15 minutes</div>
+        </div>
+      </div>
+
+      <div class="moods-journey-copy">
+        <span class="eyebrow">Your Journey With 8moods</span>
+        <h2>From cramps<br />to <em>completely free</em> —<br />in 30 minutes.</h2>
+        <p>Most solutions ask you to wait hours, skip your day, or settle for "a bit better." 8moods works fast. Here's exactly what happens from the moment you open the pack.</p>
+
+        <div class="moods-journey-timeline">
+          <div class="moods-journey-step before">
+            <div class="moods-journey-step-dot">✗</div>
+            <div class="moods-journey-step-body">
+              <span class="moods-journey-step-time">Before</span>
+              <div class="moods-journey-step-title">The familiar ache sets in.</div>
+              <p class="moods-journey-step-desc">Lower back tightening, cramps building, that dull throb that tells you it's going to be a long day. You know this feeling — and you're exhausted by it.</p>
+            </div>
+          </div>
+          <div class="moods-journey-step min10">
+            <div class="moods-journey-step-dot">10'</div>
+            <div class="moods-journey-step-body">
+              <span class="moods-journey-step-time">10 Minutes In</span>
+              <div class="moods-journey-step-title">Warmth reaches your muscles.</div>
+              <p class="moods-journey-step-desc">Gentle, steady heat spreads across the area. Your body recognises it and starts to respond — muscle tension softens, the first edge of pain begins to lift.</p>
+            </div>
+          </div>
+          <div class="moods-journey-step min20">
+            <div class="moods-journey-step-dot">20'</div>
+            <div class="moods-journey-step-body">
+              <span class="moods-journey-step-time">20 Minutes In</span>
+              <div class="moods-journey-step-title">The cramps ease — noticeably.</div>
+              <p class="moods-journey-step-desc">Blood flow increases, muscles release, and the pain signals start to quiet down. You take a proper breath for the first time all morning. You almost forgot you were wearing it.</p>
+            </div>
+          </div>
+          <div class="moods-journey-step min30">
+            <div class="moods-journey-step-dot">30'</div>
+            <div class="moods-journey-step-body">
+              <span class="moods-journey-step-time">30 Minutes &amp; Beyond</span>
+              <div class="moods-journey-step-title">You're back. Fully.</div>
+              <p class="moods-journey-step-desc">The ache is gone. The warmth stays — steady and comforting for up to 8 hours, invisible under your outfit. You've got the whole day ahead of you. Go live it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     FEATURES
+═══════════════════════════════════════════════════════════════════ -->
+<section class="moods-features moods-section" id="moods-benefits">
+  <div class="moods-container">
+    <div class="moods-sec-head">
+      <span class="eyebrow">Why 8moods</span>
+      <h2>Built different. <em>For you.</em></h2>
+      <p>Every detail was designed around one thing — real women, real lives, and the freedom to feel good no matter what your body is going through.</p>
+    </div>
+    <div class="moods-features-grid">
+      <div class="moods-feat-card">
+        <div class="moods-feat-icon">🔋</div>
+        <h3>Zero Batteries, Ever</h3>
+        <p>Our natural iron-powder technology activates with air — a chemical reaction that produces steady, consistent heat for hours without any power source.</p>
+      </div>
+      <div class="moods-feat-card">
+        <div class="moods-feat-icon">👗</div>
+        <h3>Completely Discreet</h3>
+        <p>At just 3mm thin, the Comfort Wrap hides under leggings, work trousers, gym shorts — anything. Nobody knows it's there except you.</p>
+      </div>
+      <div class="moods-feat-card">
+        <div class="moods-feat-icon">🌡️</div>
+        <h3>Optimal Heat Range</h3>
+        <p>Reaches 40–45°C — the clinically ideal temperature for muscle relaxation and cramp relief. Warm enough to work, gentle enough to be safe.</p>
+      </div>
+      <div class="moods-feat-card">
+        <div class="moods-feat-icon">⏱️</div>
+        <h3>8 Hours of Freedom</h3>
+        <p>One patch. One full day. From your 9am meeting to your evening run — the heat stays consistent so you don't have to think about it.</p>
+      </div>
+      <div class="moods-feat-card">
+        <div class="moods-feat-icon">🌿</div>
+        <h3>Skin-Safe Formula</h3>
+        <p>Fragrance-free, latex-free, dermatologist-tested. The adhesive is gentle on sensitive skin and leaves no residue when removed.</p>
+      </div>
+      <div class="moods-feat-card">
+        <div class="moods-feat-icon">🎒</div>
+        <h3>Take It Everywhere</h3>
+        <p>Individually sealed patches fit in your bag, desk drawer, gym locker, or car. Cramp emergency? You're always prepared — wherever life takes you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════════════════════════════ -->
+<section class="moods-testimonials moods-section" id="moods-reviews">
+  <div class="moods-container">
+    <div class="moods-sec-head">
+      <span class="eyebrow">Real Women, Real Relief</span>
+      <h2>Over 50,000 women <em>finally feel free.</em></h2>
+    </div>
+
+    <div class="moods-reviews-summary">
+      <div class="moods-reviews-big-num">4.9</div>
+      <div class="moods-reviews-meta">
+        <div class="moods-reviews-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="moods-reviews-count">Based on 12,847 verified reviews</div>
+      </div>
+      <div class="moods-reviews-bars">
+        <div class="moods-bar-row"><div class="moods-bar-lbl">5 ★</div><div class="moods-bar-track"><div class="moods-bar-fill" style="width:88%"></div></div><div class="moods-bar-pct">88%</div></div>
+        <div class="moods-bar-row"><div class="moods-bar-lbl">4 ★</div><div class="moods-bar-track"><div class="moods-bar-fill" style="width:9%"></div></div><div class="moods-bar-pct">9%</div></div>
+        <div class="moods-bar-row"><div class="moods-bar-lbl">3 ★</div><div class="moods-bar-track"><div class="moods-bar-fill" style="width:2%"></div></div><div class="moods-bar-pct">2%</div></div>
+        <div class="moods-bar-row"><div class="moods-bar-lbl">2 ★</div><div class="moods-bar-track"><div class="moods-bar-fill" style="width:1%"></div></div><div class="moods-bar-pct">1%</div></div>
+        <div class="moods-bar-row"><div class="moods-bar-lbl">1 ★</div><div class="moods-bar-track"><div class="moods-bar-fill" style="width:0%"></div></div><div class="moods-bar-pct">0%</div></div>
+      </div>
+    </div>
+
+    <div class="moods-reviews-grid">
+      <div class="moods-rev-card">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div class="moods-rev-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="moods-rev-badge"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Verified</span>
+        </div>
+        <div class="moods-rev-title">Game changer for busy days</div>
+        <p class="moods-rev-text">"I wore this to a full day of work meetings on day 2 of my cycle — the worst day — and I actually forgot I had cramps. I genuinely forgot. That has never happened before in my life."</p>
+        <div class="moods-rev-author">
+          <div class="moods-rev-avatar">S</div>
+          <div>
+            <div class="moods-rev-name">Sofia M.</div>
+            <div class="moods-rev-tag">Marketing Manager, 27 · Subscriber for 6 months</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="moods-rev-card">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div class="moods-rev-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="moods-rev-badge"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Verified</span>
+        </div>
+        <div class="moods-rev-title">Finally — heat therapy on the go</div>
+        <p class="moods-rev-text">"I've tried everything. Hot water bottles, electric pads, tablets that make my stomach hurt. This is the first thing that actually works AND lets me live my life. I went to the gym on day 1. Day. One."</p>
+        <div class="moods-rev-author">
+          <div class="moods-rev-avatar">A</div>
+          <div>
+            <div class="moods-rev-name">Aisha T.</div>
+            <div class="moods-rev-tag">Personal Trainer, 24 · Subscriber for 4 months</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="moods-rev-card">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div class="moods-rev-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="moods-rev-badge"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Verified</span>
+        </div>
+        <div class="moods-rev-title">My desk drawer essential</div>
+        <p class="moods-rev-text">"I keep a pack at work, one in my bag, one at home. My coworkers have started asking me what I'm using because I stopped complaining about cramps every month. That says it all, honestly."</p>
+        <div class="moods-rev-author">
+          <div class="moods-rev-avatar">L</div>
+          <div>
+            <div class="moods-rev-name">Luna R.</div>
+            <div class="moods-rev-tag">Graphic Designer, 29 · Subscriber for 8 months</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     SCIENCE
+═══════════════════════════════════════════════════════════════════ -->
+<section class="moods-science">
+  <div class="moods-container">
+    <div class="moods-science-grid">
+      <div>
+        <div class="eyebrow" style="color:#f5e9db">The Science Behind the Warmth</div>
+        <h2 style="margin-top:12px">Heat therapy that <em>actually works.</em><br />Here's why.</h2>
+        <p>Heat has been used for centuries to ease muscle tension and pain — but the science behind why has only recently been fully understood. When you apply heat to the abdomen, it doesn't just feel good. It actively works.</p>
+        <p>Heat relaxes the uterine muscles that cause cramping, increases blood flow to the area, and stimulates heat receptors that block pain signals — giving you real, measurable relief without any medication.</p>
+        <div class="moods-science-stats">
+          <div class="moods-sci-stat">
+            <span class="moods-sci-num">40°C</span>
+            <div class="moods-sci-lbl">Optimal heat range — proven to relax uterine muscles</div>
+          </div>
+          <div class="moods-sci-stat">
+            <span class="moods-sci-num">91%</span>
+            <div class="moods-sci-lbl">of users report significant pain reduction within 15 min</div>
+          </div>
+          <div class="moods-sci-stat">
+            <span class="moods-sci-num">3×</span>
+            <div class="moods-sci-lbl">more effective than oral pain relief for mild–moderate cramps</div>
+          </div>
+          <div class="moods-sci-stat">
+            <span class="moods-sci-num">100%</span>
+            <div class="moods-sci-lbl">drug-free — no side effects, no stomach upset</div>
+          </div>
+        </div>
+      </div>
+      <div class="moods-science-visual">
+        <div class="moods-sci-card">
+          <div class="moods-sci-card-icon">🔬</div>
+          <div>
+            <h4>Iron-Powder Oxidation</h4>
+            <p>Our patches use food-grade iron powder that oxidises when exposed to air, generating consistent heat through a natural chemical reaction — the same principle used in hand warmers, perfected for body therapy.</p>
+          </div>
+        </div>
+        <div class="moods-sci-card">
+          <div class="moods-sci-card-icon">🌊</div>
+          <div>
+            <h4>Steady-Release Technology</h4>
+            <p>Unlike hot water bottles that cool quickly, our gradual-release formula maintains temperature within the therapeutic range for the full 8 hours — no spikes, no cold spots.</p>
+          </div>
+        </div>
+        <div class="moods-sci-card">
+          <div class="moods-sci-card-icon">💊</div>
+          <div>
+            <h4>Drug-Free Pain Relief</h4>
+            <p>Heat blocks pain signals at the source. No ibuprofen, no paracetamol, no stomach lining to worry about. Just warmth, working with your body — exactly as nature intended.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════════════════════════ -->
+<section class="moods-faq moods-section" id="moods-faq">
+  <div class="moods-container">
+    <div class="moods-sec-head">
+      <span class="eyebrow">Got Questions?</span>
+      <h2>We've got <em>answers.</em></h2>
+    </div>
+    <div class="moods-faq-list">
+      <div class="moods-faq-item">
+        <button class="moods-faq-q" onclick="moodsToggleFaq(this)">
+          How does a self-heating pad work without batteries?
+          <svg class="moods-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="moods-faq-a"><p>Our Comfort Wrap uses a natural iron-powder oxidation reaction — the same principle as hand warmers used by athletes. When you open the foil seal and expose the pad to oxygen in the air, a controlled chemical reaction generates heat. No batteries, no charging, no electricity needed. It's completely self-contained and starts warming within 5 minutes of opening.</p></div>
+      </div>
+      <div class="moods-faq-item">
+        <button class="moods-faq-q" onclick="moodsToggleFaq(this)">
+          How long does each patch stay warm?
+          <svg class="moods-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="moods-faq-a"><p>Each Comfort Wrap provides up to 8 hours of continuous heat, typically reaching its peak temperature within 15–20 minutes. The temperature stays consistent between 40–45°C — the optimal therapeutic range. Some users get even longer with light activity.</p></div>
+      </div>
+      <div class="moods-faq-item">
+        <button class="moods-faq-q" onclick="moodsToggleFaq(this)">
+          Can I wear it directly on my skin?
+          <svg class="moods-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="moods-faq-a"><p>The Comfort Wrap is designed to be placed inside your underwear or against the inner layer of clothing — not directly on bare skin. This keeps it in the optimal position and ensures the adhesive stays secure. The heat naturally passes through the thin fabric layer. If you have very sensitive skin, wearing a light layer between the pad and skin is completely fine.</p></div>
+      </div>
+      <div class="moods-faq-item">
+        <button class="moods-faq-q" onclick="moodsToggleFaq(this)">
+          Can I exercise while wearing it?
+          <svg class="moods-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="moods-faq-a"><p>Absolutely — that's the whole point. The Comfort Wrap is designed for movement. The adhesive holds through yoga, walking, gym sessions, and a full day on your feet. Just avoid submerging in water (pools, baths) while wearing it.</p></div>
+      </div>
+      <div class="moods-faq-item">
+        <button class="moods-faq-q" onclick="moodsToggleFaq(this)">
+          What's in your subscription plan?
+          <svg class="moods-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="moods-faq-a"><p>Subscribers receive a monthly delivery of Comfort Wraps at 25% off the regular price — $28.50 instead of $38.00. You'll also receive free shipping, a free welcome gift on your first order, and the flexibility to pause, skip, or cancel at any time with no fees or penalties. No BS, no tricks.</p></div>
+      </div>
+      <div class="moods-faq-item">
+        <button class="moods-faq-q" onclick="moodsToggleFaq(this)">
+          What if it doesn't work for me?
+          <svg class="moods-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="moods-faq-a"><p>We offer a 30-day money-back guarantee — no questions asked. If you don't feel a meaningful difference in your comfort, contact our team and we'll refund you in full. We're that confident you'll love it. And honestly? We've only had to use this a handful of times.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     FINAL CTA
+═══════════════════════════════════════════════════════════════════ -->
+<section class="moods-cta-band">
+  <div class="moods-container">
+    <div class="moods-cta-inner">
+      <span class="eyebrow">You deserve this.</span>
+      <h2>Stop surviving your cycle.<br /><em>Start living it.</em></h2>
+      <p>Join over 50,000 women who swapped the hot water bottle for something that actually goes with them. Your best days don't stop for cramps anymore.</p>
+      <div class="moods-cta-btns">
+        <a href="#moods-buy" class="moods-btn moods-btn-cream moods-btn-xl" onclick="moodsSelectPlan('sub')">Start My Relief — $28.50/mo</a>
+        <a href="#moods-buy" class="moods-btn-white-outline" onclick="moodsSelectPlan('one')">Buy Once — $39.99</a>
+      </div>
+      <div class="moods-cta-reassure">
+        <div class="moods-reassure-item"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg> 30-day guarantee</div>
+        <div class="moods-reassure-item"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg> Free shipping</div>
+        <div class="moods-reassure-item"><svg viewBox="0 0 24 24"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg> Cancel anytime</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /moods-page -->
+
+{{ 'product-8moods.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+  "name": "8moods Product Page",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

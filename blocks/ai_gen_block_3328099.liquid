@@ -1,0 +1,733 @@
+{% doc %}
+  @prompt
+    Prompt (EN):
+    “Build a custom Shopify Liquid section that looks like a clean editorial split layout on a white background. The section has a two-column row:
+    
+    Left column (text):
+    	•	At the very top: a small eyebrow in uppercase with lots of letter spacing, aligned left (example: ‘WE GET IT, SIS.’).
+    	•	Below it: a large serif headline split across two lines. Part of the headline is an accent phrase in a different font and/or italic (example: ‘Your body is doing’ [Font A], ‘a lot.’ [Font B italic/accent], then next line ‘You deserve real relief.’).
+    	•	Add the ability to style the headline with two different fonts: a Main Title font and an Accent Title font, plus separate color controls for main vs accent.
+    	•	Under the headline: 2 short paragraphs in a smaller body font, muted gray color, comfortable line-height.
+    	•	Under the paragraphs: a bulleted list of 4 items. Each bullet uses a small circular icon at the left (like a soft beige/pink circle with a check mark), followed by the bullet text.
+    	•	The bullet items must be editable using blocks (repeatable list item blocks).
+    
+    Right column (media):
+    	•	A large rounded rectangle media area (no image inside by default), with a warm beige background and large border radius (~18–22px). It should visually match a placeholder box and be vertically centered with the left content.
+    	•	Add settings to choose: image OR Shopify-hosted video OR external video URL. If nothing is selected, show the beige placeholder box.
+    	•	Include settings for media background color, border radius, and aspect ratio/height.
+    
+    Layout styling:
+    	•	Max width container (e.g., 1100–1300px) centered.
+    	•	Plenty of whitespace (large vertical padding).
+    	•	Desktop: two columns with a generous gap; left column slightly narrower than the media box.
+    	•	Mobile: stack content (text first, media below), keep spacing nice.
+    
+    Return the full section code: Liquid + scoped CSS + schema with settings for eyebrow text, main title text, accent title text, body rich text, colors, font pickers (main/accent), font sizes, spacing, and bullet blocks.”
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-editorial-split-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    background-color: {{ block.settings.section_background_color }};
+    padding: {{ block.settings.section_padding_top }}px 20px {{ block.settings.section_padding_bottom }}px;
+  }
+
+  .ai-editorial-split-container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.container_max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-editorial-split-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: {{ block.settings.column_gap }}px;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 750px) {
+    .ai-editorial-split-grid-{{ ai_gen_id }} {
+      grid-template-columns: {{ block.settings.text_column_width }}% {{ 100 | minus: block.settings.text_column_width }}%;
+    }
+  }
+
+  .ai-editorial-split-text-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.text_spacing }}px;
+  }
+
+  .ai-editorial-split-eyebrow-{{ ai_gen_id }} {
+    font-size: {{ block.settings.eyebrow_font_size }}px;
+    color: {{ block.settings.eyebrow_color }};
+    text-transform: uppercase;
+    letter-spacing: {{ block.settings.eyebrow_letter_spacing }}px;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .ai-editorial-split-headline-{{ ai_gen_id }} {
+    font-family: {{ block.settings.main_title_font.family }}, {{ block.settings.main_title_font.fallback_families }};
+    font-weight: {{ block.settings.main_title_font.weight }};
+    font-size: {{ block.settings.main_title_font_size }}px;
+    line-height: {{ block.settings.headline_line_height }};
+    color: {{ block.settings.main_title_color }};
+    margin: 0;
+  }
+
+  .ai-editorial-split-headline-accent-{{ ai_gen_id }} {
+    font-family: {{ block.settings.accent_title_font.family }}, {{ block.settings.accent_title_font.fallback_families }};
+    font-weight: {{ block.settings.accent_title_font.weight }};
+    font-style: {{ block.settings.accent_font_style }};
+    color: {{ block.settings.accent_title_color }};
+  }
+
+  .ai-editorial-split-body-{{ ai_gen_id }} {
+    font-size: {{ block.settings.body_font_size }}px;
+    line-height: {{ block.settings.body_line_height }};
+    color: {{ block.settings.body_text_color }};
+  }
+
+  .ai-editorial-split-body-{{ ai_gen_id }} p {
+    margin: 0 0 {{ block.settings.paragraph_spacing }}px 0;
+  }
+
+  .ai-editorial-split-body-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-editorial-split-bullets-{{ ai_gen_id }} {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: {{ block.settings.bullet_spacing }}px;
+  }
+
+  .ai-editorial-split-bullet-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: flex-start;
+    gap: {{ block.settings.bullet_icon_gap }}px;
+  }
+
+  .ai-editorial-split-bullet-icon-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.bullet_icon_size }}px;
+    height: {{ block.settings.bullet_icon_size }}px;
+    border-radius: 50%;
+    background-color: {{ block.settings.bullet_icon_bg_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .ai-editorial-split-bullet-icon-{{ ai_gen_id }} svg {
+    width: {{ block.settings.bullet_icon_size | times: 0.6 }}px;
+    height: {{ block.settings.bullet_icon_size | times: 0.6 }}px;
+    stroke: {{ block.settings.bullet_icon_color }};
+  }
+
+  .ai-editorial-split-bullet-text-{{ ai_gen_id }} {
+    flex: 1;
+    font-size: {{ block.settings.bullet_font_size }}px;
+    line-height: 1.5;
+    color: {{ block.settings.bullet_text_color }};
+  }
+
+  .ai-editorial-split-media-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    border-radius: {{ block.settings.media_border_radius }}px;
+    overflow: hidden;
+    background-color: {{ block.settings.media_background_color }};
+  }
+
+  .ai-editorial-split-media-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: {{ block.settings.media_aspect_ratio }}%;
+  }
+
+  .ai-editorial-split-media-content-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-editorial-split-media-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-editorial-split-grid-{{ ai_gen_id }} {
+      gap: {{ block.settings.mobile_gap }}px;
+    }
+
+    .ai-editorial-split-headline-{{ ai_gen_id }} {
+      font-size: {{ block.settings.main_title_font_size | times: 0.7 }}px;
+    }
+
+    .ai-editorial-split-eyebrow-{{ ai_gen_id }} {
+      font-size: {{ block.settings.eyebrow_font_size | times: 0.85 }}px;
+    }
+
+    .ai-editorial-split-body-{{ ai_gen_id }} {
+      font-size: {{ block.settings.body_font_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<editorial-split-{{ ai_gen_id }} class="ai-editorial-split-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-editorial-split-container-{{ ai_gen_id }}">
+    <div class="ai-editorial-split-grid-{{ ai_gen_id }}">
+      <div class="ai-editorial-split-text-{{ ai_gen_id }}">
+        {% if block.settings.eyebrow_text != blank %}
+          <p class="ai-editorial-split-eyebrow-{{ ai_gen_id }}">{{ block.settings.eyebrow_text }}</p>
+        {% endif %}
+
+        {% if block.settings.main_title_text != blank or block.settings.accent_title_text != blank %}
+          <h2 class="ai-editorial-split-headline-{{ ai_gen_id }}">
+            {% if block.settings.main_title_text != blank %}
+              {{ block.settings.main_title_text }}
+            {% endif %}
+            {% if block.settings.accent_title_text != blank %}
+              <span class="ai-editorial-split-headline-accent-{{ ai_gen_id }}">{{ block.settings.accent_title_text }}</span>
+            {% endif %}
+          </h2>
+        {% endif %}
+
+        {% if block.settings.body_text != blank %}
+          <div class="ai-editorial-split-body-{{ ai_gen_id }}">
+            {{ block.settings.body_text }}
+          </div>
+        {% endif %}
+
+        {% assign bullet_items = '' %}
+        {% if block.settings.bullet_1_text != blank %}
+          {% assign bullet_items = bullet_items | append: block.settings.bullet_1_text | append: '||' %}
+        {% endif %}
+        {% if block.settings.bullet_2_text != blank %}
+          {% assign bullet_items = bullet_items | append: block.settings.bullet_2_text | append: '||' %}
+        {% endif %}
+        {% if block.settings.bullet_3_text != blank %}
+          {% assign bullet_items = bullet_items | append: block.settings.bullet_3_text | append: '||' %}
+        {% endif %}
+        {% if block.settings.bullet_4_text != blank %}
+          {% assign bullet_items = bullet_items | append: block.settings.bullet_4_text | append: '||' %}
+        {% endif %}
+
+        {% assign bullets_array = bullet_items | split: '||' %}
+        {% if bullets_array.size > 0 and bullet_items != blank %}
+          <ul class="ai-editorial-split-bullets-{{ ai_gen_id }}">
+            {% for bullet in bullets_array %}
+              {% if bullet != blank %}
+                <li class="ai-editorial-split-bullet-item-{{ ai_gen_id }}">
+                  <div class="ai-editorial-split-bullet-icon-{{ ai_gen_id }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <span class="ai-editorial-split-bullet-text-{{ ai_gen_id }}">{{ bullet }}</span>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+      <div class="ai-editorial-split-media-{{ ai_gen_id }}">
+        <div class="ai-editorial-split-media-wrapper-{{ ai_gen_id }}">
+          {% if block.settings.media_type == 'image' and block.settings.media_image != blank %}
+            <img
+              src="{{ block.settings.media_image | image_url: width: 1200 }}"
+              alt="{{ block.settings.media_image.alt | escape }}"
+              loading="lazy"
+              width="{{ block.settings.media_image.width }}"
+              height="{{ block.settings.media_image.height }}"
+              class="ai-editorial-split-media-content-{{ ai_gen_id }}"
+            >
+          {% elsif block.settings.media_type == 'video' and block.settings.media_video != blank %}
+            {{
+              block.settings.media_video
+              | video_tag:
+                class: 'ai-editorial-split-media-content-' | append: ai_gen_id,
+                autoplay: block.settings.video_autoplay,
+                loop: block.settings.video_loop,
+                muted: block.settings.video_muted,
+                controls: block.settings.video_controls
+            }}
+          {% elsif block.settings.media_type == 'external_video' and block.settings.external_video_url != blank %}
+            <iframe
+              src="{{ block.settings.external_video_url }}"
+              class="ai-editorial-split-media-content-{{ ai_gen_id }}"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+            ></iframe>
+          {% else %}
+            <div class="ai-editorial-split-media-placeholder-{{ ai_gen_id }}">
+              {{ 'image' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</editorial-split-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class EditorialSplit{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+      }
+    }
+
+    customElements.define('editorial-split-{{ ai_gen_id }}', EditorialSplit{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Editorial split layout",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "label": "Container max width",
+      "min": 1000,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "text_column_width",
+      "label": "Text column width",
+      "min": 35,
+      "max": 55,
+      "step": 5,
+      "unit": "%",
+      "default": 45
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "label": "Column gap",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "mobile_gap",
+      "label": "Mobile gap",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_text",
+      "label": "Eyebrow text",
+      "default": "WE GET IT, SIS."
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_letter_spacing",
+      "label": "Letter spacing",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Main headline"
+    },
+    {
+      "type": "text",
+      "id": "main_title_text",
+      "label": "Main title text",
+      "default": "Your body is doing"
+    },
+    {
+      "type": "font_picker",
+      "id": "main_title_font",
+      "label": "Main title font",
+      "default": "serif"
+    },
+    {
+      "type": "range",
+      "id": "main_title_font_size",
+      "label": "Font size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "main_title_color",
+      "label": "Color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Accent headline"
+    },
+    {
+      "type": "text",
+      "id": "accent_title_text",
+      "label": "Accent title text",
+      "default": "a lot. You deserve real relief."
+    },
+    {
+      "type": "font_picker",
+      "id": "accent_title_font",
+      "label": "Accent title font",
+      "default": "serif"
+    },
+    {
+      "type": "select",
+      "id": "accent_font_style",
+      "label": "Accent font style",
+      "options": [
+        {
+          "value": "normal",
+          "label": "Normal"
+        },
+        {
+          "value": "italic",
+          "label": "Italic"
+        }
+      ],
+      "default": "italic"
+    },
+    {
+      "type": "color",
+      "id": "accent_title_color",
+      "label": "Color",
+      "default": "#5f0810"
+    },
+    {
+      "type": "range",
+      "id": "headline_line_height",
+      "label": "Headline line height",
+      "min": 1,
+      "max": 1.5,
+      "step": 0.1,
+      "default": 1.2
+    },
+    {
+      "type": "header",
+      "content": "Body text"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+    },
+    {
+      "type": "range",
+      "id": "body_font_size",
+      "label": "Font size",
+      "min": 14,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "body_line_height",
+      "label": "Line height",
+      "min": 1.4,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.6
+    },
+    {
+      "type": "color",
+      "id": "body_text_color",
+      "label": "Color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "paragraph_spacing",
+      "label": "Paragraph spacing",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_spacing",
+      "label": "Text section spacing",
+      "min": 15,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 25
+    },
+    {
+      "type": "header",
+      "content": "Bullet list"
+    },
+    {
+      "type": "text",
+      "id": "bullet_1_text",
+      "label": "Bullet 1",
+      "default": "Clinically proven ingredients"
+    },
+    {
+      "type": "text",
+      "id": "bullet_2_text",
+      "label": "Bullet 2",
+      "default": "Fast-acting relief formula"
+    },
+    {
+      "type": "text",
+      "id": "bullet_3_text",
+      "label": "Bullet 3",
+      "default": "Dermatologist recommended"
+    },
+    {
+      "type": "text",
+      "id": "bullet_4_text",
+      "label": "Bullet 4",
+      "default": "100% satisfaction guaranteed"
+    },
+    {
+      "type": "range",
+      "id": "bullet_font_size",
+      "label": "Font size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "bullet_text_color",
+      "label": "Text color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "bullet_spacing",
+      "label": "Spacing between bullets",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "bullet_icon_size",
+      "label": "Icon size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "bullet_icon_gap",
+      "label": "Icon gap",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "bullet_icon_bg_color",
+      "label": "Icon background",
+      "default": "#f5e9db"
+    },
+    {
+      "type": "color",
+      "id": "bullet_icon_color",
+      "label": "Icon color",
+      "default": "#5f0810"
+    },
+    {
+      "type": "header",
+      "content": "Media"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media type",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Shopify video"
+        },
+        {
+          "value": "external_video",
+          "label": "External video"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "media_image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "media_video",
+      "label": "Shopify video"
+    },
+    {
+      "type": "video_url",
+      "id": "external_video_url",
+      "label": "External video URL",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "Autoplay video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_loop",
+      "label": "Loop video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_muted",
+      "label": "Mute video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_controls",
+      "label": "Show video controls",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "media_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "media_background_color",
+      "label": "Background color",
+      "default": "#f5e9db"
+    },
+    {
+      "type": "range",
+      "id": "media_aspect_ratio",
+      "label": "Aspect ratio",
+      "min": 50,
+      "max": 150,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Editorial split layout"
+    }
+  ]
+}
+{% endschema %}
