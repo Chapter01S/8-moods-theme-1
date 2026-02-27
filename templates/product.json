@@ -73,7 +73,7 @@
           "settings": {
             "award_badge_text": "8 moods",
             "award_badge_text_color": "#ffffff",
-            "award_badge_bg_color": "#871520",
+            "award_badge_bg_color": "#a40011",
             "award_badge_border_color": "rgba(0,0,0,0)",
             "award_badge_border_radius": 20,
             "award_badge_font_size": 14,
@@ -567,7 +567,7 @@
             "custom_icon": "",
             "icon_size": 16,
             "button_border_color": "#ef4a65",
-            "buy_box_button_bg_color": "#871520",
+            "buy_box_button_bg_color": "#a40011",
             "button_text_color": "#ffffff",
             "buy_box_button_hover_color": "#5f0810",
             "price_color": "#333030",
@@ -1493,7 +1493,7 @@
             "eyebrow_text": "WE GET IT, SIS.",
             "eyebrow_font_size": 12,
             "eyebrow_letter_spacing": 2,
-            "eyebrow_color": "#871520",
+            "eyebrow_color": "#a40011",
             "main_title_text": "Your body is doing",
             "main_title_font": "serif",
             "main_title_font_size": 48,
@@ -1501,7 +1501,7 @@
             "accent_title_text": "a lot. You deserve real relief.",
             "accent_title_font": "serif",
             "accent_font_style": "italic",
-            "accent_title_color": "#5f0810",
+            "accent_title_color": "#a40011",
             "headline_line_height": 1.2,
             "body_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
             "body_font_size": 16,
@@ -1697,28 +1697,28 @@
           "type": "roadmap_step",
           "name": "1",
           "settings": {
-            "badge_text": "Week 1",
-            "title": "",
+            "badge_text": "0 min",
+            "title": "Pijn swa",
             "description": "<p>Feel the gentle lift of clean energy. No jitters, no crash—just a calm focus that sets the tone for your day.</p>",
-            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" fill=\"white\" viewbox=\"0 0 24 24\">\n  <path d=\"M13 2L3 14h7v8l11-14h-8z\"></path>\n</svg>"
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewbox=\"0 0 24 24\" fill=\"#ffffff\"><g fill=\"none\" stroke=\"#ffffff\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M19.5 12.572L12 20l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572\"></path><path d=\"m12 6l-2 4l4 3l-2 4v3\"></path></g></svg>"
           }
         },
         "roadmap_step_EPgyYw": {
           "type": "roadmap_step",
           "name": "2",
           "settings": {
-            "badge_text": "Week 2",
-            "title": "",
+            "badge_text": "5 min",
+            "title": "De Warmup",
             "description": "<p>Your body adjusts to the sustained energy of L-theanine and antioxidants. Notice better focus, smoother digestion, and a lighter feeling overall.</p>",
-            "custom_icon": "<svg viewbox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g><g id=\"SVGRepo_iconCarrier\"> <path d=\"M8.16923 2.00234C8.11301 2.00078 8.0566 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14C11.3137 14 14 11.3137 14 8C14 7.9434 13.9992 7.88699 13.9977 7.83077L15.7642 6.06422C15.9182 6.68407 16 7.33249 16 8C16 12.4183 12.4183 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C8.66751 0 9.31593 0.0817526 9.93578 0.235791L8.16923 2.00234Z\" fill=\"#ffffff\"></path> <path d=\"M4 7.99996C4 6.13612 5.27477 4.57002 7 4.12598V6.26752C6.4022 6.61333 6 7.25968 6 7.99996C6 9.10453 6.89543 9.99996 8 9.99996C8.74028 9.99996 9.38663 9.59776 9.73244 8.99996H11.874C11.4299 10.7252 9.86384 12 8 12C5.79086 12 4 10.2091 4 7.99996Z\" fill=\"#ffffff\"></path> <path d=\"M14 2L13 0L10 3V4.58579L7.79289 6.79289L9.20711 8.20711L11.4142 6H13L16 3L14 2Z\" fill=\"#ffffff\"></path> </g></svg>"
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewbox=\"0 0 24 24\"><path fill=\"#ffffff\" d=\"M13.3 20.725q-.15.125-.313.2t-.362.075q-.2 0-.4-.088t-.35-.237q-1.025-1.1-1.513-2.25T9.876 16q0-.925.275-1.95t.95-2.65q.575-1.425.8-2.188t.225-1.412q0-.85-.375-1.587t-1.175-1.488q-.15-.15-.237-.35t-.088-.4q0-.2.075-.362t.2-.313q.15-.15.337-.225T11.25 3q.2 0 .375.075t.325.2q1.1 1.025 1.637 2.15t.538 2.375q0 .875-.263 1.838t-.912 2.512q-.625 1.5-.85 2.3t-.225 1.525q0 .875.363 1.688T13.35 19.3q.125.15.2.325t.075.375q0 .2-.075.388t-.25.337Zm4.875 0q-.15.125-.313.2T17.5 21q-.2 0-.4-.088t-.35-.237q-1.025-1.1-1.513-2.238t-.487-2.412q0-.925.275-1.975t.95-2.65q.575-1.425.8-2.175t.225-1.4q0-.85-.375-1.612T15.45 4.725q-.15-.15-.225-.337T15.15 4q0-.2.063-.363t.187-.312q.15-.15.35-.238t.4-.087q.2 0 .363.075t.312.2q1.1 1.025 1.638 2.15T19 7.8q0 .875-.263 1.838t-.912 2.537q-.625 1.5-.85 2.3t-.225 1.5q0 .875.375 1.713t1.125 1.637q.125.15.187.325t.063.35q0 .2-.075.4t-.25.325Zm-9.75 0q-.15.125-.313.2T7.75 21q-.2 0-.4-.088T7 20.676q-1.025-1.1-1.512-2.238T5 16.026q0-.925.275-1.975t.95-2.65q.575-1.425.8-2.175t.225-1.4q0-.85-.375-1.612T5.7 4.725q-.175-.15-.25-.337T5.375 4q0-.2.075-.375t.2-.325q.15-.15.338-.225T6.375 3q.2 0 .375.075t.325.2q1.1 1.025 1.638 2.138T9.25 7.8q0 .875-.25 1.838t-.9 2.512q-.625 1.5-.85 2.3t-.225 1.525q0 .875.363 1.713T8.5 19.325q.125.15.188.325t.062.35q0 .2-.075.4t-.25.325Z\"></path></svg>"
           }
         },
         "roadmap_step_iDK7aQ": {
           "type": "roadmap_step",
           "name": "3",
           "settings": {
-            "badge_text": "Week 3",
-            "title": "",
+            "badge_text": "30 min",
+            "title": "Pijn begint te minderen",
             "description": "<p>Daily matcha helps reduce stress while keeping you sharp. Your mind feels clearer, your body more resilient.</p>",
             "custom_icon": "<svg fill=\"#ffffff\" version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 484.651 484.65\" stroke=\"#ffffff\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g><g id=\"SVGRepo_iconCarrier\"> <g> <g id=\"_x32_7_48_\"> <g> <path d=\"M243.458,153.771c0.085,0,0.171-0.006,0.257-0.006c0.087,0,0.172,0.006,0.258,0.006 c42.464,0,76.884-34.422,76.884-76.887c0-42.46-34.42-76.884-76.884-76.884c-0.086,0-0.171,0.006-0.258,0.006 c-0.086,0-0.171-0.006-0.257-0.006c-42.465,0-76.884,34.424-76.884,76.884C166.572,119.349,200.991,153.771,243.458,153.771z\"></path> <path d=\"M436.565,311.038l-86.702-63.042l-27.417-66.953c-5.218-12.74-17.645-20.336-30.638-20.05l-0.004-0.03h-49.479h-49.477 l-0.004,0.03c-12.994-0.286-25.419,7.31-30.638,20.05l-27.418,66.953l-86.702,63.042c-14.443,10.502-17.64,30.724-7.136,45.169 c6.327,8.698,16.185,13.32,26.179,13.32c6.594,0,13.248-2.012,18.988-6.189l93.744-68.154l-2.389,24.675l-88.637,89.839 c-12.297,12.795-15.765,31.698-8.809,48.027c6.955,16.327,22.987,26.926,40.735,26.926h42.368 c-10.918-9.882-17.88-24.627-17.88-41.093c0-29.688,22.571-53.839,50.315-53.839c0,0,32.453,0,48.258,0 c15.807,0,28.35,12.922,28.35,12.922h-76.608c-21.085,0-38.24,18.354-38.24,40.917c0,22.562,17.155,40.916,38.24,40.916h74.192 c0.832-0.06,1.68-0.063,2.5-0.161h89.683c17.748,0,33.779-10.6,40.735-26.929c6.955-16.326,3.488-35.228-8.808-48.025 l-86.706-89.951h-0.024l-2.345-24.224l93.743,68.154c5.738,4.178,12.395,6.189,18.986,6.189c9.995,0,19.853-4.622,26.18-13.32 C454.205,341.762,451.009,321.54,436.565,311.038z\"></path> </g> </g> </g> </g></svg>"
           }
@@ -1727,10 +1727,10 @@
           "type": "roadmap_step",
           "name": "4",
           "settings": {
-            "badge_text": "Week 4",
+            "badge_text": "12 uur (later)",
             "title": "Effect Op Lange Termijn",
             "description": "<p>The benefits go deeper—supporting immunity, boosting metabolism, and giving you that calm alertness to thrive every day.</p>",
-            "custom_icon": "<svg viewbox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" stroke=\"\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g><g id=\"SVGRepo_iconCarrier\"> <path d=\"M8 3L10.5 2.5L11 0H12L12.5 2.5L15 3V4L12.5 4.5L12 7H11L10.5 4.5L8 4V3Z\" fill=\"#ffffff\"></path> <path d=\"M0 11V10L4 9L5 5H6L7 9L11 10V11L7 12L6 16H5L4 12L0 11Z\" fill=\"#ffffff\"></path> <path d=\"M1 2L2.5 0.5L4 2L2.5 3.5L1 2Z\" fill=\"#ffffff\"></path> <path d=\"M15 14L13 12L11 14L13 16L15 14Z\" fill=\"#ffffff\"></path> <path d=\"M15 10C15.5523 10 16 9.55229 16 9C16 8.44771 15.5523 8 15 8C14.4477 8 14 8.44771 14 9C14 9.55229 14.4477 10 15 10Z\" fill=\"#ffffff\"></path> </g></svg>"
+            "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewbox=\"0 0 256 256\"><path fill=\"#ffffff\" d=\"M232.76 137.88a28.66 28.66 0 0 0-12-5.39C236.19 114.94 244 97.37 244 80c0-28.67-23.09-52-51.46-52A51.77 51.77 0 0 0 156 42.85A51.77 51.77 0 0 0 119.46 28C91.09 28 68 51.33 68 80c0 10.15 2.72 20.3 8.22 30.7a35.9 35.9 0 0 0-11.73 7.84L43 140H20a20 20 0 0 0-20 20v40a20 20 0 0 0 20 20h100a11.89 11.89 0 0 0 2.91-.36l64-16a11.4 11.4 0 0 0 1.79-.6l38.82-16.54c.23-.09.45-.19.67-.3a28.61 28.61 0 0 0 4.57-48.32ZM119.46 52a27.18 27.18 0 0 1 25.44 16.56a12 12 0 0 0 22.2 0A27.18 27.18 0 0 1 192.54 52C207.42 52 220 64.82 220 80c0 18.06-15 38.84-43.38 60.19l-4.62 1.07V140a32 32 0 0 0-32-32h-37.29C95.42 97.76 92 88.77 92 80c0-15.18 12.58-28 27.46-28ZM24 164h12v32H24Zm193.68.61l-37.51 16L118.52 196H60v-39l21.46-21.46a11.93 11.93 0 0 1 8.48-3.54H140a8 8 0 0 1 0 16h-28a12 12 0 0 0 0 24h32a12.19 12.19 0 0 0 2.69-.3l67-15.41l.47-.12a4.61 4.61 0 0 1 5.82 4.44a4.58 4.58 0 0 1-2.3 4Z\"></path></svg>"
           }
         }
       },
@@ -1773,7 +1773,7 @@
         "override_global_accent": true,
         "use_accent_gradient": false,
         "accent_text_gradient": "linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
-        "accent_color": "#5f0810",
+        "accent_color": "#a40011",
         "accent_font_family": "Nothing You Could Do",
         "accent_font_style": "normal",
         "accent_font_weight": 700,
@@ -2124,8 +2124,8 @@
         "show_heading": true,
         "title_part_1": "... vs.",
         "title_part_2": "8 moods",
-        "title_part_1_color": "#5f0810",
-        "title_part_2_color": "#5f0810",
+        "title_part_1_color": "#91323c",
+        "title_part_2_color": "#91323c",
         "subheading": "<p>While coffee gives you a spike that fades fast, matcha’s unique blend of caffeine and L-Theanine keeps your mind calm, alert, and focused for hours.</p>",
         "desktop_description": "",
         "show_description_on_mobile": false,
@@ -2165,19 +2165,19 @@
         "highlighted_subtitle_color": "#ffffff",
         "highlighted_check_color": "#f5e9db",
         "highlighted_x_color": "#ffffff",
-        "border_color": "#5f0810",
-        "icon_color": "#5f0810",
-        "check_color": "#5f0810",
-        "x_color": "#5f0810",
+        "border_color": "#91323c",
+        "icon_color": "#91323c",
+        "check_color": "#91323c",
+        "x_color": "#91323c",
         "highlight_border_radius": 6,
         "use_highlight_border": false,
-        "highlight_border_color": "#5f0810",
+        "highlight_border_color": "#91323c",
         "enable_highlight_shadow": true,
         "highlight_border_width": 1,
-        "unhighlighted_text_color": "#5f0810",
+        "unhighlighted_text_color": "#91323c",
         "unhighlighted_subtitle_color": "#5f0810",
-        "unhighlighted_icon_color": "#5f0810",
-        "unhighlighted_check_color": "#5f0810",
+        "unhighlighted_icon_color": "#871520",
+        "unhighlighted_check_color": "#871520",
         "unhighlighted_x_color": "#5f0810",
         "enable_section_top_border": false,
         "section_top_border_width": 1,
