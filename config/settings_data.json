@@ -22,7 +22,7 @@
     "global_accent_text_gradient_dark": "#A40011",
     "use_dedicated_button_colors": true,
     "global_section_button_color": "#EF4A65",
-    "global_section_button_text_color": "#e2f78e",
+    "global_section_button_text_color": "#f8f8f8",
     "global_header_color": "#ffffff",
     "header_border_color": "#e6f3fa",
     "global_footer_color": "#333030",
@@ -457,7 +457,7 @@
           "cart_shipping_protection_mXGeTd"
         ],
         "settings": {
-          "cart_customization_mode": false,
+          "cart_customization_mode": true,
           "use_theme_colors_cart_drawer": true,
           "upsell_carousel_mode": false,
           "drawer_heading_font_size_desktop": 20,
@@ -493,7 +493,7 @@
           "cart_drawer_accent_color": "#2a4d2a",
           "cart_drawer_divider_color": "#e5e5e5",
           "cart_drawer_checkout_button_bg": "#2a4d2a",
-          "cart_drawer_checkout_button_text": "#e2f78e",
+          "cart_drawer_checkout_button_text": "#f8f8f8",
           "cart_drawer_item_saving_text": "#2a4d2a",
           "cart_drawer_item_saving_bg": "rgba(0,0,0,0)",
           "cart_drawer_free_product_label_bg": "#f4f4f4",
