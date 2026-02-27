@@ -3291,7 +3291,7 @@
       "settings": {
         "heading_regular": "Join De Community Van",
         "heading_accent": "8 moods",
-        "subtitle": "",
+        "subtitle": "We zijn constant bezig met manier vinden en delen voor ons zelf en andere dames om het vro",
         "desktop_layout": "row",
         "use_theme_colors": true,
         "heading_alignment_mobile": "center",
@@ -3389,6 +3389,39 @@
         "ai_gen_block_33de7c0_Eaj4kq"
       ],
       "settings": {}
+    },
+    "newsletter_ARrA8n": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_cpTKQf": {
+          "type": "heading",
+          "settings": {
+            "heading": "Abonneren op onze e-mails",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_CMthJf": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Kom als eerste te weten als er nieuwe collecties en exclusieve aanbiedingen zijn.</p>"
+          }
+        },
+        "email_form_dcg8pi": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_cpTKQf",
+        "paragraph_CMthJf",
+        "email_form_dcg8pi"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     },
     "store_faq_Lpd3PW": {
       "type": "store-faq",
@@ -3635,6 +3668,7 @@
     "video_testimonials_QaYpEt",
     "4_benefits_fzDBUr",
     "1772217175a9a7588a",
+    "newsletter_ARrA8n",
     "store_faq_Lpd3PW",
     "satisfaction_guarantee_J4ypTy"
   ]
