@@ -1490,20 +1490,20 @@
             "section_padding_top": 80,
             "section_padding_bottom": 80,
             "section_background_color": "#ffffff",
-            "eyebrow_text": "WE GET IT, SIS.",
+            "eyebrow_text": "IK BEGRIJP HET, SIS",
             "eyebrow_font_size": 12,
             "eyebrow_letter_spacing": 2,
             "eyebrow_color": "#a40011",
-            "main_title_text": "Your body is doing",
+            "main_title_text": "Je lichaam gaat door zoveel.",
             "main_title_font": "serif",
-            "main_title_font_size": 48,
+            "main_title_font_size": 42,
             "main_title_color": "#000000",
-            "accent_title_text": "a lot. You deserve real relief.",
+            "accent_title_text": "Jij verdient een wat rust",
             "accent_title_font": "serif",
             "accent_font_style": "italic",
             "accent_title_color": "#a40011",
             "headline_line_height": 1.2,
-            "body_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+            "body_text": "<p></p><h5>Snel, Simpel & Zorgeloos.</h5><p>&lcub;get in to them mind of the reader and speak to the curent them and how 8 moods is here to help. Brief intro to the product. This is the first aprt of the lanfing page where we target audiance lands (after the product box section) from this point the page is about conveting cold lead to warm, introducitng the product, removing dought, answering questions, and giving relevant info&rcub;</p>",
             "body_font_size": 16,
             "body_line_height": 1.6,
             "body_text_color": "#666666",
@@ -1560,6 +1560,115 @@
         "gradient_background": "linear-gradient(135deg, rgba(102, 126, 234, 1), rgba(118, 75, 162, 1) 100%)",
         "padding_top": 40,
         "padding_bottom": 0
+      }
+    },
+    "4_images_kkwV4i": {
+      "type": "4-images",
+      "blocks": {
+        "item_n4mfz9": {
+          "type": "item",
+          "settings": {
+            "media_type": "image",
+            "step_image": "shopify://shop_images/5_800c1a1b-9340-4869-a41c-b106b10f5cc6.webp",
+            "step_title": "Sporten",
+            "step_description": "Van onze gebruikers geeft aan de warmtepatch fijn te vinden tijdens het sporten omdat het ondersteuning biedt zonder in te leveren op bewegingsvrijheid."
+          }
+        },
+        "item_YWUCrt": {
+          "type": "item",
+          "settings": {
+            "media_type": "image",
+            "step_image": "shopify://shop_images/4_f054bc1e-16db-4441-9df1-f6e2d0042071.webp",
+            "step_title": "Werk",
+            "step_description": "Van de gebruikers geeft aan minder spanning te voelen tijdens lange werkdagen dankzij constante, rustgevende warmte."
+          }
+        },
+        "item_xchxRG": {
+          "type": "item",
+          "settings": {
+            "media_type": "image",
+            "step_image": "shopify://shop_images/istockphoto-1338469104-612x612.jpg",
+            "step_title": "School",
+            "step_description": "Van onze gebruikers waardeert de patch als dagelijkse ondersteuning, vooral op plekken zoals school."
+          }
+        },
+        "item_F8hwhj": {
+          "type": "item",
+          "settings": {
+            "media_type": "image",
+            "step_image": "shopify://shop_images/2_91bdac5c-81ca-47ff-8b78-347caad8ba34.webp",
+            "step_title": "Onderweg",
+            "step_description": "Van onze gebruikers ervaart extra comfort onderweg zodat ze zich ondersteund voelen tijdens fietsen, wandelen of reizen."
+          }
+        }
+      },
+      "block_order": [
+        "item_n4mfz9",
+        "item_YWUCrt",
+        "item_xchxRG",
+        "item_F8hwhj"
+      ],
+      "name": "4 Images",
+      "settings": {
+        "use_theme_colors": true,
+        "main_heading": "Gemaakt voor",
+        "accent_text": "Elke Situatie",
+        "subtitle": "",
+        "text_alignment": "center",
+        "section_padding_top": 20,
+        "section_padding_bottom": 60,
+        "section_max_width": 1000,
+        "container_padding_horizontal": 20,
+        "desktop_columns": 4,
+        "tablet_columns": 4,
+        "mobile_columns": "2",
+        "desktop_gap_vertical": 0,
+        "desktop_gap_horizontal": 10,
+        "main_heading_font_size_desktop": 46,
+        "main_heading_font_size_mobile": 28,
+        "subtitle_font_size_desktop": 18,
+        "subtitle_font_size_mobile": 17,
+        "item_title_font_size": 21,
+        "item_title_bold": false,
+        "item_description_font_size": 14,
+        "grid_margin_top": 30,
+        "main_heading_margin_top": 0,
+        "main_heading_margin_bottom": 10,
+        "subtitle_margin_top": 0,
+        "subtitle_margin_bottom": 30,
+        "content_margin_top": 10,
+        "step_title_margin_top": 0,
+        "step_title_margin_bottom": 30,
+        "step_description_margin_top": 0,
+        "step_description_margin_bottom": 0,
+        "divider_margin_top": 12,
+        "divider_margin_bottom": 12,
+        "section_background_color": "#ffffff",
+        "main_heading_color": "#1a371a",
+        "subtitle_color": "#1a371a",
+        "step_title_color": "#1a371a",
+        "step_description_color": "#1a371a",
+        "override_global_accent": false,
+        "use_accent_gradient": false,
+        "accent_text_gradient": "linear-gradient(45deg, rgba(239, 74, 101, 1), rgba(255, 107, 157, 1) 100%)",
+        "accent_color": "#1b3b1c",
+        "accent_text_margin_left": 0,
+        "show_divider": false,
+        "divider_width": 50,
+        "divider_thickness": 2,
+        "divider_color": "#000000",
+        "divider_alignment": "center",
+        "enable_card_styling": false,
+        "card_background_color": "#ffffff",
+        "card_border_color": "#333030",
+        "card_border_width": 2,
+        "card_border_radius": 8,
+        "image_border_radius": 8,
+        "card_padding_horizontal": 6,
+        "card_padding_vertical": 20,
+        "image_focal_point": "center",
+        "placeholder_background_color": "#f5f5f5",
+        "placeholder_text_color": "#999999"
       }
     },
     "statistics_column_BaA69H": {
@@ -2485,112 +2594,6 @@
         "rating_summary_border_radius": 50
       }
     },
-    "4_images_kkwV4i": {
-      "type": "4-images",
-      "blocks": {
-        "item_n4mfz9": {
-          "type": "item",
-          "settings": {
-            "media_type": "image",
-            "step_title": "Whisk",
-            "step_description": "Crafted from 100 fine bamboo prongs, this traditional whisk helps you create smooth, frothy matcha every time."
-          }
-        },
-        "item_YWUCrt": {
-          "type": "item",
-          "settings": {
-            "media_type": "image",
-            "step_title": "Scoop",
-            "step_description": "A sleek bamboo scoop for the perfect serving — making sure you never waste a gram of your precious matcha."
-          }
-        },
-        "item_xchxRG": {
-          "type": "item",
-          "settings": {
-            "media_type": "image",
-            "step_title": "Matcha Bowl",
-            "step_description": "Handcrafted ceramic bowl designed for whisking, serving, and enjoying matcha the authentic way."
-          }
-        },
-        "item_F8hwhj": {
-          "type": "item",
-          "settings": {
-            "media_type": "image",
-            "step_title": "Sifter",
-            "step_description": "Ensure a silky-smooth matcha by sifting out clumps before whisking. Small detail, big difference."
-          }
-        }
-      },
-      "block_order": [
-        "item_n4mfz9",
-        "item_YWUCrt",
-        "item_xchxRG",
-        "item_F8hwhj"
-      ],
-      "disabled": true,
-      "name": "4 Images",
-      "settings": {
-        "use_theme_colors": false,
-        "main_heading": "Make your set",
-        "accent_text": "Complete",
-        "subtitle": "Everything you need for the best Matcha, all at home.",
-        "text_alignment": "center",
-        "section_padding_top": 60,
-        "section_padding_bottom": 60,
-        "section_max_width": 1000,
-        "container_padding_horizontal": 20,
-        "desktop_columns": 4,
-        "tablet_columns": 2,
-        "mobile_columns": "2",
-        "desktop_gap_vertical": 0,
-        "desktop_gap_horizontal": 10,
-        "main_heading_font_size_desktop": 36,
-        "main_heading_font_size_mobile": 28,
-        "subtitle_font_size_desktop": 18,
-        "subtitle_font_size_mobile": 16,
-        "item_title_font_size": 20,
-        "item_title_bold": false,
-        "item_description_font_size": 14,
-        "grid_margin_top": 30,
-        "main_heading_margin_top": 0,
-        "main_heading_margin_bottom": 10,
-        "subtitle_margin_top": 0,
-        "subtitle_margin_bottom": 30,
-        "content_margin_top": 24,
-        "step_title_margin_top": 0,
-        "step_title_margin_bottom": 30,
-        "step_description_margin_top": 0,
-        "step_description_margin_bottom": 0,
-        "divider_margin_top": 12,
-        "divider_margin_bottom": 12,
-        "section_background_color": "#ffffff",
-        "main_heading_color": "#1a371a",
-        "subtitle_color": "#1a371a",
-        "step_title_color": "#1a371a",
-        "step_description_color": "#1a371a",
-        "override_global_accent": false,
-        "use_accent_gradient": false,
-        "accent_text_gradient": "linear-gradient(45deg, rgba(239, 74, 101, 1), rgba(255, 107, 157, 1) 100%)",
-        "accent_color": "#1b3b1c",
-        "accent_text_margin_left": 0,
-        "show_divider": false,
-        "divider_width": 50,
-        "divider_thickness": 2,
-        "divider_color": "#000000",
-        "divider_alignment": "center",
-        "enable_card_styling": false,
-        "card_background_color": "#ffffff",
-        "card_border_color": "#333030",
-        "card_border_width": 2,
-        "card_border_radius": 8,
-        "image_border_radius": 8,
-        "card_padding_horizontal": 6,
-        "card_padding_vertical": 20,
-        "image_focal_point": "center",
-        "placeholder_background_color": "#f5f5f5",
-        "placeholder_text_color": "#999999"
-      }
-    },
     "scrolling_features_bar_xXQrtb": {
       "type": "scrolling-features-bar",
       "blocks": {
@@ -3421,13 +3424,13 @@
     "image_with_text_MnK3Cx",
     "blocks_rHY3G4",
     "divider_cH7pyC",
+    "4_images_kkwV4i",
     "statistics_column_BaA69H",
     "roadmap_gVUccN",
     "roadmap_cCJcRP",
     "product_comparison_ahRqAP",
     "steps_a8McD3",
     "customer_reviews_carousel_aWfxAX",
-    "4_images_kkwV4i",
     "scrolling_features_bar_xXQrtb",
     "image_with_text_cC3QeF",
     "testimonials_erbHYR",
