@@ -3376,7 +3376,7 @@
             "muted": true,
             "controls": false,
             "desktop_width_percent": 90,
-            "padding_horizontal": 40,
+            "padding_horizontal": 20,
             "padding_top": 0,
             "padding_bottom": 40,
             "border_radius": 20,
