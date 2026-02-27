@@ -1,1 +1,82 @@
-{"name":"t:sections.header.name","type":"header","sections":{"blocks_MVVR9q":{"type":"_blocks","blocks":{"ai_gen_block_ae8da08_dfGbEt":{"type":"ai_gen_block_ae8da08","settings":{"text_1":"Gratis verzending <strong> boven 35 euro <strong><\/strong><\/strong>","text_2":"<strong> 30 dagen geen verlichting geld-terug-garantie<\/strong>","text_3":"Shop de uitverkoop met tot <strong>  40% korting <\/strong>","text_4":"","text_5":"","show_separator":true,"separator_symbol":" · ","separator_spacing":30,"separator_color":"#ffffff","background_color":"#5f0810","text_color":"#ffffff","font_size":14,"font_weight":"400","bold_font_weight":"700","padding_vertical":10,"scroll_speed":30,"pause_on_hover":true,"text_spacing":100},"blocks":{}}},"block_order":["ai_gen_block_ae8da08_dfGbEt"],"name":"Marquee text","settings":{}},"header":{"type":"header","settings":{"logo_position":"middle-left","mobile_logo_position":"center","menu":"main-menu","menu_type_desktop":"dropdown","sticky_header_type":"on-scroll-up","show_line_separator":true,"enable_top_border":false,"top_border_width":1,"top_border_style":"solid","top_border_color":"#e0e0e0","use_theme_colors":false,"use_global_gradient":false,"enable_country_selector":true,"enable_language_selector":true,"enable_customer_avatar":true,"cart_icon_type":"cart","margin_bottom":0,"padding_top":20,"padding_bottom":20}},"17720393799cb0e23c":{"type":"_blocks","settings":{}}},"order":["blocks_MVVR9q","header","17720393799cb0e23c"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "blocks_MVVR9q": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ae8da08_dfGbEt": {
+          "type": "ai_gen_block_ae8da08",
+          "settings": {
+            "text_1": "Gratis verzending <strong> boven 35 euro <strong></strong></strong>",
+            "text_2": "<strong> 30 dagen geen verlichting geld-terug-garantie</strong>",
+            "text_3": "Shop de uitverkoop met tot <strong>  40% korting </strong>",
+            "text_4": "",
+            "text_5": "",
+            "show_separator": true,
+            "separator_symbol": " · ",
+            "separator_spacing": 30,
+            "separator_color": "#ffffff",
+            "background_color": "#a40011",
+            "text_color": "#ffffff",
+            "font_size": 14,
+            "font_weight": "400",
+            "bold_font_weight": "700",
+            "padding_vertical": 10,
+            "scroll_speed": 30,
+            "pause_on_hover": true,
+            "text_spacing": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ae8da08_dfGbEt"
+      ],
+      "name": "Marquee text",
+      "settings": {}
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "enable_top_border": false,
+        "top_border_width": 1,
+        "top_border_style": "solid",
+        "top_border_color": "#e0e0e0",
+        "use_theme_colors": false,
+        "use_global_gradient": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "cart_icon_type": "cart",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "17720393799cb0e23c": {
+      "type": "_blocks",
+      "settings": {}
+    }
+  },
+  "order": [
+    "blocks_MVVR9q",
+    "header",
+    "17720393799cb0e23c"
+  ]
+}

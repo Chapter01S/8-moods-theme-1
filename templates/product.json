@@ -301,7 +301,7 @@
             "card_background": "rgba(0,0,0,0)",
             "card_border_color": "#f5e9db",
             "card_hover_border_color": "#871520",
-            "selected_card_border_color": "#45060c",
+            "selected_card_border_color": "#a40011",
             "selected_card_background": "#ffffff",
             "card_padding": 12,
             "card_border_width": 2,
@@ -373,7 +373,7 @@
             "show_per_item_price": true,
             "title_color": "#000000",
             "title_font_size": 20,
-            "description_color": "#5f0810",
+            "description_color": "#a40011",
             "description_font_size": 11,
             "current_price_color": "#000000",
             "current_price_font_size": 17,
@@ -684,7 +684,7 @@
             "use_theme_colors": false,
             "text_small": "Less than 1%",
             "text_large": "of customers claim our Money Back Guarantee",
-            "container_bg_color": "#f5e9db",
+            "container_bg_color": "#f5eaea",
             "border_color": "#f5e9db",
             "enable_container_border": false,
             "container_border_width": 1,
@@ -1103,8 +1103,8 @@
         "use_global_button_styling": false,
         "custom_button_padding_y": 27,
         "custom_button_font_size": 24,
-        "button_bg_color": "#1d3a1d",
-        "button_hover_color": "#1d3a1d",
+        "button_bg_color": "#983131",
+        "button_hover_color": "#5f0810",
         "button_text_color": "#ffffff",
         "star_color": "#f5e9db",
         "background_color": "#ffffff",
@@ -2114,7 +2114,7 @@
       "settings": {
         "use_theme_colors": true,
         "show_heading": true,
-        "title_part_1": "Coffee vs.",
+        "title_part_1": "... vs.",
         "title_part_2": "8 moods",
         "title_part_1_color": "#5f0810",
         "title_part_2_color": "#5f0810",
@@ -2745,6 +2745,7 @@
         "bullet_list_6nqfB7",
         "dropdown_WcJYch"
       ],
+      "disabled": true,
       "name": "Image with Text",
       "settings": {
         "use_theme_colors": false,
@@ -2858,6 +2859,7 @@
             "title": "Outstanding Quality",
             "content": "<p>I've been shopping with this brand for over a year now and the quality never disappoints. Every purchase has exceeded my expectations and their customer service is exceptional.</p>",
             "author_name": "Sarah M.",
+            "avatar_image": "shopify://shop_images/Cramp-Patch-ecom-asset-3_1000x_9cf722fe-9372-4259-9a65-17636033b333.jpg",
             "rating": 5,
             "verified": true,
             "show_purchase_date": false,
@@ -3248,6 +3250,159 @@
         "border_radius": 8,
         "enable_shadow": false
       }
+    },
+    "video_testimonials_QaYpEt": {
+      "type": "video-testimonials",
+      "blocks": {
+        "video_testimonial_XLFn9f": {
+          "type": "video_testimonial",
+          "settings": {
+            "video_alt": "Customer testimonial video",
+            "video_text": "",
+            "rating": 5,
+            "review_quote": "Oh wouah, c'était très intense! Tu pars direct dans une autre dimension... J'ai envie d'y retourner, j'ai adoré, c'était vraiment cool!",
+            "review_author": "Haidar",
+            "show_product_card": true,
+            "product": ""
+          }
+        },
+        "video_testimonial_mKzg3K": {
+          "type": "video_testimonial",
+          "settings": {
+            "video_alt": "Customer testimonial video",
+            "video_text": "",
+            "rating": 5,
+            "review_quote": "Complètement wow! Un peu la même sensation qu'un saut en chute libre ou quand on prend une décharge d'adrénaline.",
+            "review_author": "Julie",
+            "show_product_card": true,
+            "product": ""
+          }
+        },
+        "video_testimonial_N6JkfT": {
+          "type": "video_testimonial",
+          "settings": {
+            "video_alt": "Customer testimonial video",
+            "video_text": "Quand ça ralentissait, ça ralentissait.",
+            "rating": 5,
+            "review_quote": "Beaucoup de couleurs alors que la lumière est blanche, c'est ça qui est assez surprenant... La musique rythmait le visuel!",
+            "review_author": "Nathalie",
+            "show_product_card": true,
+            "product": ""
+          }
+        },
+        "video_testimonial_9Hkr4a": {
+          "type": "video_testimonial",
+          "settings": {
+            "video_alt": "Customer testimonial video",
+            "video_text": "J'avais comme une sensation",
+            "rating": 5,
+            "review_quote": "Oh pardon, wouah. J'avais jamais vécu ce genre de moment. J'étais comme un oiseau qui volait. C'était hyper agréable de ressentir ça!",
+            "review_author": "Aurélie",
+            "show_product_card": true,
+            "product": ""
+          }
+        },
+        "video_testimonial_Wm837i": {
+          "type": "video_testimonial",
+          "settings": {
+            "video_alt": "Customer testimonial video",
+            "video_text": "J'ai pu me sentir soit plus créative.",
+            "rating": 5,
+            "review_quote": "C'est fou à quel point c'est différent d'u programme à l'autre... Magique, pour moi l'expérience était magique.",
+            "review_author": "Priscilla",
+            "show_product_card": true,
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_testimonial_XLFn9f",
+        "video_testimonial_mKzg3K",
+        "video_testimonial_N6JkfT",
+        "video_testimonial_9Hkr4a",
+        "video_testimonial_Wm837i"
+      ],
+      "name": "Video Testimonials",
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_left": 15,
+        "padding_right": 15,
+        "mobile_compact_cards": false,
+        "card_width_desktop": 280,
+        "card_width_mobile": 220,
+        "enable_card_border": true,
+        "card_border_width": 1,
+        "card_border_style": "solid",
+        "card_border_color": "#e2e8f0",
+        "heading_size_mobile": 28,
+        "heading_size_desktop": 36,
+        "subtitle_size_mobile": 14,
+        "subtitle_size_desktop": 16,
+        "review_quote_size_mobile": 12,
+        "review_quote_size_desktop": 14,
+        "review_author_size_mobile": 10,
+        "review_author_size_desktop": 12,
+        "heading_accent": "",
+        "heading_regular": "Real People, Real Results",
+        "subtitle": "",
+        "show_navigation_desktop": true,
+        "show_navigation_mobile": false,
+        "use_theme_colors": false,
+        "background_color": "#f8fafc",
+        "use_gradient": false,
+        "gradient_start_color": "#f8fafc",
+        "gradient_end_color": "#e2e8f0",
+        "gradient_angle": 180,
+        "heading_color": "#1e293b",
+        "subtitle_color": "#64748b",
+        "override_global_accent": false,
+        "accent_font_family": "inherit",
+        "accent_font_style": "normal",
+        "accent_font_weight": "inherit",
+        "accent_letter_spacing": "inherit",
+        "accent_text_transform": "none",
+        "accent_color": "#EF4A65",
+        "use_accent_gradient": false,
+        "accent_text_gradient": "linear-gradient(45deg, rgba(239, 74, 101, 1), rgba(255, 107, 157, 1) 100%)",
+        "accent_text_margin_left": 0,
+        "card_background": "#ffffff",
+        "review_content_background": "#ffffff",
+        "review_border_width": 0,
+        "review_border_style": "solid",
+        "review_border_color": "#e2e8f0",
+        "use_global_nav_buttons": true,
+        "prev_button_bg": "#ffffff",
+        "prev_button_color": "#000000",
+        "prev_button_border": "#e0e0e0",
+        "next_button_bg": "#EF4A65",
+        "next_button_color": "#ffffff",
+        "next_button_border": "#EF4A65",
+        "video_border_radius": 12,
+        "product_card_border_radius": 8,
+        "product_image_border_radius": 6,
+        "product_title_color": "#ffffff",
+        "product_title_font_size": 13,
+        "product_title_font_weight": 600,
+        "product_price_color": "#ffffff",
+        "product_price_font_size": 13,
+        "product_price_font_weight": 500,
+        "product_original_price_color": "#ffffff",
+        "show_verified_badge": true,
+        "verified_badge_color": "#3b82f6",
+        "verified_badge_text": "Verified",
+        "verified_icon_color": "#3b82f6",
+        "review_author_background_color": "#3b82f6",
+        "review_author_text_color": "#ffffff",
+        "review_author_border_width": 0,
+        "review_author_border_style": "solid",
+        "review_author_border_color": "#3b82f6",
+        "review_author_border_radius": 50,
+        "star_color": "#fbbf24",
+        "star_size": 16,
+        "star_margin_right": 0,
+        "review_quote_color": "#374151"
+      }
     }
   },
   "order": [
@@ -3269,6 +3424,7 @@
     "image_with_text_cC3QeF",
     "testimonials_erbHYR",
     "store_faq_Lpd3PW",
-    "satisfaction_guarantee_J4ypTy"
+    "satisfaction_guarantee_J4ypTy",
+    "video_testimonials_QaYpEt"
   ]
 }
