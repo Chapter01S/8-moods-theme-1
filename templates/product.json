@@ -1663,7 +1663,7 @@
         "image_position_mobile": "above",
         "image_column_width": 50,
         "show_disclaimer": true,
-        "disclaimer_text": "* Based on internal studies and customer feedback surveys.",
+        "disclaimer_text": "* Gebaseerd op een gemiddelde van klantgegevenes binnengekregen *",
         "disclaimer_color": "#c6c6c6",
         "disclaimer_icon_color": "#f2f2f2",
         "disclaimer_background_color": "#56090f",
