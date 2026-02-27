@@ -916,8 +916,8 @@
         "video_carousel_standalone_7kTmTy": {
           "type": "video_carousel_standalone",
           "settings": {
-            "heading": "Onze klanten",
-            "heading_size": 24,
+            "heading": "Geliefd Door 10.000+ Vrouwen",
+            "heading_size": 20,
             "heading_color": "#333333",
             "scrollbar_color": "#91323c",
             "disable_sound_controls": false,
@@ -933,7 +933,7 @@
             "video_size": 150,
             "show_social_badge": false,
             "social_platform": "tiktok",
-            "view_count": 56,
+            "view_count": 12.1,
             "badge_text": "Over",
             "badge_suffix": "M Views On TikTok",
             "use_gradient_text": false,
