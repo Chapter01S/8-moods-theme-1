@@ -16,6 +16,7 @@
       "blocks": {
         "menu_column_1": {
           "type": "menu_column",
+          "disabled": true,
           "settings": {
             "heading": "Products",
             "menu": ""
@@ -23,6 +24,7 @@
         },
         "menu_column_2": {
           "type": "menu_column",
+          "disabled": true,
           "settings": {
             "heading": "Company",
             "menu": ""
@@ -96,7 +98,7 @@
         "footer_border_color": "#333333",
         "footer_menu_color": "#ffffff",
         "footer_menu_hover_color": "#ffffff",
-        "footer_divider_color": "#181b1d",
+        "footer_divider_color": "#f8f8f8",
         "localization_label_color": "#5f0810",
         "footer_heading_size": 22,
         "footer_text_size": 14,
