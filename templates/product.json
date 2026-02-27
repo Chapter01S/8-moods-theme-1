@@ -60,7 +60,7 @@
           "settings": {
             "use_custom_title": false,
             "custom_title": "{self heating pad}",
-            "font_size": 36,
+            "font_size": 33,
             "margin_top": -10,
             "margin_bottom": 10,
             "title_color": "#333030",
