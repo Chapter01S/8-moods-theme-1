@@ -14,6 +14,7 @@
       "blocks": {
         "product_benefits_cP6qW9": {
           "type": "product_benefits",
+          "disabled": true,
           "settings": {
             "benefits_position": "right",
             "icon_size_desktop": 48,
@@ -70,9 +71,9 @@
         "award_badge_XLzwhf": {
           "type": "award_badge",
           "settings": {
-            "award_badge_text": "by 8 moods",
+            "award_badge_text": "8 moods",
             "award_badge_text_color": "#ffffff",
-            "award_badge_bg_color": "#5f0810",
+            "award_badge_bg_color": "#871520",
             "award_badge_border_color": "rgba(0,0,0,0)",
             "award_badge_border_radius": 20,
             "award_badge_font_size": 14,
@@ -83,12 +84,12 @@
         "custom_text_jpmwCD": {
           "type": "custom_text",
           "settings": {
-            "text": "<p>Zelfactiverende warmtetherapie  geen batterijen, geen snoeren, geen gedoe. Plak het op, draag het de hele dag en laat de warmte het werk doen terwijl jij je leven leeft.</p>",
+            "text": "<p>Zelf-activerende warmtetherapie  geen batterijen, geen snoeren, geen gedoe. Plak het op, draag het de hele dag en laat de warmte het werk doen terwijl jij je leven leeft.</p>",
             "show_description": false,
             "description": "",
             "description_font_size": 12,
             "description_spacing": 4,
-            "description_color": "#5f0810",
+            "description_color": "#000000",
             "description_opacity": 0.8,
             "show_accent_text": false,
             "accent_text": "Accent Text",
@@ -118,7 +119,7 @@
             "use_image_after_icon": false,
             "text_align": "left",
             "font_size": 15,
-            "text_color": "#5f0810",
+            "text_color": "#000000",
             "link_color": "#0066cc",
             "margin_top": 8,
             "margin_bottom": 0,
