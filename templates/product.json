@@ -890,11 +890,11 @@
             "answer_color": "#000000",
             "answer_bg_color": "#ffffff",
             "accordion_mode": true,
-            "question_1": "Details",
+            "question_1": "Hoe Te Gebruiken?",
             "use_product_description_for_question_1": false,
-            "answer_1": "<p>Product description goes here.</p>",
-            "question_2": "Matcha at home",
-            "answer_2": "<p>Application instructions go here.</p>",
+            "answer_1": "<p>1. Trek de patch voorzichtig uit het sachet. De patch begint na gemiddeld 5 minuten op te warmen zodra hij in contact komt met zuurstof.</p><p>2. Bevestig de zelfklevende zijde van de patch op de buitenkant of binnenkant van je ondergoed of kleding, ter hoogte van je onderbuik of onderrug.</p><p>3. Geniet van de comfortabele, rustgevende warmte. De patch blijft tot wel 12 uur warm.</p>",
+            "question_2": "Verzendingen & Retours",
+            "answer_2": "<p>Bestellingen binnen Nederland worden geleverd binnen <strong>1–2 werkdagen</strong>.</p><p>Niet helemaal tevreden? Geen probleem. Je hebt <strong>14 dagen de tijd om je bestelling te retourneren</strong> – zonder opgaaf van reden, volgens de EU-wetgeving.</p>",
             "question_3": "Ingredienten",
             "answer_3": "<p>- IJZERPOEDER</p><p>- ZOUT</p><p>- ACTIVERINGSKOOL</p><p>- WATER</p><p>- VERMICULIET</p>",
             "question_4": "How does it taste?",
@@ -919,7 +919,7 @@
             "heading": "Onze klanten",
             "heading_size": 24,
             "heading_color": "#333333",
-            "scrollbar_color": "#707070",
+            "scrollbar_color": "#91323c",
             "disable_sound_controls": false,
             "enable_autoplay": false,
             "show_sound_controls_autoplay": false,
@@ -953,6 +953,7 @@
         "carousel_default_video_Er3A4T": {
           "type": "carousel_default_video",
           "settings": {
+            "video": "shopify://files/videos/073bd96b72344d8e874f7d6570fcb790.HD-1080p-4.8Mbps-66814761.mp4",
             "enable_autoplay": false,
             "margin_top": 0,
             "margin_bottom": 0
@@ -961,6 +962,7 @@
         "carousel_default_video_erUr8i": {
           "type": "carousel_default_video",
           "settings": {
+            "video": "shopify://files/videos/7a18e7de91d64520a50d2729408d3417.HD-1080p-4.8Mbps-66814755.mp4",
             "enable_autoplay": false,
             "margin_top": 0,
             "margin_bottom": 0
@@ -969,6 +971,7 @@
         "carousel_default_video_7bV39a": {
           "type": "carousel_default_video",
           "settings": {
+            "video": "shopify://files/videos/12fa86368bd649eb9578ae210dd85fe5.HD-1080p-4.8Mbps-66814754.mp4",
             "enable_autoplay": false,
             "margin_top": 0,
             "margin_bottom": 0
@@ -977,6 +980,7 @@
         "carousel_default_video_3q6jwP": {
           "type": "carousel_default_video",
           "settings": {
+            "video": "shopify://files/videos/f6ecf381cb62474bbeedf5109c5defb8.HD-1080p-7.2Mbps-66814753.mp4",
             "enable_autoplay": false,
             "margin_top": 0,
             "margin_bottom": 0
