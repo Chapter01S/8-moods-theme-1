@@ -915,7 +915,7 @@
             "heading": "See it in action",
             "heading_size": 24,
             "heading_color": "#333333",
-            "scrollbar_color": "#04c7ff",
+            "scrollbar_color": "#707070",
             "disable_sound_controls": false,
             "enable_autoplay": false,
             "show_sound_controls_autoplay": false,
@@ -942,6 +942,38 @@
             "divider_thickness": 1,
             "divider_margin": 10,
             "custom_badge_text": "",
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "carousel_default_video_Er3A4T": {
+          "type": "carousel_default_video",
+          "settings": {
+            "enable_autoplay": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "carousel_default_video_erUr8i": {
+          "type": "carousel_default_video",
+          "settings": {
+            "enable_autoplay": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "carousel_default_video_7bV39a": {
+          "type": "carousel_default_video",
+          "settings": {
+            "enable_autoplay": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "carousel_default_video_3q6jwP": {
+          "type": "carousel_default_video",
+          "settings": {
+            "enable_autoplay": false,
             "margin_top": 0,
             "margin_bottom": 0
           }
@@ -1004,6 +1036,10 @@
         "customer_review_NUEEPD",
         "product_faq_wY6Nc3",
         "video_carousel_standalone_7kTmTy",
+        "carousel_default_video_Er3A4T",
+        "carousel_default_video_erUr8i",
+        "carousel_default_video_7bV39a",
+        "carousel_default_video_3q6jwP",
         "product_upsell_VhNdbn"
       ],
       "custom_css": [
