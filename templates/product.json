@@ -1110,7 +1110,7 @@
         "use_theme_colors": false,
         "use_global_button_styling": false,
         "custom_button_padding_y": 27,
-        "custom_button_font_size": 21,
+        "custom_button_font_size": 15,
         "button_bg_color": "#a40011",
         "button_hover_color": "#5f0810",
         "button_text_color": "#ffffff",
