@@ -921,7 +921,7 @@
             "heading_color": "#333333",
             "scrollbar_color": "#91323c",
             "disable_sound_controls": false,
-            "enable_autoplay": false,
+            "enable_autoplay": true,
             "show_sound_controls_autoplay": false,
             "play_button_size": 30,
             "sound_button_size": 30,
