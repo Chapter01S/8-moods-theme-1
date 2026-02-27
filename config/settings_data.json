@@ -457,7 +457,7 @@
           "cart_shipping_protection_mXGeTd"
         ],
         "settings": {
-          "cart_customization_mode": true,
+          "cart_customization_mode": false,
           "use_theme_colors_cart_drawer": true,
           "upsell_carousel_mode": false,
           "drawer_heading_font_size_desktop": 20,
