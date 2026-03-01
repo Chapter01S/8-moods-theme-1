@@ -3046,13 +3046,37 @@
     "video_testimonials_QaYpEt": {
       "type": "video-testimonials",
       "blocks": {
+        "video_testimonial_PqUme8": {
+          "type": "video_testimonial",
+          "settings": {
+            "video_alt": "Customer testimonial video",
+            "video_text": "",
+            "rating": 5,
+            "review_quote": "Simpelweg het beste wat ik ooit voor mezelf heb gekocht tijdens mijn periode. Dat is alles. Gewoon koop hem.",
+            "review_author": "Sara",
+            "show_product_card": true,
+            "product": ""
+          }
+        },
+        "video_testimonial_DBV9E8": {
+          "type": "video_testimonial",
+          "settings": {
+            "video_alt": "Customer testimonial video",
+            "video_text": "",
+            "rating": 5,
+            "review_quote": "Ik was eerlijk gezegd sceptisch want ik had al zoveel dingen geprobeerd. Maar ik dacht, oké nog één keer. En ik ben zo blij dat ik het deed. Binnen 30 minuten voelde ik het verschil. Ik heb gewoon mijn hele dag gedaan alsof er niks was. Dit is echt een gamechanger voor mij",
+            "review_author": "Lisa",
+            "show_product_card": true,
+            "product": ""
+          }
+        },
         "video_testimonial_XLFn9f": {
           "type": "video_testimonial",
           "settings": {
             "video_alt": "Customer testimonial video",
             "video_text": "",
             "rating": 5,
-            "review_quote": "Oh wouah, c'était très intense! Tu pars direct dans une autre dimension... J'ai envie d'y retourner, j'ai adoré, c'était vraiment cool!",
+            "review_quote": "Waarom wist ik hier niet eerder van?! Gewoon opgeplakt onder mijn kleding en de hele dag naar mijn werk gegaan. Niemand had door dat ik dag 1 had. Dat alleen al is het waard",
             "review_author": "Haidar",
             "show_product_card": true,
             "product": ""
@@ -3060,11 +3084,12 @@
         },
         "video_testimonial_mKzg3K": {
           "type": "video_testimonial",
+          "disabled": true,
           "settings": {
             "video_alt": "Customer testimonial video",
             "video_text": "",
             "rating": 5,
-            "review_quote": "Complètement wow! Un peu la même sensation qu'un saut en chute libre ou quand on prend une décharge d'adrénaline.",
+            "review_quote": "Waarom wist ik hier niet eerder van?! Gewoon opgeplakt onder mijn kleding en de hele dag naar mijn werk gegaan. Niemand had door dat ik dag 1 had. Dat alleen al is het waard.",
             "review_author": "Julie",
             "show_product_card": true,
             "product": ""
@@ -3076,8 +3101,8 @@
             "video_alt": "Customer testimonial video",
             "video_text": "Quand ça ralentissait, ça ralentissait.",
             "rating": 5,
-            "review_quote": "Beaucoup de couleurs alors que la lumière est blanche, c'est ça qui est assez surprenant... La musique rythmait le visuel!",
-            "review_author": "Nathalie",
+            "review_quote": "Ik had hem opgeplakt voor school en letterlijk vergeten dat ik hem droeg. Dat zegt genoeg toch?! Hahahha",
+            "review_author": "Roos",
             "show_product_card": true,
             "product": ""
           }
@@ -3088,8 +3113,8 @@
             "video_alt": "Customer testimonial video",
             "video_text": "J'avais comme une sensation",
             "rating": 5,
-            "review_quote": "Oh pardon, wouah. J'avais jamais vécu ce genre de moment. J'étais comme un oiseau qui volait. C'était hyper agréable de ressentir ça!",
-            "review_author": "Aurélie",
+            "review_quote": "Ik ben moeder van twee en kan me echt geen uitvaldag permitteren. Elke maand was dag 1 een ramp. Nu plak ik hem op, zet koffie, en ga gewoon. Het klinkt simpel maar voor mij is dit echt een verschil",
+            "review_author": "Yasmine",
             "show_product_card": true,
             "product": ""
           }
@@ -3100,14 +3125,16 @@
             "video_alt": "Customer testimonial video",
             "video_text": "J'ai pu me sentir soit plus créative.",
             "rating": 5,
-            "review_quote": "C'est fou à quel point c'est différent d'u programme à l'autre... Magique, pour moi l'expérience était magique.",
-            "review_author": "Priscilla",
+            "review_quote": "Oké ik ga even eerlijk zijn. Ik twijfelde echt of dit iets voor mij was want ik dacht dat het gewoon weer zo'n ding zou zijn dat een beetje helpt maar niet echt. Maar nee. Hij werkt echt. De warmte is rustig en constant en ik merkte dat de krampen gewoon minder werden. Inmiddels bestel ik hem elke maand opnieuw.",
+            "review_author": "Femke",
             "show_product_card": true,
             "product": ""
           }
         }
       },
       "block_order": [
+        "video_testimonial_PqUme8",
+        "video_testimonial_DBV9E8",
         "video_testimonial_XLFn9f",
         "video_testimonial_mKzg3K",
         "video_testimonial_N6JkfT",
