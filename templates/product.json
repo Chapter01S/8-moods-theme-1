@@ -3387,7 +3387,7 @@
         "paragraph_CMthJf": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Kom als eerste te weten als er nieuwe collecties en exclusieve aanbiedingen zijn.</p>"
+            "text": "<p>Sluit je aan bij duizenden vrouwen die dag 1 niet meer vrezen. Ontvang tips, updates en exclusieve aanbiedingen</p>"
           }
         },
         "email_form_dcg8pi": {
@@ -3403,8 +3403,8 @@
       "name": "t:sections.newsletter.presets.name",
       "settings": {
         "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 16,
+        "padding_bottom": 12
       }
     },
     "store_faq_Lpd3PW": {
@@ -3414,49 +3414,50 @@
           "type": "faq_item",
           "name": "1",
           "settings": {
-            "question": "Is the matcha tested for quality?",
-            "answer": "<p>All of our products are sourced using a rigorous vetting process and then manufactured in regulated facilities adhering to strict quality standards, ensuring safety, purity, and consistency.</p>"
+            "question": "Hoe werken de patches precies?",
+            "answer": "<p>Trek hem uit het sachet en plak de zelfklevende buitenkant op je ondergoed, ter hoogte van je onderbuik of onderrug. Zodra hij lucht raakt begint hij vanzelf op te warmen. Geen knopjes, geen opladen, geen gedoe. Je voelt de warmte binnen ongeveer 5 minuten</p>"
           }
         },
         "faq_item_KQndp9": {
           "type": "faq_item",
           "name": "2",
           "settings": {
-            "question": "Does matcha contain caffeine?",
-            "answer": "<p>We accept major credit cards, PayPal, Shop Pay, and Apple Pay for your convenience and security.</p>"
+            "question": "Hoe lang duurt het voor ik iets voel?",
+            "answer": "<p>De meeste vrouwen voelen de warmte binnen 5 minuten. Verlichting van krampen begint gemiddeld binnen 30 minuten. Hij blijft tot 8 uur warm zodat jij gewoon je dag kan doen.</p>"
           }
         },
         "faq_item_FKAc3E": {
           "type": "faq_item",
           "name": "3",
           "settings": {
-            "question": "What payment methods do you accept?",
-            "answer": "<p>To place an order, simply browse our products, add items to your cart, and proceed to checkout. You can review your order before finalizing your purchase.</p>"
+            "question": "Is hij veilig voor mijn huid?",
+            "answer": "<p>De patch wordt op je ondergoed of kleding geplakt, nooit direct op je huid. Zo is hij veilig en comfortabel voor iedereen, ook als je een gevoelige huid hebt.</p>"
           }
         },
         "faq_item_NxPPHM": {
           "type": "faq_item",
           "settings": {
-            "question": "How do I prepare matcha?",
-            "answer": "<p>To place an order, simply browse our products, add items to your cart, and proceed to checkout. You can review your order before finalizing your purchase.</p>"
+            "question": "Kan ik hem dragen tijdens sporten of op het werk?",
+            "answer": "<p>Absoluut. Hij is speciaal ontworpen om te blijven zitten tijdens beweging. Of je nu fietst, vergadert of sport, hij blijft op zijn plek en niemand ziet hem onder je kleding.</p>"
           }
         },
         "faq_item_QMRATN": {
           "type": "faq_item",
           "settings": {
-            "question": "How do I place an order?",
-            "answer": "<p>To place an order, simply browse our products, add items to your cart, and proceed to checkout. You can review your order before finalizing your purchase.</p>"
+            "question": "Hoe snel wordt mijn bestelling geleverd?",
+            "answer": "<p>We verzenden binnen 1 tot 2 werkdagen. Gratis verzending bij bestellingen boven de 35 euro. Niet tevreden? Dan krijg je binnen 30 dagen je geld terug, geen vragen gesteld.</p>"
           }
         },
         "faq_item_yAPqUQ": {
           "type": "faq_item",
           "settings": {
-            "question": "Is your matcha organic?",
-            "answer": "<p>To place an order, simply browse our products, add items to your cart, and proceed to checkout. You can review your order before finalizing your purchase.</p>"
+            "question": "Hoe vaak moet ik de patch gebruiken?",
+            "answer": "<p>Elke patch is goed voor één dag. De meeste vrouwen gebruiken hem op hun zwaarste dagen, maar dat bepaal jij helemaal zelf. Veel van onze klanten bestellen maandelijks bij zodat ze altijd klaar zijn als dag 1 aankomt.</p>"
           }
         },
         "faq_item_WbQwaa": {
           "type": "faq_item",
+          "disabled": true,
           "settings": {
             "question": "How long does shipping take?",
             "answer": "<p>To place an order, simply browse our products, add items to your cart, and proceed to checkout. You can review your order before finalizing your purchase.</p>"
@@ -3465,6 +3466,7 @@
         "faq_item_X9nh8P": {
           "type": "faq_item",
           "name": "4",
+          "disabled": true,
           "settings": {
             "question": "What does ceremonial mean?",
             "answer": "<p>Standard shipping typically takes 3-5 business days within the continental US. International shipping times vary by location.</p>"
@@ -3485,19 +3487,19 @@
         "use_theme_colors": false,
         "heading": "Your Questions Answered",
         "subtitle": "<p>We offer a 90-day money back guarantee.</p>",
-        "heading_color": "#871520",
+        "heading_color": "#333030",
         "subtitle_color": "#ffffff",
         "section_padding": 40,
         "container_padding_mobile": 15,
         "container_padding_desktop": 15,
         "section_bg_color": "#ffffff",
-        "border_radius": 4,
-        "border_color": "#871520",
+        "border_radius": 8,
+        "border_color": "#a40011",
         "divider_color": "#e5e5e5",
         "border_style": "full",
-        "question_color": "#ffffff",
-        "question_bg_color": "#871520",
-        "answer_color": "#ffffff",
+        "question_color": "#333030",
+        "question_bg_color": "#f8f8f8",
+        "answer_color": "#000000",
         "answer_bg_color": "#ffffff",
         "accordion_mode": true,
         "image_border_radius": 8,
