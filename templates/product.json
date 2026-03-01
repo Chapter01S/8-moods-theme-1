@@ -612,7 +612,7 @@
             "container_bg_color": "#ffffff",
             "border_color": "#ffffff",
             "enable_container_border": false,
-            "container_border_width": 1,
+            "container_border_width": 2,
             "container_border_style": "solid",
             "container_border_color": "#ffffff",
             "container_border_radius": 10,
@@ -623,7 +623,7 @@
             "icon_size": 30,
             "text_small_size": 11,
             "text_large_size": 12,
-            "margin_top": -20,
+            "margin_top": -10,
             "margin_bottom": -5
           }
         },
