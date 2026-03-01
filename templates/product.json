@@ -3230,7 +3230,7 @@
           "type": "benefit",
           "settings": {
             "title": "Self-care & Rust",
-            "description": "Praktische tips en zachte reminders om beter voor jezelf te zorgen, afgestemd op jouw lichaam.",
+            "description": "Tips en reminders om beter voor jezelf te zorgen, ook op de dagen dat dat het moeilijkst voelt.",
             "preset_icon": "lightning",
             "use_custom_icon": false,
             "custom_icon_svg": "",
@@ -3243,7 +3243,7 @@
           "type": "benefit",
           "settings": {
             "title": "Menstruatie Tips",
-            "description": "Heldere info over je cyclus, hormonale balans en wat jij nodig hebt in elke fase.",
+            "description": "Info over je cyclus, je hormonen en wat jouw lichaam eigenlijk nodig heeft in elke fase.",
             "preset_icon": "shield",
             "use_custom_icon": false,
             "custom_icon_svg": "",
@@ -3255,8 +3255,8 @@
         "benefit_JkY3bk": {
           "type": "benefit",
           "settings": {
-            "title": "Exclusive Offers",
-            "description": "Als eerste updates over nieuwe launches, speciale acties en community-only voordelen.",
+            "title": "Exclusieve Voordelen",
+            "description": "Als eerste weten wat er nieuw is, speciale acties en aanbiedingen die alleen voor onze community zijn.",
             "preset_icon": "refresh",
             "use_custom_icon": false,
             "custom_icon_svg": "",
@@ -3273,9 +3273,9 @@
       ],
       "name": "4 Benefits",
       "settings": {
-        "heading_regular": "Join De Community Van",
+        "heading_regular": "Word Lid Van",
         "heading_accent": "8 moods",
-        "subtitle": "We zijn constant bezig met het vinden van manier en deze te delen om het vrouwelijkheid een stukje beter te maken. Join gratis de community en blijf up to date over alle nieuwe hacks",
+        "subtitle": "Elke maand is anders, maar jij hoeft het niet alleen uit te zoeken. Word deel van onze community en krijg alles wat je nodig hebt om je cyclus een stuk draaglijker te maken.",
         "desktop_layout": "row",
         "use_theme_colors": true,
         "heading_alignment_mobile": "center",
