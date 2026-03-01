@@ -1716,7 +1716,7 @@
             "media_type": "image",
             "step_image": "shopify://shop_images/4_f054bc1e-16db-4441-9df1-f6e2d0042071.webp",
             "step_title": "Werk",
-            "step_description": "Van de gebruikers geeft aan minder spanning te voelen tijdens lange werkdagen dankzij constante, rustgevende warmte."
+            "step_description": "Omdat je toch moet werken, ook al zou je liever thuis op de bank liggen. Nu hoef je niet meer te doen alsof je geen pijn hebt. Gewoon zitten, focussen en je dag doen."
           }
         },
         "item_xchxRG": {
@@ -1725,7 +1725,7 @@
             "media_type": "image",
             "step_image": "shopify://shop_images/istockphoto-1338469104-612x612.jpg",
             "step_title": "School",
-            "step_description": "Van onze gebruikers waardeert de patch als dagelijkse ondersteuning, vooral op plekken zoals school."
+            "step_description": "Omdat een lesdag niet nog zwaarder hoeft te zijn door krampen. Plak hem op voor je de deur uitgaat en vergeet hem de rest van de dag."
           }
         },
         "item_F8hwhj": {
@@ -1734,7 +1734,7 @@
             "media_type": "image",
             "step_image": "shopify://shop_images/2_91bdac5c-81ca-47ff-8b78-347caad8ba34.webp",
             "step_title": "Onderweg",
-            "step_description": "Van onze gebruikers ervaart extra comfort onderweg zodat ze zich ondersteund voelen tijdens fietsen, wandelen of reizen."
+            "step_description": "Omdat onderweg al stressvol en lang genoeg kan zijn. Gun jezelf wat rust, waar je ook naartoe gaat."
           }
         }
       },
@@ -1784,8 +1784,8 @@
         "subtitle_color": "#1a371a",
         "step_title_color": "#1a371a",
         "step_description_color": "#1a371a",
-        "override_global_accent": false,
-        "use_accent_gradient": false,
+        "override_global_accent": true,
+        "use_accent_gradient": true,
         "accent_text_gradient": "linear-gradient(45deg, rgba(239, 74, 101, 1), rgba(255, 107, 157, 1) 100%)",
         "accent_color": "#1b3b1c",
         "accent_text_margin_left": 0,
@@ -1794,9 +1794,9 @@
         "divider_thickness": 2,
         "divider_color": "#000000",
         "divider_alignment": "center",
-        "enable_card_styling": false,
-        "card_background_color": "#ffffff",
-        "card_border_color": "#333030",
+        "enable_card_styling": true,
+        "card_background_color": "#f9f9f9",
+        "card_border_color": "#dddddd",
         "card_border_width": 2,
         "card_border_radius": 8,
         "image_border_radius": 8,
