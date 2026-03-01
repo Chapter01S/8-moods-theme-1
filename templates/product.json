@@ -2053,7 +2053,7 @@
         "image_position_mobile": "above",
         "image_column_width": 50,
         "show_disclaimer": true,
-        "disclaimer_text": "* Gebaseerd op een gemiddelde van klantgegevenes binnengekregen *",
+        "disclaimer_text": "<em>* gebaseerd op klantgegevens *</em>",
         "disclaimer_color": "#ffffff",
         "disclaimer_icon_color": "#ffffff",
         "disclaimer_background_color": "#56090f",
