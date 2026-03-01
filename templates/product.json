@@ -1959,24 +1959,24 @@
           "type": "statistic",
           "settings": {
             "number": "8x",
-            "title": "Verlicht Menstruatiepijn",
-            "description": "Verlicht de pijn tijdens menstruatie tot wel ..x waardoor jou dag makkelijker wordt en jij je zelf weer kan zijn"
+            "title": "Langer Werkzaam Dan Een Standaard Pijnstiller",
+            "description": "Warmtetherapie blijft tot 8 uur actief, waar een standaard pijnstiller gemiddeld na 4 uur uitgewerkt is."
           }
         },
         "statistic_ccPHWk": {
           "type": "statistic",
           "settings": {
-            "number": "150%",
-            "title": "...% Meer ...",
-            "description": "..."
+            "number": "93%",
+            "title": "Voelde Verlichting Binnen 30 Minuten",
+            "description": "Van onze gebruikers ervaart merkbare verlichting binnen 30 minuten na het oplakken van de patch."
           }
         },
         "statistic_KUjbFV": {
           "type": "statistic",
           "settings": {
-            "number": "10.000+",
-            "title": "Boost je Mood tot wel 275%",
-            "description": "No sugar, no additives — just clean, plant-powered fuel for your day."
+            "number": "100%",
+            "title": "Zonder Medicatie Of Bijwerkingen",
+            "description": "Geen invloed op je maag, je hormonen of je hoofd. Alleen zachte, constante warmte die je lichaam ondersteunt op zijn eigen manier."
           }
         }
       },
@@ -1991,7 +1991,7 @@
         "override_theme_section_background": false,
         "heading": "Het Effect Van",
         "heading_accent": "8 moods",
-        "subtitle": "<p>Unlike trendy powders or artificial boosters, matcha has been trusted for centuries — and modern science backs it up. Every cup delivers real benefits you can feel.</p>",
+        "subtitle": "<p>Warmte is geen trend of tijdelijke hype. Onderzoek laat zien dat warmte menstruatiepijn effectief kan verlichten, net zo goed als veelgebruikte oplossingen maar dan zonder de bijwerkingen. Met al deze kennis in gedachten heeft <em><strong>8moods</strong></em> het perfecte product gemaakt, speciaal voor vrouwen die gewoon door willen met hun dag.</p>",
         "heading_vertical_alignment": "center",
         "heading_color": "#ffffff",
         "heading_size_mobile": 46,
