@@ -1,6 +1,246 @@
+{% doc %}
+  @prompt
+    marquee with text going from left to write. But give me the option to make some text bold and some not. and give me the option to adjust the spacing between the letters, give me also the option to dictate the space between each marquee text 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-marquee-container-{{ ai_gen_id }} {
+    width: {{ block.settings.desktop_width_percent }}%;
+    overflow: hidden;
+    background-color: {{ block.settings.background_color }};
+    padding: {{ block.settings.vertical_padding }}px 0;
+    display: block;
+  }
+
+  .ai-marquee-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    width: fit-content;
+    animation: ai-marquee-scroll-{{ ai_gen_id }} {{ block.settings.scroll_speed }}s linear infinite;
+  }
+
+  .ai-marquee-content-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    padding-right: {{ block.settings.gap_between_repeats }}px;
+  }
+
+  .ai-marquee-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.font_size }}px;
+    color: {{ block.settings.text_color }};
+    letter-spacing: {{ block.settings.letter_spacing }}px;
+    font-weight: {{ block.settings.font_weight }};
+    word-spacing: {{ block.settings.word_spacing }}px;
+  }
+
+  .ai-marquee-text-{{ ai_gen_id }} strong {
+    font-weight: {{ block.settings.bold_font_weight }};
+  }
+
+  @keyframes ai-marquee-scroll-{{ ai_gen_id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .ai-marquee-container-{{ ai_gen_id }}:hover .ai-marquee-wrapper-{{ ai_gen_id }} {
+    {% if block.settings.pause_on_hover %}
+      animation-play-state: paused;
+    {% endif %}
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-marquee-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<marquee-block-{{ ai_gen_id }} class="ai-marquee-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-marquee-wrapper-{{ ai_gen_id }}">
+    <div class="ai-marquee-content-{{ ai_gen_id }}">
+      <div class="ai-marquee-text-{{ ai_gen_id }}">
+        {{ block.settings.marquee_text }}
+      </div>
+    </div>
+    <div class="ai-marquee-content-{{ ai_gen_id }}">
+      <div class="ai-marquee-text-{{ ai_gen_id }}">
+        {{ block.settings.marquee_text }}
+      </div>
+    </div>
+  </div>
+</marquee-block-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class MarqueeBlock{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.adjustMarqueeSpeed();
+      }
+
+      adjustMarqueeSpeed() {
+        const wrapper = this.querySelector('.ai-marquee-wrapper-{{ ai_gen_id }}');
+        if (wrapper) {
+          const contentWidth = wrapper.scrollWidth / 2;
+          const speed = {{ block.settings.scroll_speed }};
+          wrapper.style.animationDuration = speed + 's';
+        }
+      }
+    }
+
+    customElements.define('marquee-block-{{ ai_gen_id }}', MarqueeBlock{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Marquee text",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "marquee_text",
+      "label": "Marquee text",
+      "default": "<p>Welcome to our store • <strong>Free shipping</strong> on orders over $50 • New arrivals weekly</p>",
+      "info": "Use the bold button in the editor to make text bold"
+    },
+    {
+      "type": "header",
+      "content": "Text style"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "letter_spacing",
+      "label": "Letter spacing",
+      "min": -2,
+      "max": 10,
+      "step": 0.5,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "word_spacing",
+      "label": "Word spacing",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 0,
+      "info": "Space between each word in the text"
+    },
+    {
+      "type": "range",
+      "id": "font_weight",
+      "label": "Regular font weight",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "bold_font_weight",
+      "label": "Bold font weight",
+      "min": 500,
+      "max": 900,
+      "step": 100,
+      "default": 700
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "label": "Scroll speed",
+      "min": 5,
+      "max": 50,
+      "step": 5,
+      "unit": "s",
+      "default": 20,
+      "info": "Lower number = faster scroll"
+    },
+    {
+      "type": "range",
+      "id": "gap_between_repeats",
+      "label": "Gap between repeats",
+      "min": 20,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 100
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "vertical_padding",
+      "label": "Vertical padding",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f5f5f5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee text"
+    }
+  ]
+}
 {% endschema %}
