@@ -261,6 +261,7 @@
         },
         "quantity_bundle_3RHxGN": {
           "type": "quantity_bundle",
+          "disabled": true,
           "settings": {
             "layout_type": "horizontal",
             "grid_show_images": true,
@@ -401,7 +402,6 @@
         },
         "quantity_break_fNAHPm": {
           "type": "quantity_break",
-          "disabled": true,
           "settings": {
             "show_radio_buttons": true,
             "enable_variant_selection": false,
@@ -433,7 +433,7 @@
             "option_3_custom_price": "",
             "option_3_compare_at_price": "",
             "hide_compare_at_price_option_3": false,
-            "show_option_4": true,
+            "show_option_4": false,
             "option_4_title": "Buy 4",
             "option_4_quantity": 4,
             "option_4_price": "",
@@ -503,11 +503,11 @@
             "quantity_circle_text_color": "#333333",
             "quantity_circle_font_size": 11,
             "quantity_circle_font_size_mobile": 10,
-            "best_deal_border_color": "#00c7ff",
+            "best_deal_border_color": "#a40011",
             "best_deal_background_color": "#f7fcff",
             "enable_selected_gradient": false,
             "selected_gradient_start": "#f7fcff",
-            "selected_gradient_end": "#e0f7ff",
+            "selected_gradient_end": "#a40011",
             "selected_gradient_direction": "to right",
             "title_color": "#000000",
             "price_color": "#000000",
