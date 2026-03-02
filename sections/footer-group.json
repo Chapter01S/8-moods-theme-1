@@ -50,6 +50,7 @@
         },
         "social_column_1": {
           "type": "social_column",
+          "disabled": true,
           "settings": {
             "heading": "Follow Us"
           }
