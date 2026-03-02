@@ -70,6 +70,7 @@
         },
         "award_badge_XLzwhf": {
           "type": "award_badge",
+          "disabled": true,
           "settings": {
             "award_badge_text": "8 moods",
             "award_badge_text_color": "#ffffff",
@@ -83,6 +84,7 @@
         },
         "custom_text_jpmwCD": {
           "type": "custom_text",
+          "disabled": true,
           "settings": {
             "text": "<p>De onzichtbare <strong>warmtepatch</strong> die menstruatiepijn verlicht, zodat jij gewoon door kunt met je dag</p>",
             "show_description": false,
@@ -139,6 +141,39 @@
             "divider_height": 1,
             "divider_style": "solid",
             "divider_spacing": 12
+          }
+        },
+        "benefits_grid_jzBUnM": {
+          "type": "benefits_grid",
+          "settings": {
+            "benefit_1_text": "Painless Hair Removal",
+            "benefit_1_use_image": false,
+            "benefit_1_use_custom_icon": false,
+            "benefit_1_custom_icon": "",
+            "benefit_2_text": "Long-Lasting Results",
+            "benefit_2_use_image": false,
+            "benefit_2_use_custom_icon": false,
+            "benefit_2_custom_icon": "",
+            "benefit_3_text": "Gentle on Sensitive Skin",
+            "benefit_3_use_image": false,
+            "benefit_3_use_custom_icon": false,
+            "benefit_3_custom_icon": "",
+            "benefit_4_text": "Clinically Proven Results",
+            "benefit_4_use_image": false,
+            "benefit_4_use_custom_icon": false,
+            "benefit_4_custom_icon": "",
+            "icon_bg_color": "#ffeaee",
+            "enable_icon_circle_stroke": false,
+            "icon_circle_stroke_color": "#ef4a65",
+            "icon_circle_stroke_width": 2,
+            "icon_stroke_color": "#871520",
+            "text_color": "#000000",
+            "font_size": 12,
+            "icon_size": 24,
+            "icon_container_size": 36,
+            "grid_gap": 15,
+            "container_margin_top": -21,
+            "container_margin_bottom": 15
           }
         },
         "simple_variant_picker_pWzPg6": {
@@ -202,7 +237,7 @@
         "custom_text_iyRjG7": {
           "type": "custom_text",
           "settings": {
-            "text": "<p><strong>Kies Jouw Bundle </strong></p>",
+            "text": "<p><strong>Kies Jouw verlichting kit </strong></p>",
             "show_description": false,
             "description": "",
             "description_font_size": 12,
@@ -240,7 +275,7 @@
             "text_color": "#20362a",
             "link_color": "#0066cc",
             "margin_top": 8,
-            "margin_bottom": -12,
+            "margin_bottom": 0,
             "padding_top": 0,
             "padding_bottom": 0,
             "use_container": true,
@@ -1031,6 +1066,7 @@
         "title_4EWLUd",
         "award_badge_XLzwhf",
         "custom_text_jpmwCD",
+        "benefits_grid_jzBUnM",
         "simple_variant_picker_pWzPg6",
         "custom_text_iyRjG7",
         "quantity_bundle_3RHxGN",
@@ -2637,7 +2673,7 @@
         "mobile_item_gap": 30,
         "font_size": 14,
         "mobile_font_size": 12,
-        "letter_spacing": 0.5,
+        "letter_spacing": 2,
         "uppercase_text": true,
         "override_bold": false,
         "icon_size": 20,

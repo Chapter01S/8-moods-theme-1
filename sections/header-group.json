@@ -14,10 +14,30 @@
     "blocks_MVVR9q": {
       "type": "_blocks",
       "blocks": {
+        "ai_gen_block_c38ed8e_XzWk3c": {
+          "type": "ai_gen_block_c38ed8e",
+          "settings": {
+            "marquee_text": "<p>• GRATIS VERZENDING <strong>BOVEN 40 EURO</strong> • <strong>30 DAGEN NIET GOED? GELD TERUG</strong> • SHOP DE WINTER-SALE MET TOT <strong>40% KORTING</strong> • ELKE MAAND OPNIEUW BESTELD <strong>DOOR DUIZENDEN VROUWEN</strong></p>",
+            "font_size": 14,
+            "letter_spacing": 0,
+            "word_spacing": 5,
+            "font_weight": 400,
+            "bold_font_weight": 700,
+            "text_color": "#ffffff",
+            "scroll_speed": 50,
+            "gap_between_repeats": 40,
+            "pause_on_hover": true,
+            "desktop_width_percent": 100,
+            "vertical_padding": 10,
+            "background_color": "#871520"
+          },
+          "blocks": {}
+        },
         "ai_gen_block_ae8da08_dfGbEt": {
           "type": "ai_gen_block_ae8da08",
+          "disabled": true,
           "settings": {
-            "text_1": "Gratis verzending <strong> boven 35 euro <strong></strong></strong>",
+            "text_1": "Gratis verzending <strong> boven 40 euro <strong></strong></strong>",
             "text_2": "30 dagen niet goed? <strong> Geld terug, geen gedoe</strong>",
             "text_3": "Shop de winter-sale met tot <strong>  40% korting </strong>",
             "text_4": "Elke maand opnieuw besteld door <strong> duizenden vrouwen <strong></strong></strong>",
@@ -32,14 +52,15 @@
             "font_weight": "400",
             "bold_font_weight": "700",
             "padding_vertical": 10,
-            "scroll_speed": 30,
+            "scroll_speed": 60,
             "pause_on_hover": true,
-            "text_spacing": 100
+            "text_spacing": 300
           },
           "blocks": {}
         }
       },
       "block_order": [
+        "ai_gen_block_c38ed8e_XzWk3c",
         "ai_gen_block_ae8da08_dfGbEt"
       ],
       "name": "Marquee text",
