@@ -1663,7 +1663,7 @@
             "text_spacing": 25,
             "bullet_1_text": "Geen pillen die je maag van streek maken",
             "bullet_2_text": "Geen kruik die je aan huis ketent",
-            "bullet_3_text": "Gewoon zachte warmte, de hele dag, onzichtbaar onder je kleding",
+            "bullet_3_text": "Tot 12 uur warmte, ook op drukke dagen",
             "bullet_4_text": "Discreet onder je kleding  niemand hoeft het te merken",
             "bullet_font_size": 16,
             "bullet_text_color": "#333333",
@@ -1699,7 +1699,6 @@
           "type": "step",
           "name": "1",
           "settings": {
-            "step_image": "shopify://shop_images/Evelaniq_Lifestyle_-2.jpg",
             "image_background_color": "#f8f8f8",
             "step_title": "Open de verpakking (Duhh)",
             "step_description": "Trek de patch voorzichtig uit het sachet. Zodra hij lucht raakt begint hij vanzelf op te warmen, geen knopje, geen opladen, niets.",
@@ -1711,6 +1710,7 @@
           "type": "step",
           "name": "2",
           "settings": {
+            "step_image": "shopify://shop_images/Evelaniq_Lifestyle_-2.jpg",
             "image_background_color": "#f8f8f8",
             "step_title": "Plak hem op",
             "step_description": "Bevestig de zelfklevende buitenkant op je ondergoed, ter hoogte van je onderbuik of onderrug. Hij zit vast en blijft zitten, ook als jij beweegt.",
