@@ -12,6 +12,7 @@
     "main": {
       "type": "main-page",
       "settings": {
+        "use_theme_colors": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -19,12 +20,32 @@
     "form": {
       "type": "contact-form",
       "settings": {
+        "use_theme_colors": false,
         "heading": "",
         "heading_size": "h1",
+        "validate_on_submit": true,
+        "show_success_message": true,
+        "auto_focus_errors": true,
+        "debounce_delay": 300,
+        "background_color": "#ffffff",
+        "heading_color": "#000000",
+        "text_color": "#000000",
+        "field_background_color": "#ffffff",
+        "field_border_color": "#e5e5e5",
+        "field_text_color": "#000000",
+        "placeholder_color": "#999999",
+        "button_background_color": "#000000",
+        "button_text_color": "#ffffff",
+        "button_hover_background_color": "#333333",
+        "success_color": "#28a745",
+        "error_color": "#dc3545",
         "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
-  "order": ["main", "form"]
+  "order": [
+    "main",
+    "form"
+  ]
 }

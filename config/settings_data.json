@@ -54,7 +54,7 @@
     "global_button_text_transform": "uppercase",
     "global_button_radius": 10,
     "global_button_background_color": "#181b1d",
-    "global_button_text_color_primary": "#e2f78e",
+    "global_button_text_color_primary": "#f8f8f8",
     "global_button_border_color": "#333030",
     "global_button_border_width": 0,
     "global_button_bottom_border_width": 0,
