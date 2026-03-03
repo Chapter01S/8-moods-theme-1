@@ -641,8 +641,8 @@
           "settings": {
             "notice_text_before": "Gratis verzending vanaf 35 euro",
             "notice_text_after": "",
-            "days_ahead": 2,
-            "show_suffix": true,
+            "days_ahead": 1,
+            "show_suffix": false,
             "custom_shipping_text": "#333333",
             "custom_date_color": "#333333",
             "custom_highlight_color_off_theme": "#4caf50",
