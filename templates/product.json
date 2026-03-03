@@ -175,6 +175,43 @@
             "container_margin_bottom": 15
           }
         },
+        "bullet_list_tkaRaG": {
+          "type": "bullet_list",
+          "settings": {
+            "use_theme_colors": true,
+            "bullet_1": "Gratis verzending vanaf 40 euro",
+            "bullet_2": "",
+            "bullet_3": "",
+            "bullet_4": "",
+            "bullet_5": "",
+            "bullet_6": "",
+            "layout_style": "vertical",
+            "row_gap": 15,
+            "use_custom_icon_1": false,
+            "custom_icon_1": "",
+            "use_custom_icon_2": false,
+            "custom_icon_2": "",
+            "use_custom_icon_3": false,
+            "custom_icon_3": "",
+            "use_custom_icon_4": false,
+            "custom_icon_4": "",
+            "use_custom_icon_5": false,
+            "custom_icon_5": "",
+            "use_custom_icon_6": false,
+            "custom_icon_6": "",
+            "icon_color": "#a40011",
+            "text_color": "#333333",
+            "icon_size": 20,
+            "text_size": 17,
+            "spacing": 12,
+            "icon_text_gap": 10,
+            "show_bg": false,
+            "bg_color": "#f5f5f5",
+            "border_radius": 4,
+            "margin_top": 10,
+            "margin_bottom": 10
+          }
+        },
         "simple_variant_picker_pWzPg6": {
           "type": "simple_variant_picker",
           "settings": {
@@ -444,7 +481,7 @@
             "hide_compare_price": false,
             "enable_custom_pricing": true,
             "selected_custom_price_format": "amount",
-            "show_savings_text": false,
+            "show_savings_text": true,
             "custom_savings_font_size": 12,
             "custom_savings_text_color": "#666666",
             "show_option_1": true,
@@ -474,7 +511,7 @@
             "option_4_custom_price": "",
             "option_4_compare_at_price": "",
             "hide_compare_at_price_option_4": false,
-            "hide_badges": true,
+            "hide_badges": false,
             "option_1_badge": "BEST VALUE",
             "option_2_badge": "POPULAR",
             "option_3_badge": "LIMITED",
@@ -586,43 +623,6 @@
           "type": "custom_liquid",
           "settings": {
             "custom_liquid": ""
-          }
-        },
-        "bullet_list_tkaRaG": {
-          "type": "bullet_list",
-          "settings": {
-            "use_theme_colors": true,
-            "bullet_1": "Gratis verzending vanaf 40 euro",
-            "bullet_2": "",
-            "bullet_3": "",
-            "bullet_4": "",
-            "bullet_5": "",
-            "bullet_6": "",
-            "layout_style": "vertical",
-            "row_gap": 15,
-            "use_custom_icon_1": false,
-            "custom_icon_1": "",
-            "use_custom_icon_2": false,
-            "custom_icon_2": "",
-            "use_custom_icon_3": false,
-            "custom_icon_3": "",
-            "use_custom_icon_4": false,
-            "custom_icon_4": "",
-            "use_custom_icon_5": false,
-            "custom_icon_5": "",
-            "use_custom_icon_6": false,
-            "custom_icon_6": "",
-            "icon_color": "#a40011",
-            "text_color": "#333333",
-            "icon_size": 20,
-            "text_size": 17,
-            "spacing": 12,
-            "icon_text_gap": 10,
-            "show_bg": false,
-            "bg_color": "#f5f5f5",
-            "border_radius": 4,
-            "margin_top": 10,
-            "margin_bottom": 10
           }
         },
         "shipping_notice_UUMJq8": {
@@ -742,7 +742,7 @@
           "type": "money_back_guarantee",
           "settings": {
             "use_theme_colors": false,
-            "text_small": "30-dagen",
+            "text_small": "14-dagen",
             "text_large": "niet goed geld-terug-garantie",
             "badge_icon": "shopify://shop_images/10146634.png",
             "container_bg_color": "#ffffff",
@@ -883,8 +883,8 @@
             "tab2_item_2_description": "Niemand ziet het. Jij voelt het wél  discreet onder elke outfit.",
             "tab2_item_2_brand_has": true,
             "tab2_item_2_others_has": false,
-            "tab2_item_3_name": "Werkt de hele dag door",
-            "tab2_item_3_description": "Geen nieuwe dosis nodig, gewoon plakken en vergeten",
+            "tab2_item_3_name": "Tot 12 uur warmte, ook op drukke dagen",
+            "tab2_item_3_description": "Werkt tijdens sporten, school en drukke werkdagen  zonder onderbreken",
             "tab2_item_3_brand_has": true,
             "tab2_item_3_others_has": false,
             "tab2_item_4_name": "Geschikt voor maag- en hormoongevoeligen",
@@ -1031,7 +1031,7 @@
             "use_product_description_for_question_1": false,
             "answer_1": "",
             "question_2": "Verzendingen & Retours",
-            "answer_2": "<p>Bestellingen binnen Nederland worden geleverd binnen <strong>1–2 werkdagen</strong>.</p><p>Niet helemaal tevreden? Geen probleem. Je hebt <strong>14 dagen de tijd om je bestelling te retourneren</strong> – zonder opgaaf van reden, volgens de EU-wetgeving.</p>",
+            "answer_2": "<p>Bestellingen worden binnen <strong>1–2 werkdagen verzonden</strong> en meestal binnen <strong>4–8 werkdagen bezorgd</strong>.</p><p><strong>Retourneren:</strong> Je kunt <strong>ongeopende</strong> producten binnen <strong>14 dagen</strong> retourneren. <strong>Geopende/gebruikte patches</strong> kunnen we om hygiëneredenen niet terugnemen. Is er iets mis met je bestelling? Neem contact op, dan lossen we het op.</p>",
             "question_3": "Ingredienten",
             "answer_3": "<p>- IJZERPOEDER</p><p>- ZOUT</p><p>- ACTIVERINGSKOOL</p><p>- WATER</p><p>- VERMICULIET</p>",
             "question_4": "",
@@ -1177,12 +1177,12 @@
         "award_badge_XLzwhf",
         "custom_text_jpmwCD",
         "benefits_grid_jzBUnM",
+        "bullet_list_tkaRaG",
         "simple_variant_picker_pWzPg6",
         "custom_text_iyRjG7",
         "quantity_bundle_3RHxGN",
         "quantity_break_fNAHPm",
         "custom_liquid_q6Wcnz",
-        "bullet_list_tkaRaG",
         "shipping_notice_UUMJq8",
         "add_to_cart_7nhY9K",
         "guarantee_badges_HAWQYD",
@@ -1976,7 +1976,7 @@
           "settings": {
             "badge_text": "5 min",
             "title": "De \"Warmup\"",
-            "description": "<p>Je plakt de patch zit op je ondergoed, en de warmte verspreidt zich zachtjes. Je voelt hem langzaam werken, precies waar jij het nodig hebt</p>",
+            "description": "<p>Je plakt de patch  op je ondergoed, en de warmte verspreidt zich zachtjes. Je voelt hem langzaam werken, precies waar jij het nodig hebt</p>",
             "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewbox=\"0 0 24 24\"><path fill=\"#ffffff\" d=\"M13.3 20.725q-.15.125-.313.2t-.362.075q-.2 0-.4-.088t-.35-.237q-1.025-1.1-1.513-2.25T9.876 16q0-.925.275-1.95t.95-2.65q.575-1.425.8-2.188t.225-1.412q0-.85-.375-1.587t-1.175-1.488q-.15-.15-.237-.35t-.088-.4q0-.2.075-.362t.2-.313q.15-.15.337-.225T11.25 3q.2 0 .375.075t.325.2q1.1 1.025 1.637 2.15t.538 2.375q0 .875-.263 1.838t-.912 2.512q-.625 1.5-.85 2.3t-.225 1.525q0 .875.363 1.688T13.35 19.3q.125.15.2.325t.075.375q0 .2-.075.388t-.25.337Zm4.875 0q-.15.125-.313.2T17.5 21q-.2 0-.4-.088t-.35-.237q-1.025-1.1-1.513-2.238t-.487-2.412q0-.925.275-1.975t.95-2.65q.575-1.425.8-2.175t.225-1.4q0-.85-.375-1.612T15.45 4.725q-.15-.15-.225-.337T15.15 4q0-.2.063-.363t.187-.312q.15-.15.35-.238t.4-.087q.2 0 .363.075t.312.2q1.1 1.025 1.638 2.15T19 7.8q0 .875-.263 1.838t-.912 2.537q-.625 1.5-.85 2.3t-.225 1.5q0 .875.375 1.713t1.125 1.637q.125.15.187.325t.063.35q0 .2-.075.4t-.25.325Zm-9.75 0q-.15.125-.313.2T7.75 21q-.2 0-.4-.088T7 20.676q-1.025-1.1-1.512-2.238T5 16.026q0-.925.275-1.975t.95-2.65q.575-1.425.8-2.175t.225-1.4q0-.85-.375-1.612T5.7 4.725q-.175-.15-.25-.337T5.375 4q0-.2.075-.375t.2-.325q.15-.15.338-.225T6.375 3q.2 0 .375.075t.325.2q1.1 1.025 1.638 2.138T9.25 7.8q0 .875-.25 1.838t-.9 2.512q-.625 1.5-.85 2.3t-.225 1.525q0 .875.363 1.713T8.5 19.325q.125.15.188.325t.062.35q0 .2-.075.4t-.25.325Z\"></path></svg>"
           }
         },
@@ -3421,6 +3421,7 @@
         "benefit_TrUMLC",
         "benefit_JkY3bk"
       ],
+      "disabled": true,
       "name": "4 Benefits",
       "settings": {
         "heading_regular": "Word Lid Van",
@@ -3522,6 +3523,7 @@
       "block_order": [
         "ai_gen_block_33de7c0_Eaj4kq"
       ],
+      "disabled": true,
       "settings": {}
     },
     "newsletter_ARrA8n": {
