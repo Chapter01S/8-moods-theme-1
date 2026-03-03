@@ -148,7 +148,7 @@
         "background_image_attachment": "scroll",
         "background_overlay_enable": true,
         "background_overlay_color": "#0000004d",
-        "background_overlay_opacity": 65,
+        "background_overlay_opacity": 95,
         "image_position": "right",
         "fit_image_to_height": false,
         "enable_image_fade_mask": true,
