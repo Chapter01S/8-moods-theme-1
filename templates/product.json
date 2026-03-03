@@ -588,6 +588,32 @@
             "custom_liquid": ""
           }
         },
+        "shipping_notice_UUMJq8": {
+          "type": "shipping_notice",
+          "settings": {
+            "notice_text_before": "Gratis verzending vanaf 35 euro",
+            "notice_text_after": "",
+            "days_ahead": 2,
+            "show_suffix": true,
+            "custom_shipping_text": "#333333",
+            "custom_date_color": "#333333",
+            "custom_highlight_color_off_theme": "#4caf50",
+            "custom_bg_color_off_theme": "#f5f5f5",
+            "highlight_color": "#4caf50",
+            "dot_color": "#4caf50",
+            "bg_color": "#f5f5f5",
+            "enable_border": false,
+            "border_color": "#e5e5e5",
+            "border_width": 1,
+            "border_style": "solid",
+            "font_size": 12,
+            "container_margin_top": 3,
+            "container_margin_bottom": 15,
+            "enable_animation": true,
+            "suffix_text": "Gratis verzending",
+            "text_alignment": "center"
+          }
+        },
         "add_to_cart_7nhY9K": {
           "type": "add_to_cart",
           "settings": {
@@ -636,39 +662,12 @@
             "mobile_stack": false
           }
         },
-        "shipping_notice_UUMJq8": {
-          "type": "shipping_notice",
-          "settings": {
-            "notice_text_before": "Gratis verzending vanaf 35 euro",
-            "notice_text_after": "",
-            "days_ahead": 2,
-            "show_suffix": true,
-            "custom_shipping_text": "#333333",
-            "custom_date_color": "#333333",
-            "custom_highlight_color_off_theme": "#4caf50",
-            "custom_bg_color_off_theme": "#f5f5f5",
-            "highlight_color": "#4caf50",
-            "dot_color": "#4caf50",
-            "bg_color": "#f5f5f5",
-            "enable_border": false,
-            "border_color": "#e5e5e5",
-            "border_width": 1,
-            "border_style": "solid",
-            "font_size": 12,
-            "container_margin_top": 3,
-            "container_margin_bottom": 15,
-            "enable_animation": true,
-            "suffix_text": "Gratis verzending",
-            "text_alignment": "center"
-          }
-        },
         "money_back_guarantee_U4mFjW": {
           "type": "money_back_guarantee",
-          "disabled": true,
           "settings": {
             "use_theme_colors": false,
-            "text_small": "Elke maand opnieuw besteld",
-            "text_large": "door duizenden vrouwen",
+            "text_small": "30-dagen",
+            "text_large": "niet goed geld terug",
             "badge_icon": "shopify://shop_images/10146634.png",
             "container_bg_color": "#ffffff",
             "border_color": "#ffffff",
@@ -1107,9 +1106,9 @@
         "quantity_bundle_3RHxGN",
         "quantity_break_fNAHPm",
         "custom_liquid_q6Wcnz",
+        "shipping_notice_UUMJq8",
         "add_to_cart_7nhY9K",
         "guarantee_badges_HAWQYD",
-        "shipping_notice_UUMJq8",
         "money_back_guarantee_U4mFjW",
         "product_labels_wQXkFE",
         "product_tabs_PYc3CQ",
