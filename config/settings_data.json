@@ -347,14 +347,13 @@
         "blocks": {
           "cart_progress_bar_MdnXLU": {
             "type": "cart_progress_bar",
-            "disabled": true,
             "settings": {
               "progress_bar_free_product": "",
               "shipping_away_text": "You're [missingAmount] away from Free Shipping",
               "free_product_away_text": "You're [missingAmount] away from [freeProduct]",
               "shipping_earn_text": "You've earned Free shipping",
               "free_product_earn_text": "You've earned [freeProduct]",
-              "product_free_shipping": 5,
+              "product_free_shipping": 40,
               "product_free_custom_id_title": "",
               "hide_icons_single_goal": false,
               "hide_icons_container_padding": 12,
@@ -369,7 +368,7 @@
               "hide_icons_progress_bar_inactive_color": "#ececec",
               "progress_text_font_size": 14,
               "reward_name_font_size": 10,
-              "cart_drawer_progress_active_color": "#1a371a",
+              "cart_drawer_progress_active_color": "#000000",
               "enable_progress_bar_gradient": false,
               "progress_bar_gradient_start_color": "#000000",
               "progress_bar_gradient_end_color": "#666666",
@@ -399,11 +398,11 @@
           "cart_social_proof_bar_rMkH4F": {
             "type": "cart-social_proof_bar",
             "settings": {
-              "social_proof_text": "Join 20,000+ happy customers!",
-              "social_proof_icon": "stars",
+              "social_proof_text": "Join 20,000+ happy women!",
+              "social_proof_icon": "users",
               "social_proof_bg_color": "#871520",
-              "social_proof_text_color": "#121212",
-              "social_proof_icon_color": "#121212"
+              "social_proof_text_color": "#ffffff",
+              "social_proof_icon_color": "#ffffff"
             }
           },
           "cart_money_back_guarantee_LgTUC6": {
@@ -413,6 +412,48 @@
               "money_back_guarantee_text": "30 Day Money Back Guarantee",
               "money_back_guarantee_icon": "seal-check",
               "money_back_guarantee_color": "#000000"
+            }
+          },
+          "cart_upsell_GPPmbQ": {
+            "type": "cart_upsell",
+            "settings": {
+              "upsell_product_1": "",
+              "show_upsell_description": false,
+              "upsell_description_text": "Short product description here",
+              "upsell_description_color": "#333333",
+              "upsell_show_price": true,
+              "upsell_button_text": "Add +",
+              "upsell_button_success_text": "Added!",
+              "show_upsell_best_seller_tag": true,
+              "upsell_best_seller_text": "BEST SELLER",
+              "upsell_best_seller_tag_color": "#e18942",
+              "upsell_best_seller_tag_text_color": "#ffffff",
+              "upsell_custom_bestseller_svg": "",
+              "upsell_card_background_color": "#ffffff",
+              "upsell_product_image_background_color": "#fcf9e6",
+              "upsell_title_color": "#111111",
+              "upsell_price_color": "#111111",
+              "upsell_variant_text_color": "#000000",
+              "upsell_variant_background_color": "#ffffff",
+              "upsell_variant_border_color": "#e0e0e0",
+              "upsell_variant_border_radius": 3,
+              "upsell_button_bg_color": "#181818",
+              "upsell_button_text_color": "#ffffff",
+              "upsell_button_border_radius": 2,
+              "upsell_card_border_radius": 10,
+              "upsell_margin_top": 4,
+              "upsell_margin_bottom": 4,
+              "upsell_border_style": "none",
+              "upsell_border_width": 0,
+              "upsell_border_color": "#000000",
+              "upsell_remove_container_border": false,
+              "upsell_image_border_radius": 4,
+              "upsell_title_font_size": 15,
+              "upsell_description_font_size": 11,
+              "upsell_price_font_size": 11,
+              "upsell_variant_font_size": 9,
+              "upsell_button_font_size": 12,
+              "upsell_tag_font_size": 11
             }
           },
           "cart_payment_icon_LNm8HV": {
@@ -455,13 +496,14 @@
           "cart_progress_bar_MdnXLU",
           "cart_social_proof_bar_rMkH4F",
           "cart_money_back_guarantee_LgTUC6",
+          "cart_upsell_GPPmbQ",
           "cart_payment_icon_LNm8HV",
           "cart_shipping_protection_mXGeTd"
         ],
         "settings": {
-          "cart_customization_mode": false,
-          "use_theme_colors_cart_drawer": true,
-          "upsell_carousel_mode": false,
+          "cart_customization_mode": true,
+          "use_theme_colors_cart_drawer": false,
+          "upsell_carousel_mode": true,
           "drawer_heading_font_size_desktop": 20,
           "drawer_heading_font_size_mobile": 22,
           "cart_title_font_size": 16,
@@ -483,7 +525,7 @@
           "drawer_footer_padding_right": 10,
           "cart_drawer_primary_background_color": "#ffffff",
           "cart_drawer_bg_gradient": "linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 100%)",
-          "cart_drawer_primary_text_color": "#1a371a",
+          "cart_drawer_primary_text_color": "#000000",
           "cart_drawer_header_bg": "#f8f8f8",
           "cart_drawer_header_height": 70,
           "drawer_close_button_top": 24,
