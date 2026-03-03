@@ -661,6 +661,32 @@
             "margin_bottom": -5
           }
         },
+        "emoji_benefits_NTpCe6": {
+          "type": "emoji_benefits",
+          "settings": {
+            "benefit_1": "Premium quality materials for durability",
+            "emoji_1": "✨",
+            "benefit_2": "Easy to use with simple instructions",
+            "emoji_2": "👍",
+            "benefit_3": "",
+            "emoji_3": "",
+            "benefit_4": "",
+            "emoji_4": "",
+            "benefit_5": "",
+            "emoji_5": "",
+            "benefit_6": "",
+            "emoji_6": "",
+            "text_size": 14,
+            "spacing": 10,
+            "margin_top": 0,
+            "margin_bottom": 15,
+            "text_color": "#000000",
+            "bg_color": "#ffffff",
+            "border_radius": 4,
+            "text_bold": false,
+            "font_weight": "400"
+          }
+        },
         "product_labels_wQXkFE": {
           "type": "product_labels",
           "disabled": true,
@@ -1083,6 +1109,7 @@
         "add_to_cart_7nhY9K",
         "guarantee_badges_HAWQYD",
         "money_back_guarantee_U4mFjW",
+        "emoji_benefits_NTpCe6",
         "product_labels_wQXkFE",
         "product_tabs_PYc3CQ",
         "payment_icons_mUTLJB",
