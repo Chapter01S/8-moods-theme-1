@@ -511,7 +511,7 @@
             "option_4_custom_price": "",
             "option_4_compare_at_price": "",
             "hide_compare_at_price_option_4": false,
-            "hide_badges": false,
+            "hide_badges": true,
             "option_1_badge": "BEST VALUE",
             "option_2_badge": "POPULAR",
             "option_3_badge": "LIMITED",
