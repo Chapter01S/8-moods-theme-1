@@ -15,7 +15,7 @@
         "rating_VmQ6dU": {
           "type": "rating",
           "settings": {
-            "rating_text": "<p>4.9/5 based on 1,422+ reviews</p>",
+            "rating_text": "<p>4.9/5  (2,412+ vrouwen)</p>",
             "use_theme_colors": false,
             "rating_text_color": "#ffffff",
             "rating_text_size": 14,
@@ -42,13 +42,26 @@
             "heading_size_mobile": 32,
             "heading_line_height": 1.2,
             "heading_line_height_mobile": 1.2,
-            "heading": "Ceremonial",
-            "heading_accent": "Matcha",
+            "heading": "Geen enkele kramp",
+            "heading_accent": "verdient jouw dag.",
             "accent_color": "#2a4d2a",
             "use_accent_gradient": false,
             "accent_gradient": "linear-gradient(45deg, rgba(239, 74, 101, 1), rgba(255, 107, 157, 1) 100%)",
             "margin_top": 0,
             "margin_bottom": 16
+          }
+        },
+        "subtitle_kXDN7x": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "<p>8 moods geeft je zachte warmte die de hele dag meeblijft  zodat krampen jouw plannen niet bepalen.</p>",
+            "subtitle_text_color": "#ffffff",
+            "subtitle_font_size_mobile": 16,
+            "subtitle_font_size_desktop": 18,
+            "subtitle_line_height": 1.5,
+            "subtitle_font_weight": "400",
+            "margin_top": 0,
+            "margin_bottom": 24
           }
         },
         "benefits_kRxQrA": {
@@ -60,13 +73,13 @@
             "benefits_flex_layout": true,
             "benefit_1_icon": "custom",
             "benefit_1_custom_svg": "<svg height=\"200px\" width=\"200px\" version=\"1.1\" id=\"_x32_\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 512 512\" fill=\"#000000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g><g id=\"SVGRepo_iconCarrier\"> <style type=\"text/css\"> .st0{fill:#3B6C3B;} </style> <g> <path class=\"st0\" d=\"M476.188,24.146c-6.748-3.504-60.728,38.022-185.304,67.086C230.347,105.355,62.5,153.527,65.286,392.815 L0,431.218l20.338,35.598c63.073-40.692,236.014-120.042,409.766-323.621c0,0-26.875,134.419-334.096,311.056 c103.685,53.758,249.604,53.758,360.979-76.806C568.346,246.888,476.188,24.146,476.188,24.146z\"></path> </g> </g></svg>",
-            "benefit_1_text": "100% Natural",
+            "benefit_1_text": "12 uur warmte",
             "benefit_2_icon": "custom",
             "benefit_2_custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"48\" height=\"32\" viewbox=\"0 0 48 32\">\n  <!-- Light gray tint instead of pure white -->\n  <rect width=\"48\" height=\"32\" fill=\"#f5f5f5\"></rect>\n  <circle cx=\"24\" cy=\"16\" r=\"9.6\" fill=\"#bc002d\"></circle>\n</svg>",
-            "benefit_2_text": "Imported from Japan",
+            "benefit_2_text": "Onzichtbaar onder kleding",
             "benefit_3_icon": "custom",
             "benefit_3_custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"48\" height=\"32\" viewbox=\"0 0 48 32\">\n  <!-- Light gray tint instead of pure white -->\n  <rect width=\"48\" height=\"32\" fill=\"#f5f5f5\"></rect>\n  <circle cx=\"24\" cy=\"16\" r=\"9.6\" fill=\"#bc002d\"></circle>\n</svg>",
-            "benefit_3_text": "",
+            "benefit_3_text": "Zit vast, beweegt mee",
             "margin_top": 0,
             "margin_bottom": 24
           }
@@ -113,6 +126,7 @@
       "block_order": [
         "rating_VmQ6dU",
         "heading_p9CVL9",
+        "subtitle_kXDN7x",
         "benefits_kRxQrA",
         "button_pgbiCn",
         "guarantee_zYQa6k"
