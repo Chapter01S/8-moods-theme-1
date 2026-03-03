@@ -56,7 +56,7 @@
           "settings": {
             "subtitle": "<p>8 moods geeft je zachte warmte die de hele dag meeblijft  zodat krampen jouw plannen niet bepalen.</p>",
             "subtitle_text_color": "#ffffff",
-            "subtitle_font_size_mobile": 16,
+            "subtitle_font_size_mobile": 12,
             "subtitle_font_size_desktop": 18,
             "subtitle_line_height": 1.5,
             "subtitle_font_weight": "400",
@@ -69,15 +69,15 @@
           "settings": {
             "use_theme_colors": false,
             "benefit_text_color": "#ffffff",
-            "benefit_icon_color": "#ef4a65",
+            "benefit_icon_color": "#871520",
             "benefits_flex_layout": true,
-            "benefit_1_icon": "custom",
+            "benefit_1_icon": "check_mark",
             "benefit_1_custom_svg": "<svg height=\"200px\" width=\"200px\" version=\"1.1\" id=\"_x32_\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 512 512\" fill=\"#000000\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g><g id=\"SVGRepo_iconCarrier\"> <style type=\"text/css\"> .st0{fill:#3B6C3B;} </style> <g> <path class=\"st0\" d=\"M476.188,24.146c-6.748-3.504-60.728,38.022-185.304,67.086C230.347,105.355,62.5,153.527,65.286,392.815 L0,431.218l20.338,35.598c63.073-40.692,236.014-120.042,409.766-323.621c0,0-26.875,134.419-334.096,311.056 c103.685,53.758,249.604,53.758,360.979-76.806C568.346,246.888,476.188,24.146,476.188,24.146z\"></path> </g> </g></svg>",
             "benefit_1_text": "12 uur warmte",
-            "benefit_2_icon": "custom",
+            "benefit_2_icon": "check_mark",
             "benefit_2_custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"48\" height=\"32\" viewbox=\"0 0 48 32\">\n  <!-- Light gray tint instead of pure white -->\n  <rect width=\"48\" height=\"32\" fill=\"#f5f5f5\"></rect>\n  <circle cx=\"24\" cy=\"16\" r=\"9.6\" fill=\"#bc002d\"></circle>\n</svg>",
             "benefit_2_text": "Onzichtbaar onder kleding",
-            "benefit_3_icon": "custom",
+            "benefit_3_icon": "check_mark",
             "benefit_3_custom_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"48\" height=\"32\" viewbox=\"0 0 48 32\">\n  <!-- Light gray tint instead of pure white -->\n  <rect width=\"48\" height=\"32\" fill=\"#f5f5f5\"></rect>\n  <circle cx=\"24\" cy=\"16\" r=\"9.6\" fill=\"#bc002d\"></circle>\n</svg>",
             "benefit_3_text": "Zit vast, beweegt mee",
             "margin_top": 0,
@@ -87,7 +87,7 @@
         "button_pgbiCn": {
           "type": "button",
           "settings": {
-            "button_text": "TRY NOW",
+            "button_text": "Ontdek 8 moods",
             "button_link": "shopify://products/ams-voor-tsjeridon",
             "use_global_button_styling": false,
             "button_bg_color": "#871520",
@@ -107,6 +107,7 @@
         },
         "guarantee_zYQa6k": {
           "type": "guarantee",
+          "disabled": true,
           "settings": {
             "guarantee_text": "30-Day Money-Back Guarantee",
             "guarantee_alignment_desktop": "center",
