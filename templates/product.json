@@ -988,7 +988,7 @@
         "carousel_default_video_Er3A4T": {
           "type": "carousel_default_video",
           "settings": {
-            "video": "shopify://files/videos/073bd96b72344d8e874f7d6570fcb790.HD-1080p-4.8Mbps-66814761.mp4",
+            "video": "shopify://files/videos/Review 1.mp4",
             "enable_autoplay": false,
             "margin_top": 0,
             "margin_bottom": 0
@@ -997,7 +997,7 @@
         "carousel_default_video_erUr8i": {
           "type": "carousel_default_video",
           "settings": {
-            "video": "shopify://files/videos/7a18e7de91d64520a50d2729408d3417.HD-1080p-4.8Mbps-66814755.mp4",
+            "video": "shopify://files/videos/Review 2.mp4",
             "enable_autoplay": false,
             "margin_top": 0,
             "margin_bottom": 0
@@ -1006,7 +1006,7 @@
         "carousel_default_video_7bV39a": {
           "type": "carousel_default_video",
           "settings": {
-            "video": "shopify://files/videos/12fa86368bd649eb9578ae210dd85fe5.HD-1080p-4.8Mbps-66814754.mp4",
+            "video": "shopify://files/videos/0303.mp4",
             "enable_autoplay": false,
             "margin_top": 0,
             "margin_bottom": 0
@@ -1015,7 +1015,16 @@
         "carousel_default_video_3q6jwP": {
           "type": "carousel_default_video",
           "settings": {
-            "video": "shopify://files/videos/f6ecf381cb62474bbeedf5109c5defb8.HD-1080p-7.2Mbps-66814753.mp4",
+            "video": "shopify://files/videos/video 4.mp4",
+            "enable_autoplay": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "carousel_default_video_c4DB6g": {
+          "type": "carousel_default_video",
+          "settings": {
+            "video": "shopify://files/videos/video 5.mp4",
             "enable_autoplay": false,
             "margin_top": 0,
             "margin_bottom": 0
@@ -1084,6 +1093,7 @@
         "carousel_default_video_erUr8i",
         "carousel_default_video_7bV39a",
         "carousel_default_video_3q6jwP",
+        "carousel_default_video_c4DB6g",
         "product_upsell_VhNdbn"
       ],
       "custom_css": [
