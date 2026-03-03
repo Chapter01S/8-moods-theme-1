@@ -1713,7 +1713,7 @@
             "step_image": "shopify://shop_images/Evelaniq_Lifestyle_-2.jpg",
             "image_background_color": "#f8f8f8",
             "step_title": "Plak hem op",
-            "step_description": "Bevestig de zelfklevende buitenkant op je ondergoed, broek of hemd  ter hoogte van je onderbuik of onderrug.  Nooit direct op je huid",
+            "step_description": "Bevestig de zelfklevende buitenkant op je ondergoed, broek of hemd ter hoogte van je onderbuik of onderrug. Nooit direct op je huid.",
             "content_background_color": "#a40011",
             "card_background_color": ""
           }
@@ -1858,7 +1858,7 @@
             "media_type": "image",
             "step_image": "shopify://shop_images/5_800c1a1b-9340-4869-a41c-b106b10f5cc6.webp",
             "step_title": "Sporten",
-            "step_description": "Omdat jij niet wil kiezen tussen bewegen en jezelf goed voelen. De patch zit vast, beweegt mee, en niemand ziet hem onder je sportoutfit"
+            "step_description": "Omdat jij niet wil kiezen tussen bewegen en jezelf goed voelen. De patch zit vast, beweegt mee, en niemand ziet hem onder je sportoutfit."
           }
         },
         "item_YWUCrt": {
@@ -1867,7 +1867,7 @@
             "media_type": "image",
             "step_image": "shopify://shop_images/4_f054bc1e-16db-4441-9df1-f6e2d0042071.webp",
             "step_title": "Werk",
-            "step_description": "Omdat je toch moet werken, ook al zou je liever thuis op de bank liggen. Nu hoef je niet meer te doen alsof je geen pijn hebt. Gewoon zitten, focussen en je dag doen."
+            "step_description": "Omdat je toch moet werken, ook al zou je liever thuis op de bank liggen. Nu hoef je niet meer te doen alsof je geen pijn hebt. Lekker focussen op je werk, niet op je krampen"
           }
         },
         "item_xchxRG": {
@@ -1876,7 +1876,7 @@
             "media_type": "image",
             "step_image": "shopify://shop_images/istockphoto-1338469104-612x612.jpg",
             "step_title": "School",
-            "step_description": "Omdat een lesdag niet nog zwaarder hoeft te zijn door krampen. Plak hem op voor je de deur uitgaat en vergeet hem de rest van de dag."
+            "step_description": "Omdat een lesdag niet nog zwaarder hoeft te zijn door krampen. Plak hem op voor je de deur uitgaat en focus op je les, niet op je buik"
           }
         },
         "item_F8hwhj": {
@@ -1885,7 +1885,7 @@
             "media_type": "image",
             "step_image": "shopify://shop_images/2_91bdac5c-81ca-47ff-8b78-347caad8ba34.webp",
             "step_title": "Onderweg",
-            "step_description": "Omdat onderweg al stressvol en lang genoeg kan zijn. Gun jezelf wat rust, waar je ook naartoe gaat."
+            "step_description": "Omdat onderweg al druk genoeg is. Of je nu in de trein zit, fietst of in de auto stapt  de patch gaat gewoon mee."
           }
         }
       },
@@ -1966,8 +1966,8 @@
           "name": "1",
           "settings": {
             "badge_text": "0 min",
-            "title": "Ohh... Daar Is Die Pijn Weer",
-            "description": "<p>Je voelt weer is de pijn in je onderbuik en begint al te hopen dat het snel weer over is. Nu lijkt je dag meteen al 3x zo zwaar. </p>",
+            "title": "Ohh... daar Is die pijn weer",
+            "description": "<p>Je voelt de pijn weer in je onderbuik en begint al te hopen dat het snel voorbij is. Nu lijkt je dag meteen al 3x zo zwaar</p>",
             "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewbox=\"0 0 24 24\" fill=\"#ffffff\"><g fill=\"none\" stroke=\"#ffffff\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M19.5 12.572L12 20l-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.572\"></path><path d=\"m12 6l-2 4l4 3l-2 4v3\"></path></g></svg>"
           }
         },
@@ -1977,7 +1977,7 @@
           "settings": {
             "badge_text": "5 min",
             "title": "De \"Warmup\"",
-            "description": "<p>Je plakt de patch  op je ondergoed, en de warmte verspreidt zich zachtjes. Je voelt hem langzaam werken, precies waar jij het nodig hebt</p>",
+            "description": "<p>Je plakt de patch daar waar je de pijn voelt, en voelt de warmte zich zachtjes verspreiden. Precies waar jij het nodig hebt.</p>",
             "custom_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewbox=\"0 0 24 24\"><path fill=\"#ffffff\" d=\"M13.3 20.725q-.15.125-.313.2t-.362.075q-.2 0-.4-.088t-.35-.237q-1.025-1.1-1.513-2.25T9.876 16q0-.925.275-1.95t.95-2.65q.575-1.425.8-2.188t.225-1.412q0-.85-.375-1.587t-1.175-1.488q-.15-.15-.237-.35t-.088-.4q0-.2.075-.362t.2-.313q.15-.15.337-.225T11.25 3q.2 0 .375.075t.325.2q1.1 1.025 1.637 2.15t.538 2.375q0 .875-.263 1.838t-.912 2.512q-.625 1.5-.85 2.3t-.225 1.525q0 .875.363 1.688T13.35 19.3q.125.15.2.325t.075.375q0 .2-.075.388t-.25.337Zm4.875 0q-.15.125-.313.2T17.5 21q-.2 0-.4-.088t-.35-.237q-1.025-1.1-1.513-2.238t-.487-2.412q0-.925.275-1.975t.95-2.65q.575-1.425.8-2.175t.225-1.4q0-.85-.375-1.612T15.45 4.725q-.15-.15-.225-.337T15.15 4q0-.2.063-.363t.187-.312q.15-.15.35-.238t.4-.087q.2 0 .363.075t.312.2q1.1 1.025 1.638 2.15T19 7.8q0 .875-.263 1.838t-.912 2.537q-.625 1.5-.85 2.3t-.225 1.5q0 .875.375 1.713t1.125 1.637q.125.15.187.325t.063.35q0 .2-.075.4t-.25.325Zm-9.75 0q-.15.125-.313.2T7.75 21q-.2 0-.4-.088T7 20.676q-1.025-1.1-1.512-2.238T5 16.026q0-.925.275-1.975t.95-2.65q.575-1.425.8-2.175t.225-1.4q0-.85-.375-1.612T5.7 4.725q-.175-.15-.25-.337T5.375 4q0-.2.075-.375t.2-.325q.15-.15.338-.225T6.375 3q.2 0 .375.075t.325.2q1.1 1.025 1.638 2.138T9.25 7.8q0 .875-.25 1.838t-.9 2.512q-.625 1.5-.85 2.3t-.225 1.525q0 .875.363 1.713T8.5 19.325q.125.15.188.325t.062.35q0 .2-.075.4t-.25.325Z\"></path></svg>"
           }
         },
@@ -1986,7 +1986,7 @@
           "name": "3",
           "settings": {
             "badge_text": "30 min",
-            "title": "Pijn Begint Te Minderen",
+            "title": "Pijn begint te minderen",
             "description": "<p>De warmte doet zijn werk en je voelt de pijn langzaam wegebben. Nu kan je rustig verder met je dag, of eindelijk even ontspannen zoals je dat verdiende</p>",
             "custom_icon": "<svg fill=\"#ffffff\" version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 484.651 484.65\" stroke=\"#ffffff\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xml:space=\"preserve\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g><g id=\"SVGRepo_iconCarrier\"> <g> <g id=\"_x32_7_48_\"> <g> <path d=\"M243.458,153.771c0.085,0,0.171-0.006,0.257-0.006c0.087,0,0.172,0.006,0.258,0.006 c42.464,0,76.884-34.422,76.884-76.887c0-42.46-34.42-76.884-76.884-76.884c-0.086,0-0.171,0.006-0.258,0.006 c-0.086,0-0.171-0.006-0.257-0.006c-42.465,0-76.884,34.424-76.884,76.884C166.572,119.349,200.991,153.771,243.458,153.771z\"></path> <path d=\"M436.565,311.038l-86.702-63.042l-27.417-66.953c-5.218-12.74-17.645-20.336-30.638-20.05l-0.004-0.03h-49.479h-49.477 l-0.004,0.03c-12.994-0.286-25.419,7.31-30.638,20.05l-27.418,66.953l-86.702,63.042c-14.443,10.502-17.64,30.724-7.136,45.169 c6.327,8.698,16.185,13.32,26.179,13.32c6.594,0,13.248-2.012,18.988-6.189l93.744-68.154l-2.389,24.675l-88.637,89.839 c-12.297,12.795-15.765,31.698-8.809,48.027c6.955,16.327,22.987,26.926,40.735,26.926h42.368 c-10.918-9.882-17.88-24.627-17.88-41.093c0-29.688,22.571-53.839,50.315-53.839c0,0,32.453,0,48.258,0 c15.807,0,28.35,12.922,28.35,12.922h-76.608c-21.085,0-38.24,18.354-38.24,40.917c0,22.562,17.155,40.916,38.24,40.916h74.192 c0.832-0.06,1.68-0.063,2.5-0.161h89.683c17.748,0,33.779-10.6,40.735-26.929c6.955-16.326,3.488-35.228-8.808-48.025 l-86.706-89.951h-0.024l-2.345-24.224l93.743,68.154c5.738,4.178,12.395,6.189,18.986,6.189c9.995,0,19.853-4.622,26.18-13.32 C454.205,341.762,451.009,321.54,436.565,311.038z\"></path> </g> </g> </g> </g></svg>"
           }
@@ -2025,7 +2025,7 @@
         "enable_background_overlay": false,
         "background_overlay_color": "#000000",
         "background_overlay_opacity": 50,
-        "heading": "Wees krampvrij",
+        "heading": "Voel het verschil",
         "subheading": "<p>De meeste oplossingen vragen je om uren te wachten, je dag over te slaan of genoegen te nemen met “een beetje beter”. </p><p><em><strong>8 moods</strong></em> werkt snel. Dit is precies wat er gebeurt vanaf het moment dat je de verpakking opent.</p>",
         "heading_size": 34,
         "heading_line_height": 1.3,
@@ -2037,7 +2037,7 @@
         "step_title_size_mobile": 18,
         "step_description_size": 14,
         "step_description_size_mobile": 12,
-        "accent_text": "in 30 minuten",
+        "accent_text": "binnen 30 minuten",
         "override_global_accent": true,
         "use_accent_gradient": false,
         "accent_text_gradient": "linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 100%)",
@@ -2493,6 +2493,7 @@
         },
         "feature_row_VDkRVC": {
           "type": "feature_row",
+          "disabled": true,
           "settings": {
             "feature_name": "Veilig voor gevoelige huid",
             "show_icon": true,
@@ -2522,7 +2523,7 @@
         "title_part_2": "de perfecte keuze is.",
         "title_part_1_color": "#91323c",
         "title_part_2_color": "#91323c",
-        "subheading": "<p>Je kruik is leuk 😌 8moods geeft je dezelfde warmte voor langer, overal waar jij naartoe gaat.</p>",
+        "subheading": "<p>Je kruik is fijn thuis  maar 8 moods gaat met je mee, overal waar jij naartoe gaat.</p>",
         "desktop_description": "",
         "show_description_on_mobile": false,
         "heading_size_mobile": 42,
@@ -3314,7 +3315,7 @@
         "review_author_size_mobile": 10,
         "review_author_size_desktop": 12,
         "heading_accent": "",
-        "heading_regular": "Wat onze klanten zeggen",
+        "heading_regular": "Wat onze dames zeggen",
         "subtitle": "",
         "show_navigation_desktop": true,
         "show_navigation_mobile": false,
@@ -3527,39 +3528,6 @@
       "disabled": true,
       "settings": {}
     },
-    "newsletter_ARrA8n": {
-      "type": "newsletter",
-      "blocks": {
-        "heading_cpTKQf": {
-          "type": "heading",
-          "settings": {
-            "heading": "Abonneren op onze e-mails",
-            "heading_size": "h1"
-          }
-        },
-        "paragraph_CMthJf": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Sluit je aan bij duizenden vrouwen die dag 1 niet meer vrezen. Ontvang tips, updates en exclusieve aanbiedingen</p>"
-          }
-        },
-        "email_form_dcg8pi": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading_cpTKQf",
-        "paragraph_CMthJf",
-        "email_form_dcg8pi"
-      ],
-      "name": "t:sections.newsletter.presets.name",
-      "settings": {
-        "full_width": true,
-        "padding_top": 16,
-        "padding_bottom": 12
-      }
-    },
     "store_faq_Lpd3PW": {
       "type": "store-faq",
       "blocks": {
@@ -3697,6 +3665,39 @@
         "section_bottom_border_color": "#e5e5e5"
       }
     },
+    "newsletter_ARrA8n": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_cpTKQf": {
+          "type": "heading",
+          "settings": {
+            "heading": "Abonneren op onze e-mails",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_CMthJf": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Sluit je aan bij duizenden vrouwen die dag 1 niet meer vrezen. Ontvang tips, updates en exclusieve aanbiedingen</p>"
+          }
+        },
+        "email_form_dcg8pi": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_cpTKQf",
+        "paragraph_CMthJf",
+        "email_form_dcg8pi"
+      ],
+      "name": "t:sections.newsletter.presets.name",
+      "settings": {
+        "full_width": true,
+        "padding_top": 16,
+        "padding_bottom": 12
+      }
+    },
     "satisfaction_guarantee_J4ypTy": {
       "type": "satisfaction-guarantee",
       "disabled": true,
@@ -3807,8 +3808,8 @@
     "video_testimonials_QaYpEt",
     "4_benefits_fzDBUr",
     "1772217175a9a7588a",
-    "newsletter_ARrA8n",
     "store_faq_Lpd3PW",
+    "newsletter_ARrA8n",
     "satisfaction_guarantee_J4ypTy"
   ]
 }
