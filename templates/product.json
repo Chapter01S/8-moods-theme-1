@@ -3294,6 +3294,7 @@
         "video_testimonial_9Hkr4a",
         "video_testimonial_Wm837i"
       ],
+      "disabled": true,
       "name": "Video Testimonials",
       "settings": {
         "padding_top": 10,
