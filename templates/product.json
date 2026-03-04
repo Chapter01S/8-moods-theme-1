@@ -3107,7 +3107,6 @@
         "testimonial_G8iDWr",
         "testimonial_pycd9R"
       ],
-      "disabled": true,
       "name": "Testimonials",
       "settings": {
         "use_theme_colors": false,
@@ -3295,6 +3294,7 @@
         "video_testimonial_9Hkr4a",
         "video_testimonial_Wm837i"
       ],
+      "disabled": true,
       "name": "Video Testimonials",
       "settings": {
         "padding_top": 10,
@@ -3608,7 +3608,7 @@
       ],
       "settings": {
         "use_theme_colors": false,
-        "heading": "Your Questions Answered",
+        "heading": "Jouw Vragen Beantwoord",
         "subtitle": "<p>We offer a 90-day money back guarantee.</p>",
         "heading_color": "#333030",
         "subtitle_color": "#ffffff",
