@@ -3019,13 +3019,26 @@
     "testimonials_erbHYR": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_fRgLqG": {
+          "type": "testimonial",
+          "settings": {
+            "show_stars": true,
+            "title": "...",
+            "content": "<p>Simpelweg het beste wat ik ooit voor mezelf heb gekocht tijdens mijn periode. Dat is alles. Gewoon koop hem.</p>",
+            "author_name": "Sara",
+            "rating": 5,
+            "verified": true,
+            "show_purchase_date": false,
+            "purchase_date": "March 14th, 2024"
+          }
+        },
         "testimonial_EifWza": {
           "type": "testimonial",
           "settings": {
             "show_stars": true,
-            "title": "Outstanding Quality",
-            "content": "<p>I've been shopping with this brand for over a year now and the quality never disappoints. Every purchase has exceeded my expectations and their customer service is exceptional.</p>",
-            "author_name": "Sarah M.",
+            "title": "...",
+            "content": "<p>Ik was eerlijk gezegd sceptisch want ik had al zoveel dingen geprobeerd. Maar ik dacht, oké nog één keer. En ik ben zo blij dat ik het deed. Binnen 30 minuten voelde ik het verschil. Ik heb gewoon mijn hele dag gedaan alsof er niks was.</p>",
+            "author_name": "Lisa",
             "avatar_image": "shopify://shop_images/Cramp-Patch-ecom-asset-3_1000x_9cf722fe-9372-4259-9a65-17636033b333.jpg",
             "rating": 5,
             "verified": true,
@@ -3037,22 +3050,9 @@
           "type": "testimonial",
           "settings": {
             "show_stars": true,
-            "title": "Outstanding Quality",
-            "content": "<p>I've been shopping with this brand for over a year now and the quality never disappoints. Every purchase has exceeded my expectations and their customer service is exceptional.</p>",
+            "title": "...",
+            "content": "<p>Waarom wist ik hier niet eerder van?! Gewoon opgeplakt onder mijn kleding en de hele dag naar mijn werk gegaan. Niemand had door dat ik dag 1 had. Dat alleen al is het waard</p>",
             "author_name": "Sarah M.",
-            "rating": 5,
-            "verified": true,
-            "show_purchase_date": false,
-            "purchase_date": "March 14th, 2024"
-          }
-        },
-        "testimonial_fRgLqG": {
-          "type": "testimonial",
-          "settings": {
-            "show_stars": true,
-            "title": "Worth It!",
-            "content": "<p>Okay, so I thought about the price, but this jacket is 100% worth every penny. The way it's made is top-notch, and it's surprisingly warm without being super bulky. A total keeper.</p>",
-            "author_name": "Jessica M.",
             "rating": 5,
             "verified": true,
             "show_purchase_date": false,
@@ -3100,9 +3100,9 @@
         }
       },
       "block_order": [
+        "testimonial_fRgLqG",
         "testimonial_EifWza",
         "testimonial_eUrbKY",
-        "testimonial_fRgLqG",
         "testimonial_UBqkbE",
         "testimonial_G8iDWr",
         "testimonial_pycd9R"
@@ -3146,7 +3146,7 @@
         "purchase_date_size_mobile": 11,
         "card_rating_size": 16,
         "show_rating": true,
-        "enable_mask_fade": true,
+        "enable_mask_fade": false,
         "rating_summary_text": "<p><strong>Excellent</strong> 4.9/5 | 1,422+ reviews</p>",
         "rating_value": 4.9,
         "rating_max": 5,
@@ -3294,7 +3294,6 @@
         "video_testimonial_9Hkr4a",
         "video_testimonial_Wm837i"
       ],
-      "disabled": true,
       "name": "Video Testimonials",
       "settings": {
         "padding_top": 10,
