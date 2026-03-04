@@ -1673,7 +1673,7 @@
             "bullet_icon_bg_color": "#f5e9db",
             "bullet_icon_color": "#5f0810",
             "media_type": "image",
-            "media_image": "shopify://shop_images/Gemini_Generated_Image_g7osa5g7osa5g7os.png",
+            "media_image": "shopify://shop_images/PDP.jpg",
             "external_video_url": "",
             "video_autoplay": true,
             "video_loop": true,
@@ -1699,7 +1699,7 @@
           "type": "step",
           "name": "1",
           "settings": {
-            "step_image": "shopify://shop_images/Relaxing_with_a_heating_pad.png",
+            "step_image": "shopify://shop_images/steps-1.jpg",
             "image_background_color": "#f8f8f8",
             "step_title": "Open de verpakking (Duhh)",
             "step_description": "Trek de patch voorzichtig uit het sachet. Zodra hij lucht raakt begint hij vanzelf op te warmen, geen knopje, geen opladen, niets.",
@@ -1711,7 +1711,7 @@
           "type": "step",
           "name": "2",
           "settings": {
-            "step_image": "shopify://shop_images/Gemini_Generated_Image_3u81l63u81l63u81.png",
+            "step_image": "shopify://shop_images/steps-2.jpg",
             "image_background_color": "#f8f8f8",
             "step_title": "Plak hem op",
             "step_description": "Bevestig de zelfklevende buitenkant op je ondergoed, broek of hemd ter hoogte van je onderbuik of onderrug. Nooit direct op je huid.",
