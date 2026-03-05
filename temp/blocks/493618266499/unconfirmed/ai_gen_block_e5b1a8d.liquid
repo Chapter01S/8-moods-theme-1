@@ -1,6 +1,532 @@
+{% doc %}
+  @prompt
+    shipping & retour section
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-shipping-returns-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: {{ block.settings.section_padding }}px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-shipping-returns-container-{{ ai_gen_id }} {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ai-shipping-returns-header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.text_alignment }};
+    margin-bottom: 40px;
+  }
+
+  .ai-shipping-returns-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 16px;
+    font-weight: 700;
+  }
+
+  .ai-shipping-returns-subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  .ai-shipping-returns-grid-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .ai-shipping-returns-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_background_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 32px 24px;
+    text-align: center;
+    border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .ai-shipping-returns-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .ai-shipping-returns-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: {{ block.settings.icon_background_color }};
+    border-radius: 50%;
+    color: {{ block.settings.icon_color }};
+  }
+
+  .ai-shipping-returns-icon-{{ ai_gen_id }} svg {
+    width: calc({{ block.settings.icon_size }}px * 0.5);
+    height: calc({{ block.settings.icon_size }}px * 0.5);
+  }
+
+  .ai-shipping-returns-card-title-{{ ai_gen_id }} {
+    font-size: 20px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+
+  .ai-shipping-returns-card-text-{{ ai_gen_id }} {
+    font-size: 15px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-shipping-returns-details-{{ ai_gen_id }} {
+    background-color: {{ block.settings.details_background_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 40px;
+    border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
+  }
+
+  .ai-shipping-returns-details-title-{{ ai_gen_id }} {
+    font-size: 24px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 24px;
+    font-weight: 600;
+  }
+
+  .ai-shipping-returns-details-content-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    line-height: 1.8;
+  }
+
+  .ai-shipping-returns-details-content-{{ ai_gen_id }} h3 {
+    font-size: 18px;
+    color: {{ block.settings.title_color }};
+    margin: 24px 0 12px;
+    font-weight: 600;
+  }
+
+  .ai-shipping-returns-details-content-{{ ai_gen_id }} h3:first-child {
+    margin-top: 0;
+  }
+
+  .ai-shipping-returns-details-content-{{ ai_gen_id }} p {
+    margin: 0 0 16px;
+  }
+
+  .ai-shipping-returns-details-content-{{ ai_gen_id }} ul {
+    margin: 0 0 16px;
+    padding-left: 24px;
+  }
+
+  .ai-shipping-returns-details-content-{{ ai_gen_id }} li {
+    margin-bottom: 8px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-shipping-returns-{{ ai_gen_id }} {
+      width: 100%;
+      padding: {{ block.settings.section_padding | times: 0.6 }}px 16px;
+    }
+
+    .ai-shipping-returns-grid-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .ai-shipping-returns-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.7 }}px;
+    }
+
+    .ai-shipping-returns-subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.85 }}px;
+    }
+
+    .ai-shipping-returns-details-{{ ai_gen_id }} {
+      padding: 24px 20px;
+    }
+  }
+{% endstyle %}
+
+<shipping-returns-{{ ai_gen_id }}
+  class="ai-shipping-returns-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-shipping-returns-container-{{ ai_gen_id }}">
+    {% if block.settings.show_header %}
+      <div class="ai-shipping-returns-header-{{ ai_gen_id }}">
+        {% if block.settings.title != blank %}
+          <h2 class="ai-shipping-returns-title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.subtitle != blank %}
+          <p class="ai-shipping-returns-subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-shipping-returns-grid-{{ ai_gen_id }}">
+      {% if block.settings.show_shipping_card %}
+        <div class="ai-shipping-returns-card-{{ ai_gen_id }}">
+          <div class="ai-shipping-returns-icon-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+            </svg>
+          </div>
+          <h3 class="ai-shipping-returns-card-title-{{ ai_gen_id }}">{{ block.settings.shipping_title }}</h3>
+          <p class="ai-shipping-returns-card-text-{{ ai_gen_id }}">{{ block.settings.shipping_text }}</p>
+        </div>
+      {% endif %}
+
+      {% if block.settings.show_returns_card %}
+        <div class="ai-shipping-returns-card-{{ ai_gen_id }}">
+          <div class="ai-shipping-returns-icon-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z" />
+            </svg>
+          </div>
+          <h3 class="ai-shipping-returns-card-title-{{ ai_gen_id }}">{{ block.settings.returns_title }}</h3>
+          <p class="ai-shipping-returns-card-text-{{ ai_gen_id }}">{{ block.settings.returns_text }}</p>
+        </div>
+      {% endif %}
+
+      {% if block.settings.show_support_card %}
+        <div class="ai-shipping-returns-card-{{ ai_gen_id }}">
+          <div class="ai-shipping-returns-icon-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="ai-shipping-returns-card-title-{{ ai_gen_id }}">{{ block.settings.support_title }}</h3>
+          <p class="ai-shipping-returns-card-text-{{ ai_gen_id }}">{{ block.settings.support_text }}</p>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if block.settings.show_details %}
+      <div class="ai-shipping-returns-details-{{ ai_gen_id }}">
+        {% if block.settings.details_title != blank %}
+          <h3 class="ai-shipping-returns-details-title-{{ ai_gen_id }}">{{ block.settings.details_title }}</h3>
+        {% endif %}
+        {% if block.settings.details_content != blank %}
+          <div class="ai-shipping-returns-details-content-{{ ai_gen_id }}">
+            {{ block.settings.details_content }}
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</shipping-returns-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ShippingReturns{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.init();
+      }
+
+      init() {
+        const cards = this.querySelectorAll('.ai-shipping-returns-card-{{ ai_gen_id }}');
+        
+        cards.forEach((card, index) => {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, index * 100);
+        });
+      }
+    }
+
+    customElements.define('shipping-returns-{{ ai_gen_id }}', ShippingReturns{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Shipping & returns",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Show header",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "Verzending & Retourneren"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Alles wat je moet weten over onze verzend- en retourvoorwaarden"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Shipping card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_card",
+      "label": "Show shipping card",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "shipping_title",
+      "label": "Title",
+      "default": "Gratis Verzending"
+    },
+    {
+      "type": "text",
+      "id": "shipping_text",
+      "label": "Text",
+      "default": "Gratis verzending bij bestellingen boven €50 binnen Nederland"
+    },
+    {
+      "type": "header",
+      "content": "Returns card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_returns_card",
+      "label": "Show returns card",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "returns_title",
+      "label": "Title",
+      "default": "30 Dagen Retour"
+    },
+    {
+      "type": "text",
+      "id": "returns_text",
+      "label": "Text",
+      "default": "Niet tevreden? Retourneer binnen 30 dagen voor een volledige terugbetaling"
+    },
+    {
+      "type": "header",
+      "content": "Support card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_support_card",
+      "label": "Show support card",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "support_title",
+      "label": "Title",
+      "default": "Klantenservice"
+    },
+    {
+      "type": "text",
+      "id": "support_text",
+      "label": "Text",
+      "default": "Vragen? Ons team staat voor je klaar van ma-vr 9:00-17:00"
+    },
+    {
+      "type": "header",
+      "content": "Detailed information"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_details",
+      "label": "Show details section",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "details_title",
+      "label": "Details title",
+      "default": "Verzend- en Retourbeleid"
+    },
+    {
+      "type": "richtext",
+      "id": "details_content",
+      "label": "Details content",
+      "default": "<h3>Verzending</h3><p>Wij verzenden alle bestellingen binnen 1-2 werkdagen. Je ontvangt een track & trace code zodra je bestelling is verzonden.</p><ul><li>Gratis verzending boven €50</li><li>Standaard verzending: €4,95</li><li>Levering binnen 2-4 werkdagen</li></ul><h3>Retourneren</h3><p>Je kunt je bestelling binnen 30 dagen retourneren. Zorg ervoor dat de producten ongebruikt en in originele verpakking zijn.</p><ul><li>Gratis retourneren binnen Nederland</li><li>Geld terug binnen 5-7 werkdagen</li><li>Retourlabel aanvragen via klantenservice</li></ul>"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card background",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "details_background_color",
+      "label": "Details background",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon background",
+      "default": "#5f0810"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 70
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shipping & returns"
+    }
+  ]
+}
 {% endschema %}
