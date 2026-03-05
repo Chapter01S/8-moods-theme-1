@@ -349,10 +349,10 @@
             "type": "cart_progress_bar",
             "settings": {
               "progress_bar_free_product": "",
-              "shipping_away_text": "You're [missingAmount] away from Free Shipping",
-              "free_product_away_text": "You're [missingAmount] away from [freeProduct]",
-              "shipping_earn_text": "You've earned Free shipping",
-              "free_product_earn_text": "You've earned [freeProduct]",
+              "shipping_away_text": "Je bent [missingAmount] weg van Gratis Verzending",
+              "free_product_away_text": "Je bent [missingAmount] weg van [freeProduct]",
+              "shipping_earn_text": "Je krijgt Gratis Verzending",
+              "free_product_earn_text": "Je Krijgt [freeProduct] Cadeau",
               "product_free_shipping": 40,
               "product_free_custom_id_title": "",
               "hide_icons_single_goal": false,
@@ -398,7 +398,7 @@
           "cart_social_proof_bar_rMkH4F": {
             "type": "cart-social_proof_bar",
             "settings": {
-              "social_proof_text": "Join 20,000+ happy women!",
+              "social_proof_text": "Meer Dan 10,000+ Blije Vrouwen!",
               "social_proof_icon": "users",
               "social_proof_bg_color": "#871520",
               "social_proof_text_color": "#ffffff",
@@ -409,7 +409,7 @@
             "type": "cart_money_back_guarantee",
             "settings": {
               "show_money_back_guarantee": true,
-              "money_back_guarantee_text": "30 Day Money Back Guarantee",
+              "money_back_guarantee_text": "30 Dagen niet goed, geld terug",
               "money_back_guarantee_icon": "seal-check",
               "money_back_guarantee_color": "#000000"
             }
@@ -422,8 +422,8 @@
               "upsell_description_text": "Short product description here",
               "upsell_description_color": "#333333",
               "upsell_show_price": true,
-              "upsell_button_text": "Add +",
-              "upsell_button_success_text": "Added!",
+              "upsell_button_text": "Voeg Toe +",
+              "upsell_button_success_text": "Toegevoegd!",
               "show_upsell_best_seller_tag": true,
               "upsell_best_seller_text": "BEST SELLER",
               "upsell_best_seller_tag_color": "#e18942",
