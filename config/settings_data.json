@@ -501,7 +501,7 @@
           "cart_shipping_protection_mXGeTd"
         ],
         "settings": {
-          "cart_customization_mode": false,
+          "cart_customization_mode": true,
           "use_theme_colors_cart_drawer": false,
           "upsell_carousel_mode": true,
           "drawer_heading_font_size_desktop": 20,
@@ -553,7 +553,7 @@
           "cart_drawer_discount_text_color": "#ffffff",
           "cart_drawer_discount_icon_color": "#ffffff",
           "cart_drawer_discount_border_radius": 4,
-          "cart_drawer_checkout_button_label": ""
+          "cart_drawer_checkout_button_label": "Plaats Bestelling"
         }
       }
     },
