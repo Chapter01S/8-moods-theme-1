@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "general": {
     "password_page": {
@@ -40,9 +49,9 @@
       "reset": "Clear search term"
     },
     "cart": {
-      "view": "View cart ({{ count }})",
-      "item_added": "Item added to your cart",
-      "view_empty_cart": "View cart",
+      "view": "Zie winkelmand ({{ count }})",
+      "item_added": "Item toegevoegd aan winkelmand",
+      "view_empty_cart": "Zie winkelmand",
       "free": "FREE",
       "free_gift": {
         "one": "Free Gift",
@@ -296,19 +305,19 @@
       "announcement": "Announcement",
       "menu": "Menu",
       "cart_count": {
-        "one": "{{ count }} item",
+        "one": "{{ count }} items",
         "other": "{{ count }} items"
       }
     },
     "cart": {
-      "title": "Your cart",
-      "caption": "Cart items",
+      "title": "Mijn Winkelmand",
+      "caption": "Mijn Items",
       "remove_title": "Remove {{ title }}",
       "estimated_total": "Totaal:",
-      "new_estimated_total": "New estimated total",
+      "new_estimated_total": "Totaal",
       "note": "Order special instructions",
-      "checkout": "Check out",
-      "empty": "Your cart is empty",
+      "checkout": "Plaats Bestelling",
+      "empty": "Je Winkelmand Is Leeg",
       "cart_error": "There was an error while updating your cart. Please try again.",
       "cart_quantity_error_html": "You can only add {{ quantity }} of this item to your cart.",
       "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Duties and taxes included. Discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
@@ -319,7 +328,7 @@
       "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Duties included. Taxes, discounts and shipping calculated at checkout.",
       "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Taxes, discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
       "taxes_at_checkout_shipping_at_checkout_without_policy": "Taxes, discounts and shipping calculated at checkout.",
-      "items_total": "Total: {{ item_count }} Items",
+      "items_total": "Totaal: {{ item_count }} Items",
       "headings": {
         "product": "Product",
         "price": "Price",
@@ -329,7 +338,7 @@
       },
       "update": "Update",
       "login": {
-        "title": "Have an account?",
+        "title": "Heb je een account?",
         "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Log in</a> to check out faster."
       }
     },
