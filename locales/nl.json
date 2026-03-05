@@ -54,8 +54,8 @@
       "view_empty_cart": "Zie winkelmand",
       "free": "FREE",
       "free_gift": {
-        "one": "Free Gift",
-        "other": "{{ count }} Free Gifts"
+        "one": "Gratis Gift",
+        "other": "{{ count }} Gratis Gifts"
       }
     },
     "share": {
@@ -120,7 +120,7 @@
   },
   "products": {
     "product": {
-      "add_to_cart": "Add to cart",
+      "add_to_cart": "Toevoegen aan winkelmand",
       "choose_options": "Choose options",
       "choose_product_options": "Choose options for {{ product_name }}",
       "description": "Description",
@@ -312,7 +312,7 @@
     "cart": {
       "title": "Mijn Winkelmand",
       "caption": "Mijn Items",
-      "remove_title": "Remove {{ title }}",
+      "remove_title": "Verwijder {{ title }}",
       "estimated_total": "Totaal:",
       "new_estimated_total": "Totaal",
       "note": "Order special instructions",
