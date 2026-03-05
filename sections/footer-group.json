@@ -36,15 +36,15 @@
             "heading": "Support",
             "link_1_text": "Help Center",
             "link_1_url": "/pages/help",
-            "link_2_text": "Track Your Order",
+            "link_2_text": "Volg Mijn Bestelling",
             "link_2_url": "/account/login",
             "link_3_text": "Contact Us",
             "link_3_url": "/pages/contact",
             "link_4_text": "FAQs",
             "link_4_url": "shopify://pages/faq",
-            "link_5_text": "Shipping Info",
+            "link_5_text": "Verzending & Retour",
             "link_5_url": "/pages/shipping",
-            "link_6_text": "Returns",
+            "link_6_text": "",
             "link_6_url": "/pages/returns"
           }
         },
