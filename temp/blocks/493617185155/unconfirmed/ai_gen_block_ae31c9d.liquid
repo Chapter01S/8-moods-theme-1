@@ -1,6 +1,648 @@
+{% doc %}
+  @prompt
+    Shipping & returns explanation
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-shipping-returns-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    padding: {{ block.settings.section_padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-shipping-returns__container-{{ ai_gen_id }} {
+    max-width: {{ block.settings.content_max_width }}px;
+    margin: 0 auto;
+  }
+
+  .ai-shipping-returns__header-{{ ai_gen_id }} {
+    text-align: {{ block.settings.text_alignment }};
+    margin-bottom: {{ block.settings.header_spacing }}px;
+  }
+
+  .ai-shipping-returns__title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    color: {{ block.settings.title_color }};
+    margin: 0 0 {{ block.settings.title_bottom_spacing }}px 0;
+    font-weight: 600;
+  }
+
+  .ai-shipping-returns__subtitle-{{ ai_gen_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .ai-shipping-returns__content-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
+    gap: {{ block.settings.item_spacing }}px;
+  }
+
+  .ai-shipping-returns__item-{{ ai_gen_id }} {
+    background-color: {{ block.settings.item_background_color }};
+    padding: {{ block.settings.item_padding }}px;
+    border-radius: {{ block.settings.item_border_radius }}px;
+    border: {{ block.settings.item_border_width }}px solid {{ block.settings.item_border_color }};
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  {% if block.settings.enable_hover_effect %}
+    .ai-shipping-returns__item-{{ ai_gen_id }}:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+  {% endif %}
+
+  .ai-shipping-returns__item-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    margin-bottom: {{ block.settings.icon_spacing }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: {{ block.settings.icon_background_color }};
+    border-radius: {{ block.settings.icon_border_radius }}px;
+    padding: {{ block.settings.icon_padding }}px;
+  }
+
+  .ai-shipping-returns__item-icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: {{ block.settings.icon_color }};
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .ai-shipping-returns__item-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.item_title_size }}px;
+    color: {{ block.settings.item_title_color }};
+    margin: 0 0 {{ block.settings.item_title_spacing }}px 0;
+    font-weight: 600;
+  }
+
+  .ai-shipping-returns__item-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.item_description_size }}px;
+    color: {{ block.settings.item_description_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-shipping-returns__item-description-{{ ai_gen_id }} p {
+    margin: 0 0 8px 0;
+  }
+
+  .ai-shipping-returns__item-description-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-shipping-returns__content-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_tablet }}, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-shipping-returns-{{ ai_gen_id }} {
+      padding: {{ block.settings.section_padding | times: 0.7 }}px;
+    }
+
+    .ai-shipping-returns__content-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-shipping-returns__title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.8 }}px;
+    }
+
+    .ai-shipping-returns__subtitle-{{ ai_gen_id }} {
+      font-size: {{ block.settings.subtitle_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<shipping-returns-{{ ai_gen_id }} class="ai-shipping-returns-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-shipping-returns__container-{{ ai_gen_id }}">
+    {% if block.settings.show_header %}
+      <div class="ai-shipping-returns__header-{{ ai_gen_id }}">
+        {% if block.settings.title != blank %}
+          <h2 class="ai-shipping-returns__title-{{ ai_gen_id }}">{{ block.settings.title }}</h2>
+        {% endif %}
+        {% if block.settings.subtitle != blank %}
+          <div class="ai-shipping-returns__subtitle-{{ ai_gen_id }}">{{ block.settings.subtitle }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="ai-shipping-returns__content-{{ ai_gen_id }}">
+      {% if block.settings.show_shipping %}
+        <div class="ai-shipping-returns__item-{{ ai_gen_id }}">
+          <div class="ai-shipping-returns__item-icon-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <h3 class="ai-shipping-returns__item-title-{{ ai_gen_id }}">{{ block.settings.shipping_title }}</h3>
+          <div class="ai-shipping-returns__item-description-{{ ai_gen_id }}">
+            {{ block.settings.shipping_description }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.show_returns %}
+        <div class="ai-shipping-returns__item-{{ ai_gen_id }}">
+          <div class="ai-shipping-returns__item-icon-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <polyline points="9 14 4 9 9 4"></polyline>
+              <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
+            </svg>
+          </div>
+          <h3 class="ai-shipping-returns__item-title-{{ ai_gen_id }}">{{ block.settings.returns_title }}</h3>
+          <div class="ai-shipping-returns__item-description-{{ ai_gen_id }}">
+            {{ block.settings.returns_description }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.show_tracking %}
+        <div class="ai-shipping-returns__item-{{ ai_gen_id }}">
+          <div class="ai-shipping-returns__item-icon-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <h3 class="ai-shipping-returns__item-title-{{ ai_gen_id }}">{{ block.settings.tracking_title }}</h3>
+          <div class="ai-shipping-returns__item-description-{{ ai_gen_id }}">
+            {{ block.settings.tracking_description }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.settings.show_support %}
+        <div class="ai-shipping-returns__item-{{ ai_gen_id }}">
+          <div class="ai-shipping-returns__item-icon-{{ ai_gen_id }}">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3 class="ai-shipping-returns__item-title-{{ ai_gen_id }}">{{ block.settings.support_title }}</h3>
+          <div class="ai-shipping-returns__item-description-{{ ai_gen_id }}">
+            {{ block.settings.support_description }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</shipping-returns-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ShippingReturns{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.style.display = 'block';
+      }
+    }
+
+    customElements.define('shipping-returns-{{ ai_gen_id }}', ShippingReturns{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Shipping & returns",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width",
+      "min": 600,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Columns on desktop",
+      "options": [
+        { "value": "2", "label": "2" },
+        { "value": "3", "label": "3" },
+        { "value": "4", "label": "4" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "select",
+      "id": "columns_tablet",
+      "label": "Columns on tablet",
+      "options": [
+        { "value": "1", "label": "1" },
+        { "value": "2", "label": "2" }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "item_spacing",
+      "label": "Space between items",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Section border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Show header",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "Verzending & retour"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "<p>Wij zorgen voor een zorgeloze winkelervaring met snelle verzending en eenvoudige retourmogelijkheden.</p>"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "header_spacing",
+      "label": "Header bottom spacing",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Shipping information"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping",
+      "label": "Show shipping",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "shipping_title",
+      "label": "Title",
+      "default": "Gratis verzending"
+    },
+    {
+      "type": "richtext",
+      "id": "shipping_description",
+      "label": "Description",
+      "default": "<p>Gratis verzending bij bestellingen boven €50. Standaard levering binnen 3-5 werkdagen.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Returns information"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_returns",
+      "label": "Show returns",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "returns_title",
+      "label": "Title",
+      "default": "30 dagen retourrecht"
+    },
+    {
+      "type": "richtext",
+      "id": "returns_description",
+      "label": "Description",
+      "default": "<p>Niet tevreden? Retourneer uw bestelling binnen 30 dagen voor een volledige terugbetaling.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Tracking information"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tracking",
+      "label": "Show tracking",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tracking_title",
+      "label": "Title",
+      "default": "Track & trace"
+    },
+    {
+      "type": "richtext",
+      "id": "tracking_description",
+      "label": "Description",
+      "default": "<p>Volg uw bestelling in realtime met onze track & trace service.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Support information"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_support",
+      "label": "Show support",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "support_title",
+      "label": "Title",
+      "default": "Klantenservice"
+    },
+    {
+      "type": "richtext",
+      "id": "support_description",
+      "label": "Description",
+      "default": "<p>Vragen? Ons team staat klaar om u te helpen via chat, e-mail of telefoon.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "item_background_color",
+      "label": "Item background",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "item_border_color",
+      "label": "Item border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "item_title_color",
+      "label": "Item title",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "item_description_color",
+      "label": "Item description",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon",
+      "default": "#5f0810"
+    },
+    {
+      "type": "color",
+      "id": "icon_background_color",
+      "label": "Icon background",
+      "default": "#fff4f3"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "title_bottom_spacing",
+      "label": "Title bottom spacing",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "item_title_size",
+      "label": "Item title size",
+      "min": 14,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "item_title_spacing",
+      "label": "Item title spacing",
+      "min": 5,
+      "max": 25,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "item_description_size",
+      "label": "Item description size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Item style"
+    },
+    {
+      "type": "range",
+      "id": "item_padding",
+      "label": "Item padding",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "item_border_radius",
+      "label": "Item border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "item_border_width",
+      "label": "Item border width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_hover_effect",
+      "label": "Enable hover effect",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Icon style"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 30,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "icon_padding",
+      "label": "Icon padding",
+      "min": 5,
+      "max": 20,
+      "step": 5,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "icon_spacing",
+      "label": "Icon bottom spacing",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "icon_border_radius",
+      "label": "Icon border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shipping & returns"
+    }
+  ]
+}
 {% endschema %}
