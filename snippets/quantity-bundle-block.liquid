@@ -1558,8 +1558,8 @@
           usesVariantCompare: card.dataset.usesVariantCompare === 'true'
         }));
 
-        this.quantityInput = document.querySelector('input[name="quantity"]');
-        this.productForm = document.querySelector('.shop-add-to-cart-wrapper form[action="/cart/add"]');
+        this.productForm = document.querySelector('.shop-add-to-cart-wrapper form');
+        this.quantityInput = document.querySelector('#bundle-quantity-input') || (this.productForm && this.productForm.querySelector('input[name="quantity"]')) || document.querySelector('input[name="quantity"]');
 
         this.updateSelectedVariantFromInput();
         this.updateCardPricing();
