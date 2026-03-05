@@ -436,6 +436,7 @@
         },
         "variant_selector_AkUHwf": {
           "type": "variant_selector",
+          "disabled": true,
           "settings": {
             "show_variant_images": true,
             "show_compare_price": true,
