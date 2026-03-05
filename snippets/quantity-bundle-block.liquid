@@ -1827,4 +1827,63 @@
       }
     }));
   });
+
+  /* ── Vanilla JS fallback — works even if Alpine fails ── */
+  (function() {
+    function getOrCreateQtyInput(form) {
+      var input = document.getElementById('bundle-quantity-input');
+      if (!input && form) {
+        input = form.querySelector('input[name="quantity"]');
+        if (!input) {
+          input = document.createElement('input');
+          input.type = 'hidden';
+          input.name = 'quantity';
+          form.appendChild(input);
+        }
+      }
+      return input;
+    }
+
+    function applySelectedQty(cards, form) {
+      var selected = null;
+      cards.forEach(function(c) { if (c.getAttribute('data-selected') === 'true') selected = c; });
+      if (!selected && cards.length) selected = cards[0];
+      if (selected) {
+        var input = getOrCreateQtyInput(form);
+        if (input) input.value = Number(selected.dataset.quantity) || 1;
+      }
+    }
+
+    function initContainer(container) {
+      var cards = Array.from(container.querySelectorAll('.quantity-bundle-card'));
+      if (!cards.length) return;
+      var form = document.querySelector('.shop-add-to-cart-wrapper form');
+
+      cards.forEach(function(card) {
+        card.addEventListener('click', function() {
+          cards.forEach(function(c) { c.setAttribute('data-selected', 'false'); });
+          card.setAttribute('data-selected', 'true');
+          var input = getOrCreateQtyInput(form);
+          if (input) input.value = Number(card.dataset.quantity) || 1;
+        });
+      });
+
+      if (form && !form._bundleQtyBound) {
+        form._bundleQtyBound = true;
+        form.addEventListener('submit', function() {
+          applySelectedQty(cards, form);
+        }, true);
+      }
+    }
+
+    function init() {
+      document.querySelectorAll('[x-data="quantityBundleComponent()"]').forEach(initContainer);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
 </script>
