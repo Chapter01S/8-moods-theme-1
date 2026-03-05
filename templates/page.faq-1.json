@@ -123,11 +123,64 @@
             "answer_10": "<p>De gebruiksinstructies staan duidelijk op de verpakking. Kort samengevat: patch uit het zakje halen, plakken op ondergoed of kleding ter hoogte van de pijnplek, nooit direct op de huid. Klaar in 30 seconden. We adviseren de eerste keer samen te doen zodat ze weet wat ze kan verwachten.</p>"
           },
           "blocks": {}
+        },
+        "ai_gen_block_f77aa38_e6aXKw": {
+          "type": "ai_gen_block_f77aa38",
+          "name": "FAQ accordion",
+          "settings": {
+            "title": "",
+            "description": "",
+            "text_alignment": "left",
+            "header_spacing": 20,
+            "desktop_width_percent": 100,
+            "section_padding": 24,
+            "item_spacing": 12,
+            "first_item_open": false,
+            "allow_multiple_open": false,
+            "background_color": "#ffffff",
+            "title_color": "#000000",
+            "description_color": "#666666",
+            "item_background_color": "#ffffff",
+            "item_border_color": "#e0e0e0",
+            "question_color": "#000000",
+            "question_hover_bg": "#f5f5f5",
+            "answer_color": "#333333",
+            "icon_color": "#000000",
+            "title_size": 36,
+            "description_size": 16,
+            "question_size": 18,
+            "answer_size": 16,
+            "item_border_width": 1,
+            "item_border_radius": 8,
+            "question_padding": 20,
+            "question_1": "Hoe snel wordt mijn bestelling geleverd?",
+            "answer_1": "<p>We verzenden binnen 1 tot 2 werkdagen. Gratis verzending bij bestellingen boven de 35 euro. Niet tevreden? Dan krijg je binnen 30 dagen je geld terug, geen vragen gesteld.</p>",
+            "question_2": "Kan ik maandelijks bestellen zodat ik nooit zonder zit?",
+            "answer_2": "<p>Ja, en dat is precies wat veel van onze klanten doen. Met een maandelijkse bestelling ben je altijd voorbereid als dag 1 aankomt, zonder dat je er last-minute aan hoeft te denken.</p>",
+            "question_3": "Kan ik retourneren?",
+            "answer_3": "<p>Je kunt ongeopende producten binnen 14 dagen retourneren. Geopende of gebruikte patches kunnen we om hygiëneredenen niet terugnemen. Is er iets mis met je bestelling? Neem contact op, dan lossen we het op.</p>",
+            "question_4": "",
+            "answer_4": "",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "ai_gen_block_f77aa38_eCRmmw",
-        "ai_gen_block_f77aa38_bMnBVL"
+        "ai_gen_block_f77aa38_bMnBVL",
+        "ai_gen_block_f77aa38_e6aXKw"
       ],
       "settings": {}
     }
