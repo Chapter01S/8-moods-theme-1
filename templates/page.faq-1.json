@@ -24,8 +24,8 @@
           "type": "ai_gen_block_f77aa38",
           "name": "FAQ accordion",
           "settings": {
-            "title": "Frequently Asked Questions",
-            "description": "<p>Find answers to common questions about our products and services.</p>",
+            "title": "Meest Gestelde Vragen",
+            "description": "",
             "text_alignment": "center",
             "header_spacing": 40,
             "desktop_width_percent": 100,
