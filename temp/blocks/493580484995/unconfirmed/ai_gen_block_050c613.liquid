@@ -1,6 +1,1661 @@
+{% doc %}
+  @prompt
+    1) A grid of FAQ cards
+    
+    On the FAQ page, show a clean grid of boxes (cards).
+    
+    Each card contains:
+    
+    The question as the title
+    
+    One short preview line of the answer underneath (only the first line, cut off with “…”)
+    
+    Layout:
+    
+    Desktop: 2 columns (optional 3)
+    
+    Mobile: 1 column
+    
+    2) Clicking a card opens the full answer in a popup
+    
+    When someone clicks a card, a popup modal opens on top of the page.
+    
+    The popup shows:
+    
+    The same question as a big heading
+    
+    The full answer underneath, all text visible
+    
+    3) How the popup behaves
+    
+    Background page becomes darkened (overlay)
+    
+    Page behind it cannot scroll while popup is open
+    
+    Popup can be closed by:
+    
+    Clicking an X button
+    
+    Clicking outside the popup
+    
+    Pressing Escape
+    
+    4) Admin editing experience
+    
+    In Shopify theme editor, you can add multiple FAQ items, each one has:
+    
+    Question
+    
+    Answer
+    
+    Optional preview text (if empty, it auto uses the first sentence of the answer)
+    
+    Optional extra:
+    
+    Category tag per FAQ, with a dropdown filter “All, Shipping, Returns, etc”
+    
+    5) Style goal
+    
+    It should look like a help center:
+    
+    Clean white cards
+    
+    Light border
+    
+    Subtle hover effect
+    
+    Consistent spacing
+    
+    Popup looks like an “article page” inside a modal
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-faq-grid-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .ai-faq-filter-{{ ai_gen_id }} {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ai-faq-filter-button-{{ ai_gen_id }} {
+    padding: 10px 20px;
+    background-color: {{ block.settings.filter_button_bg }};
+    color: {{ block.settings.filter_button_text }};
+    border: 1px solid {{ block.settings.filter_button_border }};
+    border-radius: {{ block.settings.filter_button_radius }}px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .ai-faq-filter-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.filter_button_hover_bg }};
+    color: {{ block.settings.filter_button_hover_text }};
+  }
+
+  .ai-faq-filter-button-{{ ai_gen_id }}.active {
+    background-color: {{ block.settings.filter_button_active_bg }};
+    color: {{ block.settings.filter_button_active_text }};
+    border-color: {{ block.settings.filter_button_active_bg }};
+  }
+
+  .ai-faq-grid-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.desktop_columns }}, 1fr);
+    gap: {{ block.settings.card_gap }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-faq-grid-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ai-faq-card-{{ ai_gen_id }} {
+    background-color: {{ block.settings.card_bg_color }};
+    border: 1px solid {{ block.settings.card_border_color }};
+    border-radius: {{ block.settings.card_border_radius }}px;
+    padding: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ai-faq-card-{{ ai_gen_id }}:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: {{ block.settings.card_hover_border_color }};
+  }
+
+  .ai-faq-card-question-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_question_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.card_question_color }};
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .ai-faq-card-preview-{{ ai_gen_id }} {
+    font-size: {{ block.settings.card_preview_size }}px;
+    color: {{ block.settings.card_preview_color }};
+    margin: 0;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .ai-faq-card-category-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: {{ block.settings.category_badge_bg }};
+    color: {{ block.settings.category_badge_text }};
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    align-self: flex-start;
+  }
+
+  .ai-faq-modal-overlay-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .ai-faq-modal-overlay-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ai-faq-modal-{{ ai_gen_id }} {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 90%;
+    max-width: {{ block.settings.modal_max_width }}px;
+    max-height: 80vh;
+    background-color: {{ block.settings.modal_bg_color }};
+    border-radius: {{ block.settings.modal_border_radius }}px;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-faq-modal-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .ai-faq-modal-header-{{ ai_gen_id }} {
+    padding: 32px 32px 24px;
+    border-bottom: 1px solid {{ block.settings.modal_border_color }};
+    position: relative;
+  }
+
+  .ai-faq-modal-question-{{ ai_gen_id }} {
+    font-size: {{ block.settings.modal_question_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.modal_question_color }};
+    margin: 0;
+    padding-right: 40px;
+    line-height: 1.3;
+  }
+
+  .ai-faq-modal-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+  }
+
+  .ai-faq-modal-close-{{ ai_gen_id }}:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .ai-faq-modal-close-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+    stroke: {{ block.settings.modal_close_color }};
+  }
+
+  .ai-faq-modal-body-{{ ai_gen_id }} {
+    padding: 32px;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .ai-faq-modal-answer-{{ ai_gen_id }} {
+    font-size: {{ block.settings.modal_answer_size }}px;
+    color: {{ block.settings.modal_answer_color }};
+    line-height: 1.7;
+  }
+
+  .ai-faq-modal-answer-{{ ai_gen_id }} p {
+    margin: 0 0 16px;
+  }
+
+  .ai-faq-modal-answer-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-faq-card-{{ ai_gen_id }}.hidden {
+    display: none;
+  }
+
+  body.ai-faq-modal-open-{{ ai_gen_id }} {
+    overflow: hidden;
+  }
+{% endstyle %}
+
+<faq-grid-{{ ai_gen_id }} class="ai-faq-grid-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.show_category_filter %}
+    <div class="ai-faq-filter-{{ ai_gen_id }}">
+      <button class="ai-faq-filter-button-{{ ai_gen_id }} active" data-category="all">
+        All
+      </button>
+      {% assign categories = '' %}
+      {% for i in (1..20) %}
+        {% assign category_key = 'faq_' | append: i | append: '_category' %}
+        {% assign category = block.settings[category_key] %}
+        {% if category != blank %}
+          {% unless categories contains category %}
+            {% assign categories = categories | append: category | append: ',' %}
+            <button class="ai-faq-filter-button-{{ ai_gen_id }}" data-category="{{ category }}">
+              {{ category }}
+            </button>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="ai-faq-grid-container-{{ ai_gen_id }}">
+    {% for i in (1..20) %}
+      {% liquid
+        assign question_key = 'faq_' | append: i | append: '_question'
+        assign answer_key = 'faq_' | append: i | append: '_answer'
+        assign preview_key = 'faq_' | append: i | append: '_preview'
+        assign category_key = 'faq_' | append: i | append: '_category'
+
+        assign question = block.settings[question_key]
+        assign answer = block.settings[answer_key]
+        assign preview = block.settings[preview_key]
+        assign category = block.settings[category_key]
+      %}
+
+      {% if question != blank and answer != blank %}
+        {% if preview == blank %}
+          {% assign preview = answer | strip_html | truncate: 100 %}
+        {% endif %}
+
+        <div
+          class="ai-faq-card-{{ ai_gen_id }}"
+          data-faq-index="{{ i }}"
+          data-category="{{ category }}"
+        >
+          {% if block.settings.show_category_filter and category != blank %}
+            <span class="ai-faq-card-category-{{ ai_gen_id }}">{{ category }}</span>
+          {% endif %}
+          <h3 class="ai-faq-card-question-{{ ai_gen_id }}">{{ question }}</h3>
+          <p class="ai-faq-card-preview-{{ ai_gen_id }}">{{ preview }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="ai-faq-modal-overlay-{{ ai_gen_id }}"></div>
+
+  <div class="ai-faq-modal-{{ ai_gen_id }}">
+    <div class="ai-faq-modal-header-{{ ai_gen_id }}">
+      <h2 class="ai-faq-modal-question-{{ ai_gen_id }}"></h2>
+      <button class="ai-faq-modal-close-{{ ai_gen_id }}" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="ai-faq-modal-body-{{ ai_gen_id }}">
+      <div class="ai-faq-modal-answer-{{ ai_gen_id }}"></div>
+    </div>
+  </div>
+</faq-grid-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class FaqGrid{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.faqData = {
+          {% for i in (1..20) %}
+            {% liquid
+              assign question_key = 'faq_' | append: i | append: '_question'
+              assign answer_key = 'faq_' | append: i | append: '_answer'
+              assign question = block.settings[question_key]
+              assign answer = block.settings[answer_key]
+            %}
+            {% if question != blank and answer != blank %}
+              '{{ i }}': {
+                question: {{ question | json }},
+                answer: {{ answer | json }}
+              }{% unless forloop.last %},{% endunless %}
+            {% endif %}
+          {% endfor %}
+        };
+      }
+
+      connectedCallback() {
+        this.cards = this.querySelectorAll('.ai-faq-card-{{ ai_gen_id }}');
+        this.modal = this.querySelector('.ai-faq-modal-{{ ai_gen_id }}');
+        this.overlay = this.querySelector('.ai-faq-modal-overlay-{{ ai_gen_id }}');
+        this.closeButton = this.querySelector('.ai-faq-modal-close-{{ ai_gen_id }}');
+        this.modalQuestion = this.querySelector('.ai-faq-modal-question-{{ ai_gen_id }}');
+        this.modalAnswer = this.querySelector('.ai-faq-modal-answer-{{ ai_gen_id }}');
+        this.filterButtons = this.querySelectorAll('.ai-faq-filter-button-{{ ai_gen_id }}');
+
+        this.setupEventListeners();
+      }
+
+      setupEventListeners() {
+        this.cards.forEach(card => {
+          card.addEventListener('click', () => {
+            const index = card.getAttribute('data-faq-index');
+            this.openModal(index);
+          });
+        });
+
+        this.closeButton.addEventListener('click', () => this.closeModal());
+        this.overlay.addEventListener('click', () => this.closeModal());
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+            this.closeModal();
+          }
+        });
+
+        this.filterButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const category = button.getAttribute('data-category');
+            this.filterByCategory(category);
+            
+            this.filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+          });
+        });
+      }
+
+      openModal(index) {
+        const faq = this.faqData[index];
+        if (!faq) return;
+
+        this.modalQuestion.textContent = faq.question;
+        this.modalAnswer.innerHTML = faq.answer;
+
+        this.modal.classList.add('active');
+        this.overlay.classList.add('active');
+        document.body.classList.add('ai-faq-modal-open-{{ ai_gen_id }}');
+      }
+
+      closeModal() {
+        this.modal.classList.remove('active');
+        this.overlay.classList.remove('active');
+        document.body.classList.remove('ai-faq-modal-open-{{ ai_gen_id }}');
+      }
+
+      filterByCategory(category) {
+        this.cards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          
+          if (category === 'all' || cardCategory === category) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+    }
+
+    customElements.define('faq-grid-{{ ai_gen_id }}', FaqGrid{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "FAQ grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "select",
+      "id": "desktop_columns",
+      "label": "Desktop columns",
+      "options": [
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Gap between cards",
+      "min": 12,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Category filter"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_category_filter",
+      "label": "Show category filter",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "filter_button_bg",
+      "label": "Button background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "filter_button_text",
+      "label": "Button text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "filter_button_border",
+      "label": "Button border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "filter_button_hover_bg",
+      "label": "Hover background",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "filter_button_hover_text",
+      "label": "Hover text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "filter_button_active_bg",
+      "label": "Active background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "filter_button_active_text",
+      "label": "Active text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "filter_button_radius",
+      "label": "Button radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "card_hover_border_color",
+      "label": "Hover border",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "card_question_size",
+      "label": "Question size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "card_question_color",
+      "label": "Question color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "card_preview_size",
+      "label": "Preview size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "card_preview_color",
+      "label": "Preview color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "category_badge_bg",
+      "label": "Category badge background",
+      "default": "#f0f0f0"
+    },
+    {
+      "type": "color",
+      "id": "category_badge_text",
+      "label": "Category badge text",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Modal style"
+    },
+    {
+      "type": "range",
+      "id": "modal_max_width",
+      "label": "Max width",
+      "min": 500,
+      "max": 900,
+      "step": 50,
+      "unit": "px",
+      "default": 700
+    },
+    {
+      "type": "color",
+      "id": "modal_bg_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "modal_border_color",
+      "label": "Border",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "range",
+      "id": "modal_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "modal_question_size",
+      "label": "Question size",
+      "min": 20,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "modal_question_color",
+      "label": "Question color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "modal_answer_size",
+      "label": "Answer size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "modal_answer_color",
+      "label": "Answer color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "modal_close_color",
+      "label": "Close button",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 1"
+    },
+    {
+      "type": "text",
+      "id": "faq_1_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_1_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_1_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_1_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "General"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 2"
+    },
+    {
+      "type": "text",
+      "id": "faq_2_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_2_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_2_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_2_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "General"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 3"
+    },
+    {
+      "type": "text",
+      "id": "faq_3_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_3_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_3_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_3_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "General"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 4"
+    },
+    {
+      "type": "text",
+      "id": "faq_4_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_4_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_4_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_4_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "General"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 5"
+    },
+    {
+      "type": "text",
+      "id": "faq_5_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_5_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_5_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_5_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "General"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 6"
+    },
+    {
+      "type": "text",
+      "id": "faq_6_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_6_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_6_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_6_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "Shipping"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 7"
+    },
+    {
+      "type": "text",
+      "id": "faq_7_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_7_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_7_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_7_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "Shipping"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 8"
+    },
+    {
+      "type": "text",
+      "id": "faq_8_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_8_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_8_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_8_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "Returns"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 9"
+    },
+    {
+      "type": "text",
+      "id": "faq_9_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_9_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_9_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_9_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "Returns"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 10"
+    },
+    {
+      "type": "text",
+      "id": "faq_10_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_10_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_10_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_10_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "Payment"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 11"
+    },
+    {
+      "type": "text",
+      "id": "faq_11_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_11_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_11_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_11_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "Payment"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 12"
+    },
+    {
+      "type": "text",
+      "id": "faq_12_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_12_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_12_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_12_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "Products"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 13"
+    },
+    {
+      "type": "text",
+      "id": "faq_13_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_13_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_13_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_13_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "Products"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 14"
+    },
+    {
+      "type": "text",
+      "id": "faq_14_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_14_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_14_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_14_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "General"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 15"
+    },
+    {
+      "type": "text",
+      "id": "faq_15_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_15_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_15_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_15_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "General"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 16"
+    },
+    {
+      "type": "text",
+      "id": "faq_16_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_16_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_16_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_16_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "General"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 17"
+    },
+    {
+      "type": "text",
+      "id": "faq_17_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_17_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_17_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_17_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "General"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 18"
+    },
+    {
+      "type": "text",
+      "id": "faq_18_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_18_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_18_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_18_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "General"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 19"
+    },
+    {
+      "type": "text",
+      "id": "faq_19_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_19_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_19_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_19_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "General"
+    },
+    {
+      "type": "header",
+      "content": "FAQ 20"
+    },
+    {
+      "type": "text",
+      "id": "faq_20_question",
+      "label": "Question"
+    },
+    {
+      "type": "richtext",
+      "id": "faq_20_answer",
+      "label": "Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_20_preview",
+      "label": "Preview text"
+    },
+    {
+      "type": "select",
+      "id": "faq_20_category",
+      "label": "Category",
+      "options": [
+        {
+          "value": "General",
+          "label": "General"
+        },
+        {
+          "value": "Shipping",
+          "label": "Shipping"
+        },
+        {
+          "value": "Returns",
+          "label": "Returns"
+        },
+        {
+          "value": "Payment",
+          "label": "Payment"
+        },
+        {
+          "value": "Products",
+          "label": "Products"
+        }
+      ],
+      "default": "General"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ grid"
+    }
+  ]
+}
 {% endschema %}
