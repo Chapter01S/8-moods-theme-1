@@ -41,7 +41,7 @@
             "link_3_text": "Contact Us",
             "link_3_url": "/pages/contact",
             "link_4_text": "FAQs",
-            "link_4_url": "/pages/faq",
+            "link_4_url": "shopify://pages/faq",
             "link_5_text": "Shipping Info",
             "link_5_url": "/pages/shipping",
             "link_6_text": "Returns",
