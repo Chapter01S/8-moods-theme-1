@@ -407,6 +407,7 @@
           },
           "cart_money_back_guarantee_LgTUC6": {
             "type": "cart_money_back_guarantee",
+            "disabled": true,
             "settings": {
               "show_money_back_guarantee": true,
               "money_back_guarantee_text": "30 Dagen niet goed, geld terug",
