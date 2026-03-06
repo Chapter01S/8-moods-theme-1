@@ -17,68 +17,9 @@
         "padding_bottom": 0
       }
     },
-    "rich_text_HN3ETg": {
-      "type": "rich-text",
-      "blocks": {
-        "subtitle_79MCBw": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "<p>Neem contact op met ons Dreamteam en we komen zo snel mogelijk bij je terug met een antwoord!</p>"
-          }
-        }
-      },
-      "block_order": [
-        "subtitle_79MCBw"
-      ],
-      "disabled": true,
-      "name": "Rich Text",
-      "settings": {
-        "use_theme_colors": true,
-        "text_alignment": "center",
-        "mobile_text_alignment": "center",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_horizontal": 20,
-        "title_font_size": 36,
-        "title_font_size_mobile": 28,
-        "title_line_height": 1.3,
-        "title_margin_bottom": 20,
-        "title_color": "#000000",
-        "use_accent_gradient": false,
-        "accent_color": "#ef4a65",
-        "accent_gradient_start": "#ef4a65",
-        "accent_gradient_end": "#ff6b35",
-        "accent_gradient_angle": 45,
-        "subtitle_font_size": 18,
-        "subtitle_font_size_mobile": 16,
-        "subtitle_line_height": 1.6,
-        "subtitle_margin_bottom": 32,
-        "subtitle_max_width": 700,
-        "subtitle_color": "#666666",
-        "use_global_button_styling": true,
-        "button_font_size": 16,
-        "button_font_size_mobile": 14,
-        "button_padding_vertical": 14,
-        "button_padding_horizontal": 28,
-        "button_border_radius": 4,
-        "button_border_width": 0,
-        "button_margin_top": 24,
-        "button_bg_color": "#000000",
-        "button_text_color": "#ffffff",
-        "button_border_color": "#000000",
-        "button_hover_bg_color": "#333333",
-        "button_hover_text_color": "#ffffff",
-        "section_bg_color": "#ffffff",
-        "section_border_radius": 0,
-        "enable_top_border": false,
-        "top_border_width": 1,
-        "top_border_style": "solid",
-        "top_border_color": "#e0e0e0",
-        "enable_bottom_border": false,
-        "bottom_border_width": 1,
-        "bottom_border_style": "solid",
-        "bottom_border_color": "#e0e0e0"
-      }
+    "1772826010d727ac4f": {
+      "type": "_blocks",
+      "settings": {}
     },
     "form": {
       "type": "contact-form",
@@ -162,17 +103,76 @@
             "input_padding": 12
           },
           "blocks": {}
+        },
+        "ai_gen_block_0c4310d_Qnc7WX": {
+          "type": "ai_gen_block_0c4310d",
+          "name": "FAQ section",
+          "disabled": true,
+          "settings": {
+            "heading": "Frequently Asked Questions",
+            "subheading": "Find answers to common questions",
+            "heading_alignment": "center",
+            "heading_size": 36,
+            "subheading_size": 16,
+            "heading_spacing": 40,
+            "subheading_spacing": 10,
+            "desktop_width_percent": 100,
+            "column_gap": 30,
+            "item_spacing": 15,
+            "section_padding_top": 50,
+            "section_padding_bottom": 50,
+            "section_padding_horizontal": 20,
+            "background_color": "#ffffff",
+            "heading_color": "#000000",
+            "subheading_color": "#666666",
+            "item_background_color": "#ffffff",
+            "question_background_color": "#f8f8f8",
+            "question_hover_background": "#eeeeee",
+            "question_color": "#000000",
+            "answer_color": "#333333",
+            "icon_color": "#000000",
+            "item_border_color": "#e0e0e0",
+            "item_border_width": 1,
+            "item_border_radius": 8,
+            "question_padding": 20,
+            "question_size": 18,
+            "question_font_weight": "600",
+            "answer_size": 16,
+            "icon_size": 24,
+            "question_1": "What is your return policy?",
+            "answer_1": "<p>We offer a 30-day return policy on all items. Products must be in original condition with tags attached.</p>",
+            "question_2": "How long does shipping take?",
+            "answer_2": "<p>Standard shipping takes 5-7 business days. Express shipping is available for 2-3 business days delivery.</p>",
+            "question_3": "Do you ship internationally?",
+            "answer_3": "<p>Yes, we ship to most countries worldwide. International shipping times vary by location.</p>",
+            "question_4": "What payment methods do you accept?",
+            "answer_4": "<p>We accept all major credit cards, PayPal, Apple Pay, and Google Pay.</p>",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_db06a7e_6bYpmg"
+        "ai_gen_block_db06a7e_6bYpmg",
+        "ai_gen_block_0c4310d_Qnc7WX"
       ],
       "settings": {}
     }
   },
   "order": [
     "main",
-    "rich_text_HN3ETg",
+    "1772826010d727ac4f",
     "form",
     "1772825768797b901e"
   ]
