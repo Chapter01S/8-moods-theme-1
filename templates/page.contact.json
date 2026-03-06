@@ -30,6 +30,7 @@
       "block_order": [
         "subtitle_79MCBw"
       ],
+      "disabled": true,
       "name": "Rich Text",
       "settings": {
         "use_theme_colors": true,
@@ -81,6 +82,7 @@
     },
     "form": {
       "type": "contact-form",
+      "disabled": true,
       "settings": {
         "use_theme_colors": false,
         "heading": "",
@@ -104,11 +106,74 @@
         "padding_top": 0,
         "padding_bottom": 36
       }
+    },
+    "1772825768797b901e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_db06a7e_6bYpmg": {
+          "type": "ai_gen_block_db06a7e",
+          "settings": {
+            "custom_text": "<p>Neem contact op met ons Dreamteam en we komen zo snel mogelijk bij je terug met een antwoord!</p>",
+            "custom_text_size": 16,
+            "custom_text_spacing": 20,
+            "show_name_field": true,
+            "name_label": "Naam",
+            "name_placeholder": "Jouw naam",
+            "name_field_name": "naam",
+            "name_required": true,
+            "email_label": "Email address",
+            "email_placeholder": "jouw@email.com",
+            "message_label": "Opmerking",
+            "message_placeholder": "",
+            "message_required": true,
+            "textarea_height": 120,
+            "button_text": "Verzenden",
+            "button_text_size": 16,
+            "button_font_weight": "600",
+            "button_padding": 14,
+            "button_border_radius": 8,
+            "button_background_color": "#181b1d",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#5f6264",
+            "success_message": "Thank you! Your message has been sent successfully.",
+            "error_heading": "Please correct the following:",
+            "success_background_color": "#d4edda",
+            "success_text_color": "#155724",
+            "error_background_color": "#f8d7da",
+            "error_text_color": "#721c24",
+            "desktop_width_percent": 100,
+            "text_alignment": "left",
+            "form_padding": 30,
+            "header_spacing": 25,
+            "field_spacing": 20,
+            "border_radius": 8,
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "label_color": "#000000",
+            "label_size": 14,
+            "label_weight": "600",
+            "input_background_color": "#ffffff",
+            "input_text_color": "#000000",
+            "input_text_size": 14,
+            "input_border_color": "#cccccc",
+            "input_focus_border_color": "#181b1d",
+            "input_border_width": 1,
+            "input_border_radius": 4,
+            "input_padding": 12
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_db06a7e_6bYpmg"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "main",
     "rich_text_HN3ETg",
-    "form"
+    "form",
+    "1772825768797b901e"
   ]
 }
