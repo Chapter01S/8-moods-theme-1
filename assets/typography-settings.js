@@ -72,11 +72,11 @@ function applyFontWeightOverrides() {
   style.id = "font-weight-overrides";
   style.textContent = `
     /* Regular weight elements */
-    body :not(moonbundle-component) p,
-    body :not(moonbundle-component) div,
-    body :not(moonbundle-component) input,
-    body :not(moonbundle-component) textarea,
-    body :not(moonbundle-component) select {
+    body :not(moonbundle-component *) p,
+    body :not(moonbundle-component *) div,
+    body :not(moonbundle-component *) input,
+    body :not(moonbundle-component *) textarea,
+    body :not(moonbundle-component *) select {
       font-weight: var(--font-weight-regular) !important;
     }
     
