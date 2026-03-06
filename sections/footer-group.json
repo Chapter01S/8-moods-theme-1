@@ -43,7 +43,7 @@
             "link_4_text": "FAQs",
             "link_4_url": "shopify://pages/faq",
             "link_5_text": "Verzending & Retour",
-            "link_5_url": "/pages/shipping",
+            "link_5_url": "shopify://pages/verzending-retouren",
             "link_6_text": "",
             "link_6_url": "/pages/returns"
           }
