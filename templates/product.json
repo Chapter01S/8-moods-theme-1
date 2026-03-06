@@ -525,43 +525,6 @@
             "preselected_option": "first_visible"
           }
         },
-        "bullet_list_tkaRaG": {
-          "type": "bullet_list",
-          "settings": {
-            "use_theme_colors": true,
-            "bullet_1": "Gratis verzending vanaf 40 euro",
-            "bullet_2": "",
-            "bullet_3": "",
-            "bullet_4": "",
-            "bullet_5": "",
-            "bullet_6": "",
-            "layout_style": "vertical",
-            "row_gap": 15,
-            "use_custom_icon_1": false,
-            "custom_icon_1": "",
-            "use_custom_icon_2": false,
-            "custom_icon_2": "",
-            "use_custom_icon_3": false,
-            "custom_icon_3": "",
-            "use_custom_icon_4": false,
-            "custom_icon_4": "",
-            "use_custom_icon_5": false,
-            "custom_icon_5": "",
-            "use_custom_icon_6": false,
-            "custom_icon_6": "",
-            "icon_color": "#a40011",
-            "text_color": "#333333",
-            "icon_size": 20,
-            "text_size": 17,
-            "spacing": 12,
-            "icon_text_gap": 10,
-            "show_bg": false,
-            "bg_color": "#f5f5f5",
-            "border_radius": 4,
-            "margin_top": 10,
-            "margin_bottom": 10
-          }
-        },
         "moon_bundles_upsell_cart_aov_app_block_NJHEwR": {
           "type": "shopify://apps/moon-bundles-upsell-cart-aov/blocks/app-block/aaf4cd95-8b9b-4a14-b929-0f7fc8fced27",
           "settings": {
@@ -570,6 +533,7 @@
         },
         "custom_text_iyRjG7": {
           "type": "custom_text",
+          "disabled": true,
           "settings": {
             "text": "<p><strong>Kies Jouw verlichting kit </strong></p>",
             "show_description": false,
@@ -626,6 +590,43 @@
             "divider_height": 1,
             "divider_style": "solid",
             "divider_spacing": 12
+          }
+        },
+        "bullet_list_tkaRaG": {
+          "type": "bullet_list",
+          "settings": {
+            "use_theme_colors": true,
+            "bullet_1": "Gratis verzending vanaf 40 euro",
+            "bullet_2": "",
+            "bullet_3": "",
+            "bullet_4": "",
+            "bullet_5": "",
+            "bullet_6": "",
+            "layout_style": "vertical",
+            "row_gap": 15,
+            "use_custom_icon_1": false,
+            "custom_icon_1": "",
+            "use_custom_icon_2": false,
+            "custom_icon_2": "",
+            "use_custom_icon_3": false,
+            "custom_icon_3": "",
+            "use_custom_icon_4": false,
+            "custom_icon_4": "",
+            "use_custom_icon_5": false,
+            "custom_icon_5": "",
+            "use_custom_icon_6": false,
+            "custom_icon_6": "",
+            "icon_color": "#a40011",
+            "text_color": "#333333",
+            "icon_size": 20,
+            "text_size": 17,
+            "spacing": 12,
+            "icon_text_gap": 10,
+            "show_bg": false,
+            "bg_color": "#f5f5f5",
+            "border_radius": 4,
+            "margin_top": 10,
+            "margin_bottom": 10
           }
         },
         "shipping_notice_UUMJq8": {
@@ -1184,9 +1185,9 @@
         "simple_variant_picker_pWzPg6",
         "quantity_bundle_3RHxGN",
         "quantity_break_fNAHPm",
-        "bullet_list_tkaRaG",
         "moon_bundles_upsell_cart_aov_app_block_NJHEwR",
         "custom_text_iyRjG7",
+        "bullet_list_tkaRaG",
         "shipping_notice_UUMJq8",
         "add_to_cart_7nhY9K",
         "guarantee_badges_HAWQYD",
