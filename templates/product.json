@@ -306,14 +306,14 @@
             "grid_image_max_height": 80,
             "quantity_1": 1,
             "title_1": "5 Patches",
-            "price_1": 25.0,
+            "price_1": 25,
             "compare_price_1": 35,
             "description_1": "€5 / Patch",
             "show_badge_1": false,
             "badge_1": "BEST VALUE",
             "quantity_2": 2,
             "title_2": "10 Patches",
-            "price_2": 45.0,
+            "price_2": 45,
             "compare_price_2": 70,
             "description_2": "€4,49 / Patch",
             "show_badge_2": true,
@@ -625,6 +625,12 @@
           "type": "custom_liquid",
           "settings": {
             "custom_liquid": ""
+          }
+        },
+        "moon_bundles_upsell_cart_aov_app_block_NJHEwR": {
+          "type": "shopify://apps/moon-bundles-upsell-cart-aov/blocks/app-block/aaf4cd95-8b9b-4a14-b929-0f7fc8fced27",
+          "settings": {
+            "moonbundle_selected_product": "{{section.settings.current_product}}"
           }
         },
         "shipping_notice_UUMJq8": {
@@ -1186,6 +1192,7 @@
         "quantity_break_fNAHPm",
         "bullet_list_tkaRaG",
         "custom_liquid_q6Wcnz",
+        "moon_bundles_upsell_cart_aov_app_block_NJHEwR",
         "shipping_notice_UUMJq8",
         "add_to_cart_7nhY9K",
         "guarantee_badges_HAWQYD",
