@@ -38,7 +38,7 @@
             "link_1_url": "",
             "link_2_text": "",
             "link_2_url": "",
-            "link_3_text": "Contact Us",
+            "link_3_text": "Contact",
             "link_3_url": "/pages/contact",
             "link_4_text": "FAQs",
             "link_4_url": "shopify://pages/faq",
@@ -46,6 +46,13 @@
             "link_5_url": "shopify://pages/verzending-retouren",
             "link_6_text": "",
             "link_6_url": "/pages/returns"
+          }
+        },
+        "text_column_r8cLqa": {
+          "type": "text_column",
+          "settings": {
+            "heading": "Klantenservice",
+            "text": "<p>Neem gerust contact op met onze klantenservice. We staan altijd voor je klaar en beloven binnen 48 uur te reageren.<br/></p><p><strong>Maandag t/m zaterdag:</strong> klantenservice bereikbaar.</p><p><strong>Zondag:</strong>  gesloten.</p><p><strong>Contact:</strong> info@the8moods.com</p>"
           }
         },
         "social_column_1": {
@@ -60,6 +67,7 @@
         "menu_column_1",
         "menu_column_2",
         "custom_links_1",
+        "text_column_r8cLqa",
         "social_column_1"
       ],
       "settings": {
