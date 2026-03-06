@@ -295,6 +295,7 @@
         },
         "quantity_bundle_3RHxGN": {
           "type": "quantity_bundle",
+          "disabled": true,
           "settings": {
             "layout_type": "horizontal",
             "grid_show_images": true,
