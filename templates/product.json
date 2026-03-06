@@ -621,12 +621,6 @@
             "margin_bottom": 10
           }
         },
-        "custom_liquid_q6Wcnz": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": ""
-          }
-        },
         "moon_bundles_upsell_cart_aov_app_block_NJHEwR": {
           "type": "shopify://apps/moon-bundles-upsell-cart-aov/blocks/app-block/aaf4cd95-8b9b-4a14-b929-0f7fc8fced27",
           "settings": {
@@ -1191,7 +1185,6 @@
         "quantity_bundle_3RHxGN",
         "quantity_break_fNAHPm",
         "bullet_list_tkaRaG",
-        "custom_liquid_q6Wcnz",
         "moon_bundles_upsell_cart_aov_app_block_NJHEwR",
         "shipping_notice_UUMJq8",
         "add_to_cart_7nhY9K",
