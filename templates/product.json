@@ -296,7 +296,7 @@
         "quantity_bundle_3RHxGN": {
           "type": "quantity_bundle",
           "settings": {
-            "layout_type": "grid_2x2",
+            "layout_type": "horizontal",
             "grid_show_images": true,
             "horizontal_show_images": false,
             "horizontal_image_height_desktop": 60,
