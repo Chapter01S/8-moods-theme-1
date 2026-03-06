@@ -80,7 +80,7 @@
         "show_footer_bottom": true,
         "copyright_text": "",
         "show_payment_icons": true,
-        "custom_payment_icons": "visa, mastercard, american_express, apple_pay, google_pay, shopify_pay, paypal, discover",
+        "custom_payment_icons": "ideal,",
         "payment_icon_height": 24,
         "payment_icon_spacing": 8,
         "show_localization": true,
