@@ -594,6 +594,7 @@
         },
         "bullet_list_tkaRaG": {
           "type": "bullet_list",
+          "disabled": true,
           "settings": {
             "use_theme_colors": true,
             "bullet_1": "Gratis verzending vanaf 40 euro",
