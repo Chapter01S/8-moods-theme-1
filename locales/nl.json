@@ -562,5 +562,12 @@
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "alternative_payment_method_banner": {
+        "or": "⚠ Beperkte voorraad — bestel voordat het te laat is!"
+      }
+    }
   }
 }
