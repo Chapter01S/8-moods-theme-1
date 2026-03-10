@@ -1095,6 +1095,7 @@
         },
         "carousel_default_video_Er3A4T": {
           "type": "carousel_default_video",
+          "disabled": true,
           "settings": {
             "video": "shopify://files/videos/Review 1.mp4",
             "enable_autoplay": false,
