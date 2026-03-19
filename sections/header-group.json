@@ -93,11 +93,46 @@
     "17720393799cb0e23c": {
       "type": "_blocks",
       "settings": {}
+    },
+    "sale_countdown_banner_zkHdYi": {
+      "type": "sale-countdown-banner",
+      "disabled": true,
+      "name": "Sale Countdown Banner",
+      "settings": {
+        "use_theme_colors": false,
+        "heading_text": "SPRING SALE",
+        "highlight_text": "30% OFF",
+        "show_colon": true,
+        "show_icon": true,
+        "icon_text": "🌼",
+        "show_days": true,
+        "custom_end_time": true,
+        "end_year": 2024,
+        "end_month": 12,
+        "end_day": 31,
+        "end_hour": 23,
+        "end_minute": 59,
+        "sticky": false,
+        "background_color": "#a82a36",
+        "text_color": "#ef4a65",
+        "highlight_color": "#000000",
+        "highlight_underline": true,
+        "countdown_color": "#ef4a65",
+        "countdown_label_color": "#000000",
+        "border_color": "#ef4a65",
+        "days_label": "DAYS",
+        "hours_label": "HRS",
+        "minutes_label": "MIN",
+        "seconds_label": "SEC",
+        "time_format_single_digit": "0",
+        "zero_value": "00"
+      }
     }
   },
   "order": [
     "blocks_MVVR9q",
     "header",
-    "17720393799cb0e23c"
+    "17720393799cb0e23c",
+    "sale_countdown_banner_zkHdYi"
   ]
 }
