@@ -684,9 +684,9 @@
           "settings": {
             "use_theme_colors": true,
             "badge_1_show": true,
-            "badge_1_text": "Veilig en snel betalen met iDeal",
+            "badge_1_text": "✓ Veilig en snel betalen met iDeal",
             "badge_1_icon": "clock",
-            "badge_1_custom_icon": "<svg viewbox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" stroke=\"\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g><g id=\"SVGRepo_iconCarrier\"><path fill=\"#E2F78E\" d=\"M8 3a5 5 0 100 10A5 5 0 008 3z\"></path></g></svg>",
+            "badge_1_custom_icon": "",
             "badge_1_custom_image": "shopify://shop_images/ideal.svg",
             "badge_2_show": false,
             "badge_2_text": "GRATIS verzending in NL🇳🇱",
