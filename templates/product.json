@@ -684,7 +684,7 @@
           "settings": {
             "use_theme_colors": true,
             "badge_1_show": true,
-            "badge_1_text": "✓ Veilig en snel betalen met iDeal",
+            "badge_1_text": "✓ Veilig en snel betalen met",
             "badge_1_icon": "clock",
             "badge_1_custom_icon": "",
             "badge_1_custom_image": "shopify://shop_images/ideal.svg",
@@ -696,13 +696,24 @@
             "text_color": "#20362a",
             "container_margin_top": -5,
             "container_margin_right": 0,
-            "container_margin_bottom": 10,
+            "container_margin_bottom": 5,
             "container_margin_left": 0,
             "font_size": 13,
             "icon_size": 13,
             "gap": 10,
             "align_center": true,
             "mobile_stack": false
+          }
+        },
+        "payment_icons_dXmDVx": {
+          "type": "payment_icons",
+          "settings": {
+            "custom_payment_icons": "iDeal, Paypal, Mastercard, american_express,",
+            "alignment": "center",
+            "icon_height": 22,
+            "icon_spacing": 6,
+            "margin_top": 0,
+            "margin_bottom": 8
           }
         },
         "bullet_list_dAR8rA": {
@@ -1193,6 +1204,7 @@
         "shipping_notice_UUMJq8",
         "add_to_cart_7nhY9K",
         "guarantee_badges_HAWQYD",
+        "payment_icons_dXmDVx",
         "bullet_list_dAR8rA",
         "money_back_guarantee_U4mFjW",
         "product_labels_wQXkFE",
